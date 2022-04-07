@@ -8,6 +8,10 @@ import (
 
 const (
 	oo = int64(1e18)
+	errorClasesMaterias = "Se planean dar %d clases pero los profesores solo son capaces de dar %d clases."
+	errorClasesProfesores = "En total, los profesores deben dar %d clases pero solo existen %d clases disponibles."
+	errorSinSolucion = "No fue posible el encontrar una solucion con las restricciones dadas."
+	errorCostoPreferencias = "No fue posible encontrar una solucion dadas las preferencias blandas."
 )
 
 type tupla struct {
@@ -141,7 +145,6 @@ func min_cost_max_flow(source, sink int) (int64, int64) {
 	return flow, cost
 }
 
-// tenemos que validar que la suma de clases a dar sea la disponible para los profesores
 func crearGrafo(salones int, materias []obj.Materia, profesores []obj.Profesor, bloques []obj.Bloque) (int, int, error){
 	n_materias := len(materias)
 	n_profesores := len(profesores)
@@ -149,6 +152,8 @@ func crearGrafo(salones int, materias []obj.Materia, profesores []obj.Profesor, 
 	n = 1 + n_materias + 2*n_profesores + n_bloques + 1
 	fuente := 0
 	destino := n-1
+	clasesMaterias := 0
+	clasesProfesores := 0
 
 	adj = make([][]edge, n)
 	m_idx := make(map[int]int)
@@ -160,8 +165,8 @@ func crearGrafo(salones int, materias []obj.Materia, profesores []obj.Profesor, 
 	for i, m := range materias {
 		m_idx[m.Id] = i + 1
 		idx_original[i+1] = i
+		clasesMaterias += m.Cantidad
 		add_edge(fuente,i + 1, int64(m.Cantidad), 0)
-		//fmt.Printf("%d %d %d %d\n", fuente, i+1, m.Cantidad, 0)
 	}
 
 	// indices para bloques
@@ -171,7 +176,6 @@ func crearGrafo(salones int, materias []obj.Materia, profesores []obj.Profesor, 
 		b_idx[b.Id] = nodo
 		idx_original[nodo] = i
 		add_edge(nodo, destino, int64(salones), 0)
-		//fmt.Printf("%d %d %d %d\n", nodo, destino, b.Capacidad, 0)
 	}
 
 	for i, p := range profesores {
@@ -179,21 +183,27 @@ func crearGrafo(salones int, materias []obj.Materia, profesores []obj.Profesor, 
 		salida := 1 + n_materias + 2*i + 1
 		idx_original[entrada] = i
 		add_edge(entrada, salida, int64(p.Clases), 0)
-		//fmt.Printf("%d %d %d %d\n", entrada, salida, p.Clases, 0)
+		clasesProfesores += p.Clases
 
 		pref_materias := p.Materias
 		for _, m := range pref_materias {
 			nodo := m_idx[m.Id]
 			add_edge(nodo, entrada, int64(m.Limite), int64(m.Preferencia))
-			//fmt.Printf("%d %d %d %d\n", nodo, entrada, m.Limite, m.Preferencia)
 		}
 
 		pref_bloques := p.Bloques
 		for _, b := range pref_bloques {
 			nodo := b_idx[b.Id]
 			add_edge(salida, nodo, 1, int64(b.Preferencia))
-			//fmt.Printf("%d %d %d %d\n", salida, nodo, 1, b.Preferencia)
 		}
+	}
+
+	if clasesMaterias > clasesProfesores {
+		// Se planea dar mas clases de las que los profesores deben dar
+		return 0, 0, fmt.Errorf(errorClasesMaterias, clasesMaterias, clasesProfesores)
+	} else if clasesMaterias < clasesProfesores {
+		// Los profesores necesitan mas clases de las disponibles
+		return 0, 0, fmt.Errorf(errorClasesProfesores, clasesProfesores, clasesMaterias)
 	}
 
 	return fuente, destino, nil
@@ -244,11 +254,11 @@ func encontrarSolucion(fuente, destino int, materias []obj.Materia, profesores [
 	}
 
 	if flujo != flujoEsperado {
-		return nil, fmt.Errorf("No se encontro una solucion");
+		return nil, fmt.Errorf(errorSinSolucion);
 	}
 
 	if costo >= oo {
-		return nil, fmt.Errorf("Solucion muy cara");
+		return nil, fmt.Errorf(errorCostoPreferencias);
 	}
 
 	flujoFinal := flujo
