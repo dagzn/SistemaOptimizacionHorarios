@@ -21,7 +21,7 @@ func DeserializarEntradaHorario(data []byte) (*obj.Entrada_horario, error){
 }
 
 func SerializarSalidaHorario(h *obj.Salida_horario) ([]byte, error) {
-	data, err := json.Marshal(h)
+	data, err := json.MarshalIndent(h, "", " ")
 	if err != nil {
 		return nil, err
 	}

@@ -309,8 +309,6 @@ func GenerarHorario(horario *obj.Entrada_horario) (*obj.Salida_horario, error){
 	// Aqui es donde creamos el obj Salida_horario y lo regresamos
 	salida := &obj.Salida_horario{
 		Distribuciones: distribuciones,
-		Profesores: horario.Profesores,
-		Materias: horario.Materias,
 	}
 
 	return salida, nil

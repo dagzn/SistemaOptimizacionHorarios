@@ -68,8 +68,6 @@ type Entrada_horario struct {
 // Formato de salida al crear un horario
 type Salida_horario struct {
 	Distribuciones []Distribucion
-	Profesores []Profesor
-	Materias []Materia
 }
 
 // Este formato es el que usamos para validar

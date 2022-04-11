@@ -22,12 +22,12 @@ func probarSolucion(){
 		panic(err)
 	}
 
-	bytes, err := utils.SerializarSalidaHorario(salida)
+	content, err := utils.SerializarSalidaHorario(salida)
 	if err != nil {
 		panic(err)
 	}
 
-	fmt.Println(string(bytes))
+	fmt.Println(string(content))
 }
 
 func main(){
