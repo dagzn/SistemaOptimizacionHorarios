@@ -7,7 +7,8 @@ import (
 )
 
 const (
-	oo = int64(1e18)
+	inf = int64(1e18)
+	oo = int64(1e9)
 	errorClasesMaterias = "Se planean dar %d clases pero los profesores solo son capaces de dar %d clases."
 	errorClasesProfesores = "En total, los profesores deben dar %d clases pero solo existen %d clases disponibles."
 	errorSinSolucion = "No fue posible el encontrar una solucion con las restricciones dadas."
@@ -74,7 +75,7 @@ func (pq *PriorityQueue) Pop() (v interface{}) {
 
 func add_edge(src, dst int, cap, cost int64) {
 	if cost == -1 {
-		cost = 100000000
+		cost = oo
 	}
 	adj[src] = append(adj[src], edge{src, dst, cap, 0, cost, len(adj[dst])})
 	adj[dst] = append(adj[dst], edge{dst, src, 0, 0, -cost, len(adj[src]) -1})
@@ -89,7 +90,7 @@ func dijkstra(source, sink int) bool {
 	dist = make([]int64, n+1)
 	back = make([]bedge, n+1)
 	for i:= range dist {
-		dist[i] = oo
+		dist[i] = inf
 		back[i] = bedge{-1, -1}
 	}
 
@@ -112,7 +113,7 @@ func dijkstra(source, sink int) bool {
 		}
 	}
 
-	return dist[sink] < oo
+	return dist[sink] < inf
 }
 
 func min_cost_max_flow(source, sink int) (int64, int64) {
@@ -120,12 +121,12 @@ func min_cost_max_flow(source, sink int) (int64, int64) {
 	potential = make([]int64, n+1)
 	for dijkstra(source, sink) {
 		for u:= 0; u < n; u++ {
-			if dist[u] < oo {
+			if dist[u] < inf {
 				potential[u] = dist[u]
 			}
 		}
 
-		new_flow := oo
+		new_flow := inf
 		for be := back[sink]; be.node != -1; be = back[be.node] {
 			e := adj[be.node][be.pos]
 			if e.cap - e.flow < new_flow {
@@ -289,8 +290,9 @@ func encontrarSolucion(fuente, destino int, materias []obj.Materia, profesores [
 			Asignaciones: filtrarTuplasPorBloque(tuplas, b.Id),
 		}
 
-		distribuciones = append(distribuciones, d)
+ 		distribuciones = append(distribuciones, d)
 	}
+
 
 	return distribuciones, nil
 }

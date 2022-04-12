@@ -1,4 +1,3 @@
-
 {
 	"salones":5,
 	"materias":[
@@ -53,8 +52,8 @@
 				},
 				{
 					"id":2,
-					"limite":1,
-					"preferencia":-1
+					"limite":2,
+					"preferencia":8
 				}
 			],
 			"bloques":[
@@ -84,12 +83,12 @@
 				},
 				{
 					"id":2,
-					"limite":2,
-					"preferencia":8
+					"limite":1,
+					"preferencia":-1
 				},
 				{
 					"id":3,
-					"limite":1000,
+					"limite":100,
 					"preferencia":4
 				}
 			],
