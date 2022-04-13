@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"proyecto-horarios/utils"
 	"proyecto-horarios/solucion"
+	"proyecto-horarios/validacion"
 )
 
 func probarSolucion(archivo string){
@@ -15,6 +16,14 @@ func probarSolucion(archivo string){
 	entradaHorario, err := utils.DeserializarEntradaHorario(data)
 	if err != nil {
 		panic(err)
+	}
+
+	errores := validacion.ValidarFormatoEntradaHorario(entradaHorario)
+	if errores != nil {
+		for _,e := range errores {
+			fmt.Println(e.Error())
+		}
+		panic(fmt.Errorf("Existe un error en el formato de la peticion. Cheque los logs para obtener mas informacion.\n"))
 	}
 
 	salida, err := solucion.GenerarHorario(entradaHorario)

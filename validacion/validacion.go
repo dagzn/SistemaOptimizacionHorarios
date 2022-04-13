@@ -44,18 +44,11 @@ func validarMaterias(materias []obj.Materia, distribuciones []obj.Distribucion) 
 	Validar que cada bloque cumpla con con limite asignado de salones.
 */
 func validarBloques(salonesDisponibles int, distribuciones []obj.Distribucion) ([]error) {
-	salonesOcupados := make(map[string]int)
-	for _, d := range distribuciones {
-		nombreBloque := d.Bloque
-		actual := salonesOcupados[nombreBloque]
-		salonesOcupados[nombreBloque] = actual + 1
-	}
-
 	var errores []error
-	for _, b := range bloques {
-		ocupados := salonesOcupados[b.Nombre]
-		if salonesDisponibles < ocupados {
-			errores = append(errores, fmt.Errorf(errorBloques, b.Nombre, salonesDisponibles, ocupados)
+	for _, d := range distribuciones {
+		salonesOcupados := len(d.Asignaciones)
+		if salonesDisponibles < salonesOcupados {
+			errores = append(errores, fmt.Errorf(errorBloques, d.Bloque, salonesDisponibles, salonesOcupados))
 		}
 	}
 
@@ -74,10 +67,11 @@ func unique(intSlice []int) []int {
     return list
 }
 
-func validarProfesores(profesores []obj.Profesor, distribuciones []obj.Distribuciones) ([]error) {
+func validarProfesores(profesores []obj.Profesor, distribuciones []obj.Distribucion) ([]error) {
 	var errores []error
-	materiasAsignadas := make(map[string][]int)
-	bloquesAsignados := make(map[string][]int)
+	/*
+	materiasAsignadas := make(map[int][]int)
+	bloquesAsignados := make(map[int][]int)
 	nombreMateria := make(map[int]string)
 	nombreBloque := make(map[int]string)
 
@@ -87,9 +81,8 @@ func validarProfesores(profesores []obj.Profesor, distribuciones []obj.Distribuc
 			profesor := a.Profesor
 			if duplicados[profesor] {
 				// Validar que un profesor no tenga mas de una clase en el mismo bloque.
-				errores = append(errores, fmt.Errorf(errorInterseccionBloques, profesor, d.Bloque)
-			}
-			else {
+				errores = append(errores, fmt.Errorf(errorInterseccionBloques, profesor, d.Bloque))
+			} else {
 				duplicados[profesor] = true
 			}
 
@@ -150,26 +143,26 @@ func validarProfesores(profesores []obj.Profesor, distribuciones []obj.Distribuc
 			}
 		}
 	}
-
+	*/
 	return errores
 }
 
-func ValidarHorario(horario *Valida_horario) ([]error) {
+func ValidarHorario(horario *obj.Valida_horario) ([]error) {
 	var errores []error
 
 	erroresMaterias := validarMaterias(horario.Materias, horario.Distribuciones)
 	if len(erroresMaterias) > 0 {
-		errores = append(errores, erroresMaterias)
+		errores = append(errores, erroresMaterias...)
 	}
 
 	erroresBloques := validarBloques(horario.Salones, horario.Distribuciones)
 	if len(erroresBloques) > 0 {
-		errores = append(errores, erroresBloques)
+		errores = append(errores, erroresBloques...)
 	}
 
 	erroresProfesores := validarProfesores(horario.Profesores, horario.Distribuciones)
 	if len(erroresProfesores) > 0 {
-		errores = append(errores, erroresProfesores)
+		errores = append(errores, erroresProfesores...)
 	}
 
 	return errores
