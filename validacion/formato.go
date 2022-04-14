@@ -7,6 +7,7 @@ import (
 )
 
 const(
+	errorGeneral = "Existe un error en el formato de la peticion. Cheque los logs para obtener mas informacion.\n"
 	errorRequired = "El campo %s es obligatorio.\nCampo: %s\n"
 	errorMin = "El arreglo %s no cuenta con la longitud esperada.\n%s"
 	errorGte = "El valor del campo %s es menor al valor esperado.\n%s"
@@ -15,7 +16,7 @@ const(
 )
 
 
-func ValidarFormatoEntradaHorario(h *obj.Entrada_horario) ([]error) {
+func ValidarFormatoEntradaHorario(h *obj.Entrada_horario) ([]error, error) {
 	validate := validator.New()
 	err := validate.Struct(h)
 
@@ -37,8 +38,8 @@ func ValidarFormatoEntradaHorario(h *obj.Entrada_horario) ([]error) {
 
 			errores = append(errores, errFmt)
 		}
-		return errores
+		return errores, fmt.Errorf(errorGeneral)
 	}
 
-	return nil
+	return nil, nil
 }

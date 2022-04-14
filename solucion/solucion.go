@@ -12,7 +12,7 @@ const (
 	errorClasesMaterias = "Se planean dar %d clases pero los profesores solo son capaces de dar %d clases."
 	errorClasesProfesores = "En total, los profesores deben dar %d clases pero solo existen %d clases disponibles."
 	errorSinSolucion = "No fue posible el encontrar una solucion con las restricciones dadas."
-	errorCostoPreferencias = "No fue posible encontrar una solucion dadas las preferencias blandas."
+	logCostoInfinito = "Solo fue posible encontrar una solucion que hace uso de preferencias no optimas."
 )
 
 type tupla struct {
@@ -40,6 +40,7 @@ var (
 	potential []int64
 	back []bedge
 	idx_original map[int]int
+	logs []string
 )
 
 // Dijkstra code
@@ -259,7 +260,9 @@ func encontrarSolucion(fuente, destino int, materias []obj.Materia, profesores [
 	}
 
 	if costo >= oo {
-		return nil, fmt.Errorf(errorCostoPreferencias);
+		// Aqui debemos indicar cuales preferencias se pueden modificar.
+		// Esto consiste en identificar las aristas de costo infinito que tengan flujo.
+		logs = append(logs, fmt.Sprintf(logCostoInfinito))
 	}
 
 	flujoFinal := flujo
@@ -290,9 +293,8 @@ func encontrarSolucion(fuente, destino int, materias []obj.Materia, profesores [
 			Asignaciones: filtrarTuplasPorBloque(tuplas, b.Id),
 		}
 
- 		distribuciones = append(distribuciones, d)
+		distribuciones = append(distribuciones, d)
 	}
-
 
 	return distribuciones, nil
 }
@@ -311,6 +313,7 @@ func GenerarHorario(horario *obj.Entrada_horario) (*obj.Salida_horario, error){
 	// Aqui es donde creamos el obj Salida_horario y lo regresamos
 	salida := &obj.Salida_horario{
 		Distribuciones: distribuciones,
+		Logs: logs,
 	}
 
 	return salida, nil

@@ -2,41 +2,49 @@ package main
 
 import (
 	"fmt"
+	obj "proyecto-horarios/objetos"
 	"proyecto-horarios/utils"
 	"proyecto-horarios/solucion"
 	"proyecto-horarios/validacion"
 )
 
-func probarSolucion(archivo string){
+func probarSolucion(archivo string) (*obj.Salida_horario){
 	data, err := utils.LeerArchivo(archivo)
 	if err != nil {
-		panic(err)
+		return &obj.Salida_horario{
+			Error: err.Error(),
+		}
 	}
 
 	entradaHorario, err := utils.DeserializarEntradaHorario(data)
 	if err != nil {
-		panic(err)
+		return &obj.Salida_horario{
+			Error: err.Error(),
+		}
 	}
 
-	errores := validacion.ValidarFormatoEntradaHorario(entradaHorario)
-	if errores != nil {
-		for _,e := range errores {
-			fmt.Println(e.Error())
+	errores, err := validacion.ValidarFormatoEntradaHorario(entradaHorario)
+	if err != nil {
+		return &obj.Salida_horario{
+			Error: err.Error(),
+			Logs: func(errores []error) []string {
+				var ret []string
+				for _, e := range errores {
+					ret = append(ret, e.Error())
+				}
+				return ret
+			}(errores),
 		}
-		panic(fmt.Errorf("Existe un error en el formato de la peticion. Cheque los logs para obtener mas informacion.\n"))
 	}
 
 	salida, err := solucion.GenerarHorario(entradaHorario)
 	if err != nil {
-		panic(err)
+		return &obj.Salida_horario{
+			Error: err.Error(),
+		}
 	}
 
-	content, err := utils.SerializarSalidaHorario(salida)
-	if err != nil {
-		panic(err)
-	}
-
-	fmt.Println(string(content))
+	return salida
 }
 
 func probarValidacion(archivo string){
@@ -58,7 +66,12 @@ func main(){
 		fmt.Printf("Nombre del archivo:\n")
 		fmt.Scanf("%s", &archivo)
 		if opc == 1 {
-			probarSolucion("archivos_pruebas/"+archivo)
+			salida := probarSolucion("archivos_pruebas/"+archivo)
+			content, err := utils.SerializarSalidaHorario(salida)
+			if err != nil {
+				panic(err)
+			}
+			fmt.Println(string(content))
 		} else if opc == 2 {
 			probarValidacion("archivos_pruebas/"+archivo)
 		}
