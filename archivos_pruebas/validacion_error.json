@@ -1,0 +1,201 @@
+{
+	"distribuciones": [
+		{
+			"bloque": "A",
+			"id_bloque": 1,
+			"asignaciones": [
+				{
+					"profesor": "Alice",
+					"materia": "Lengua",
+					"id_profesor": 1,
+					"id_materia": 1
+				},
+				{
+					"profesor": "Bob",
+					"materia": "Lengua",
+					"id_profesor": 2,
+					"id_materia": 1
+				}
+			]
+		},
+		{
+			"bloque": "B",
+			"id_bloque": 2,
+			"asignaciones": [
+				{
+					"profesor": "Alice",
+					"materia": "Matematicas",
+					"id_profesor": 1,
+					"id_materia": 2
+				}
+			]
+		},
+		{
+			"bloque": "C",
+			"id_bloque": 3,
+			"asignaciones": [
+				{
+					"profesor": "Carl",
+					"materia": "Matematicas",
+					"id_profesor": 3,
+					"id_materia": 2
+				},
+				{
+					"profesor": "Bob",
+					"materia": "Fisica",
+					"id_profesor": 2,
+					"id_materia": 3
+				},
+				{
+					"profesor": "Dan",
+					"materia": "Matematicas",
+					"id_profesor": 4,
+					"id_materia": 2
+				}
+			]
+		},
+		{
+			"bloque": "D",
+			"id_bloque": 4,
+			"asignaciones": [
+				{
+					"profesor": "Carl",
+					"materia": "Fisica",
+					"id_profesor": 3,
+					"id_materia": 3
+				}
+			]
+		}
+	],
+	"salones":5,
+	"materias":[
+		{
+			"id":1,
+			"nombre":"Lengua",
+			"cantidad":3
+		},
+		{
+			"id":2,
+			"nombre":"Matematicas",
+			"cantidad":2
+		},
+		{
+			"id":3,
+			"nombre":"Fisica",
+			"cantidad":3
+		}
+	],
+	"profesores":[
+		{
+			"id":1,
+			"nombre":"Alice",
+			"clases":1,
+			"materias":[
+				{
+					"id":1,
+					"limite":1,
+					"preferencia":1
+				}
+			],
+			"bloques":[
+				{
+					"id":1,
+					"preferencia":8
+				},
+				{
+					"id":2,
+					"preferencia":-1
+				}
+			]
+		},
+		{
+			"id":2,
+			"nombre":"Bob",
+			"clases":2,
+			"materias":[
+				{
+					"id":1,
+					"limite":2,
+					"preferencia":4
+				},
+				{
+					"id":2,
+					"limite":1,
+					"preferencia":-1
+				}
+			],
+			"bloques":[
+				{
+					"id":1,
+					"preferencia":2
+				},
+				{
+					"id":2,
+					"preferencia":64
+				},
+				{
+					"id":4,
+					"preferencia":8
+				}
+			]
+		},
+		{
+			"id":3,
+			"nombre":"Carl",
+			"clases":2,
+			"materias":[
+				{
+					"id":1,
+					"limite":1,
+					"preferencia":1
+				},
+				{
+					"id":2,
+					"limite":2,
+					"preferencia":8
+				},
+				{
+					"id":3,
+					"limite":1000,
+					"preferencia":4
+				}
+			],
+			"bloques":[
+				{
+					"id":2,
+					"preferencia":32
+				},
+				{
+					"id":3,
+					"preferencia":2
+				}
+			]
+		},
+		{
+			"id":4,
+			"nombre":"Dan",
+			"clases":3,
+			"materias":[
+				{
+					"id":3,
+					"limite":4,
+					"preferencia":1
+				}
+			],
+			"bloques":[
+				{
+					"id":1,
+					"preferencia":1
+				},
+				{
+					"id":3,
+					"preferencia":16
+				},
+				{
+					"id":4,
+					"preferencia":128
+				}
+			]
+		}
+	]
+}

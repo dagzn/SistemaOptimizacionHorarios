@@ -6,6 +6,7 @@ import (
 )
 
 const (
+	errorValidacion = "Se encontraron errores al momento de validar el horario. Cheque los logs para mas informacion."
 	errorClasesMateria = "La materia '%s' tiene que impartirse %d veces y tiene %d clases asignadas."
 	errorBloques = "El bloque %s tiene un maximo de %d salones y se le asignaron %d clases."
 	errorClasesProfesor = "El profesor %s requiere de %d clases en total y se le asignaron %d."
@@ -69,19 +70,18 @@ func unique(intSlice []int) []int {
 
 func validarProfesores(profesores []obj.Profesor, distribuciones []obj.Distribucion) ([]error) {
 	var errores []error
-	/*
 	materiasAsignadas := make(map[int][]int)
 	bloquesAsignados := make(map[int][]int)
 	nombreMateria := make(map[int]string)
 	nombreBloque := make(map[int]string)
 
 	for _, d := range distribuciones {
-		duplicados := make(map[string]bool)
+		duplicados := make(map[int]bool)
 		for _, a := range d.Asignaciones {
-			profesor := a.Profesor
-			if duplicados[profesor] {
+			profesor := a.Id_profesor
+			if ok := duplicados[profesor]; ok {
 				// Validar que un profesor no tenga mas de una clase en el mismo bloque.
-				errores = append(errores, fmt.Errorf(errorInterseccionBloques, profesor, d.Bloque))
+				errores = append(errores, fmt.Errorf(errorInterseccionBloques, a.Profesor, d.Bloque))
 			} else {
 				duplicados[profesor] = true
 			}
@@ -94,7 +94,7 @@ func validarProfesores(profesores []obj.Profesor, distribuciones []obj.Distribuc
 	}
 
 	for _, p := range profesores {
-		asignadas := len(materiasAsignadas[p.Nombre])
+		asignadas := len(materiasAsignadas[p.Id])
 		if asignadas != p.Clases {
 			// Validar que se cumplan con las clases requeridas para cada profesor.
 			errores = append(errores, fmt.Errorf(errorClasesProfesor, p.Nombre, p.Clases, asignadas))
@@ -108,12 +108,14 @@ func validarProfesores(profesores []obj.Profesor, distribuciones []obj.Distribuc
 			preferencias[m.Id] = 1
 		}
 
+		for _, id := range materiasAsignadas[p.Id] {
+			vecesAsignada[id] = vecesAsignada[id] + 1
+		}
+
 		materiasAsignadas[p.Id] = unique(materiasAsignadas[p.Id])
 
 		for _, id := range materiasAsignadas[p.Id] {
-			if _, ok := preferencias[id]; ok {
-				vecesAsignada[id] = vecesAsignada[id] + 1
-			} else {
+			if _, ok := preferencias[id]; !ok {
 				// error de que tiene asignada materia que no
 				errores = append(errores, fmt.Errorf(errorMateriaNoAsignada, nombreMateria[id], p.Nombre))
 			}
@@ -136,6 +138,8 @@ func validarProfesores(profesores []obj.Profesor, distribuciones []obj.Distribuc
 			preferencias[b.Id] = 1
 		}
 
+		bloquesAsignados[p.Id] = unique(bloquesAsignados[p.Id])
+
 		for _, id := range bloquesAsignados[p.Id] {
 			if _, ok := preferencias[id]; !ok {
 				// el bloque asignado no esta en sus preferencias.
@@ -143,11 +147,10 @@ func validarProfesores(profesores []obj.Profesor, distribuciones []obj.Distribuc
 			}
 		}
 	}
-	*/
 	return errores
 }
 
-func ValidarHorario(horario *obj.Valida_horario) ([]error) {
+func validar(horario *obj.Entrada_validacion) ([]error) {
 	var errores []error
 
 	erroresMaterias := validarMaterias(horario.Materias, horario.Distribuciones)
@@ -166,4 +169,25 @@ func ValidarHorario(horario *obj.Valida_horario) ([]error) {
 	}
 
 	return errores
+}
+
+func ValidarHorario(horario *obj.Entrada_validacion) (*obj.Salida_validacion){
+	errores := validar(horario)
+	if len(errores) > 1 {
+		err := fmt.Errorf(errorValidacion);
+		salida := &obj.Salida_validacion{
+			Error: err.Error(),
+			Logs: func(errores []error) []string {
+				var ret []string
+				for _, e := range errores {
+					ret = append(ret, e.Error())
+				}
+				return ret
+			}(errores),
+		}
+
+		return salida
+	}
+
+	return &obj.Salida_validacion{}
 }

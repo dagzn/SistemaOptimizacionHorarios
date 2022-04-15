@@ -45,16 +45,16 @@ type Profesor struct {
 }
 
 type Asignacion struct {
-	Profesor string
-	Id_profesor int
-	Materia string
-	Id_materia int
+	Profesor string `validate:"required"`
+	Id_profesor int `validate:"required"`
+	Materia string `validate:"required"`
+	Id_materia int `validate:"required"`
 }
 
 type Distribucion struct {
-	Bloque string
-	Id_bloque int
-	Asignaciones []Asignacion
+	Bloque string `validate:"required"`
+	Id_bloque int `validate:"required"`
+	Asignaciones []Asignacion `validate:"required,min=1,dive,required"`
 }
 
 // Formato de entrada para crear un horario
@@ -73,9 +73,15 @@ type Salida_horario struct {
 }
 
 // Este formato es el que usamos para validar
-type Valida_horario struct {
-	Distribuciones []Distribucion
-	Profesores []Profesor
-	Materias []Materia
-	Salones int
+type Entrada_validacion struct {
+	Distribuciones []Distribucion `validate:"required,min=1,dive,required"`
+	Profesores []Profesor `validate:"required,min=1,dive,required"`
+	Materias []Materia `validate:"required,min=1,dive,required"`
+	Salones int `validate:"required,gte=1"`
+}
+
+// Coleccion de los errores encontrados al validar
+type Salida_validacion struct {
+	Error string
+	Logs []string
 }

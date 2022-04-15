@@ -47,11 +47,38 @@ func probarSolucion(archivo string) (*obj.Salida_horario){
 	return salida
 }
 
-func probarValidacion(archivo string){
-	_, err := utils.LeerArchivo(archivo)
+func probarValidacion(archivo string) (*obj.Salida_validacion){
+	data, err := utils.LeerArchivo(archivo)
 	if err != nil {
-		panic(err)
+		return &obj.Salida_validacion{
+			Error: err.Error(),
+		}
 	}
+
+	entradaValidacion, err := utils.DeserializarEntradaValidacion(data)
+	if err != nil {
+		return &obj.Salida_validacion{
+			Error: err.Error(),
+		}
+	}
+
+	errores, err := validacion.ValidarFormatoEntradaValidacion(entradaValidacion)
+	if err != nil {
+		return &obj.Salida_validacion{
+			Error: err.Error(),
+			Logs: func(errores []error) []string {
+				var ret []string
+				for _, e := range errores {
+					ret = append(ret, e.Error())
+				}
+				return ret
+			}(errores),
+		}
+	}
+
+	salida := validacion.ValidarHorario(entradaValidacion)
+
+	return salida
 }
 
 func main(){
@@ -73,7 +100,12 @@ func main(){
 			}
 			fmt.Println(string(content))
 		} else if opc == 2 {
-			probarValidacion("archivos_pruebas/"+archivo)
+			salida := probarValidacion("archivos_pruebas/"+archivo)
+			content, err := utils.SerializarSalidaValidacion(salida)
+			if err != nil {
+				panic(err)
+			}
+			fmt.Println(string(content))
 		}
 	}
 }
