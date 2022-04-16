@@ -13,6 +13,7 @@ const (
 	errorClasesProfesores = "En total, los profesores deben dar %d clases pero solo existen %d clases disponibles."
 	errorSinSolucion = "No fue posible el encontrar una solucion con las restricciones dadas."
 	logCostoInfinito = "Solo fue posible encontrar una solucion que hace uso de preferencias no optimas."
+	logAristaInfinita = "Si se cambia la preferencia de %s hacia %s, entonces habria una solucion valida."
 )
 
 type tupla struct {
@@ -189,14 +190,16 @@ func crearGrafo(salones int, materias []obj.Materia, profesores []obj.Profesor, 
 
 		pref_materias := p.Materias
 		for _, m := range pref_materias {
-			nodo := m_idx[m.Id]
-			add_edge(nodo, entrada, int64(m.Limite), int64(m.Preferencia))
+			if nodo, ok := m_idx[m.Id]; ok {
+				add_edge(nodo, entrada, int64(m.Limite), int64(m.Preferencia))
+			}
 		}
 
 		pref_bloques := p.Bloques
 		for _, b := range pref_bloques {
-			nodo := b_idx[b.Id]
-			add_edge(salida, nodo, 1, int64(b.Preferencia))
+			if nodo, ok := b_idx[b.Id]; ok {
+				add_edge(salida, nodo, 1, int64(b.Preferencia))
+			}
 		}
 	}
 
@@ -229,7 +232,7 @@ func filtrarTuplasPorBloque(tuplas []tupla, id_bloque int) ([]obj.Asignacion) {
 	return asignaciones
 }
 
-func movimiento(u int) int {
+func movimiento(u int) (int, bool) {
 	for i, e := range adj[u] {
 		if e.cost < 0 {
 			continue
@@ -238,9 +241,9 @@ func movimiento(u int) int {
 			continue
 		}
 		adj[u][i].flow--
-		return e.dst
+		return e.dst, (adj[u][i].cost >= oo)
 	}
-	return -1
+	return -1, false
 }
 
 func encontrarSolucion(fuente, destino int, materias []obj.Materia, profesores []obj.Profesor, bloques []obj.Bloque) ([]obj.Distribucion, error) {
@@ -268,15 +271,23 @@ func encontrarSolucion(fuente, destino int, materias []obj.Materia, profesores [
 	flujoFinal := flujo
 	for i := int64(0); i < flujoFinal; i++ {
 		u := 0
-		u = movimiento(u)
+		u, _ = movimiento(u)
 		materia := materias[idx_original[u]]
 
-		u = movimiento(u)
+		u, infinita := movimiento(u)
 		profesor := profesores[idx_original[u]]
+		if infinita {
+			logs = append(logs, fmt.Sprintf(logAristaInfinita, profesor.Nombre, materia.Nombre))
+		}
 
-		u = movimiento(movimiento(u))
+		u, _ = movimiento(u)
+		u, infinita = movimiento(u)
 		bloque := bloques[idx_original[u]]
+		if infinita {
+			logs = append(logs, fmt.Sprintf(logAristaInfinita, profesor.Nombre, bloque.Nombre))
+		}
 
+		// Optimizacion: agregar directo a un map de bloque -> {profesor,materia}
 		t := tupla {
 			Profesor: profesor,
 			Materia: materia,
