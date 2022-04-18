@@ -78,6 +78,7 @@ type Entrada_validacion struct {
 	Profesores []Profesor `validate:"required,min=1,dive,required"`
 	Materias []Materia `validate:"required,min=1,dive,required"`
 	Salones int `validate:"required,gte=1"`
+	Validaciones []string `validate:"required,min=1,dive,required"`
 }
 
 // Coleccion de los errores encontrados al validar

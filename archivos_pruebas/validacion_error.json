@@ -197,5 +197,14 @@
 				}
 			]
 		}
+	],
+	"validaciones":[
+		"ClasesMateria",
+		"ClasesProfesor",
+		"InterseccionBloques",
+		"LimiteMateria",
+		"LimiteBloque",
+		"MateriaNoAsignada",
+		"BloqueNoAsignado"
 	]
 }
