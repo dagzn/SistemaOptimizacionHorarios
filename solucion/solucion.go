@@ -298,13 +298,15 @@ func encontrarSolucion(fuente, destino int, materias []obj.Materia, profesores [
 	}
 
 	for _, b := range bloques {
-		d := obj.Distribucion{
-			Bloque: b.Nombre,
-			Id_bloque: b.Id,
-			Asignaciones: filtrarTuplasPorBloque(tuplas, b.Id),
-		}
+		asignaciones := filtrarTuplasPorBloque(tuplas, b.Id)
+		if len(asignaciones) > 0 {
+			d := obj.Distribucion{
+				Bloque: b,
+				Asignaciones: asignaciones,
+			}
 
-		distribuciones = append(distribuciones, d)
+			distribuciones = append(distribuciones, d)
+		}
 	}
 
 	return distribuciones, nil

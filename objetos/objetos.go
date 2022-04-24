@@ -52,8 +52,7 @@ type Asignacion struct {
 }
 
 type Distribucion struct {
-	Bloque string `validate:"required"`
-	Id_bloque int `validate:"required"`
+	Bloque Bloque `validate:"required"`
 	Asignaciones []Asignacion `validate:"required,min=1,dive,required"`
 }
 
@@ -85,4 +84,10 @@ type Entrada_validacion struct {
 type Salida_validacion struct {
 	Error string
 	Logs []string
+}
+
+// Horario que exportaremos a PDF
+type Entrada_exportacion struct {
+	Distribuciones []Distribucion `validate:"required,min=1,dive,required"`
+	Agrupar string // Materia, Profesor, Bloque o NULL (sin agrupar)
 }

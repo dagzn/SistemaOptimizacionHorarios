@@ -44,3 +44,12 @@ func SerializarSalidaValidacion(h *obj.Salida_validacion) ([]byte, error) {
 	}
 	return data, err
 }
+
+func DeserializarEntradaExportacion(data []byte) (*obj.Entrada_exportacion, error){
+	var h *obj.Entrada_exportacion
+	err := json.Unmarshal(data, &h)
+	if err != nil {
+		return nil, err
+	}
+	return h, nil
+}

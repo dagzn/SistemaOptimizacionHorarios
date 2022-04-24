@@ -63,7 +63,7 @@ func validarBloques(salonesDisponibles int, distribuciones []obj.Distribucion, v
 	for _, d := range distribuciones {
 		salonesOcupados := len(d.Asignaciones)
 		if salonesDisponibles < salonesOcupados {
-			errores = append(errores, fmt.Errorf(errorLimiteBloque, d.Bloque, salonesDisponibles, salonesOcupados))
+			errores = append(errores, fmt.Errorf(errorLimiteBloque, d.Bloque.Nombre, salonesDisponibles, salonesOcupados))
 		}
 	}
 
@@ -94,7 +94,7 @@ func validarInterseccionBloques(distribuciones []obj.Distribucion, validaciones 
 		for _, a := range d.Asignaciones {
 			profesor := a.Id_profesor
 			if ok := duplicados[profesor]; ok {
-				errores = append(errores, fmt.Errorf(errorInterseccionBloques, a.Profesor, d.Bloque))
+				errores = append(errores, fmt.Errorf(errorInterseccionBloques, a.Profesor, d.Bloque.Nombre))
 			} else {
 				duplicados[profesor] = true
 			}
@@ -232,10 +232,10 @@ func llenarInformacionProfesores(distribuciones []obj.Distribucion) {
 		for _, a := range d.Asignaciones {
 			profesor := a.Id_profesor
 			materiasAsignadas[profesor] = append(materiasAsignadas[profesor], a.Id_materia)
-			bloquesAsignados[profesor] = append(bloquesAsignados[profesor], d.Id_bloque)
+			bloquesAsignados[profesor] = append(bloquesAsignados[profesor], d.Bloque.Id)
 			nombreMateria[a.Id_materia] = a.Materia
 		}
-		nombreBloque[d.Id_bloque] = d.Bloque
+		nombreBloque[d.Bloque.Id] = d.Bloque.Nombre
 	}
 }
 

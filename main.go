@@ -6,6 +6,7 @@ import (
 	"proyecto-horarios/utils"
 	"proyecto-horarios/solucion"
 	"proyecto-horarios/validacion"
+	"proyecto-horarios/exportacion"
 )
 
 func probarSolucion(archivo string) (*obj.Salida_horario){
@@ -81,13 +82,30 @@ func probarValidacion(archivo string) (*obj.Salida_validacion){
 	return salida
 }
 
+func probarExportacion(archivo string) {
+	data, err := utils.LeerArchivo(archivo)
+	if err != nil {
+		panic(err)
+	}
+
+	entradaExportacion, err := utils.DeserializarEntradaExportacion(data)
+	if err != nil {
+		panic(err)
+	}
+
+	err = exportacion.ExportarHorario(entradaExportacion)
+	if err != nil {
+		panic(err)
+	}
+}
+
 func main(){
 	var archivo string
 	opc := 0
 	for true {
-		fmt.Printf("\n1.- Probar servicio de solucion.\n2.- Probar servicio de validacion.\n3.- Salir\n");
+		fmt.Printf("\n1.- Probar servicio de solucion.\n2.- Probar servicio de validacion.\n3.- Servicio de exportacion\n4.- Salir\n");
 		fmt.Scanf("%d", &opc)
-		if opc == 3 {
+		if opc == 4 {
 			break
 		}
 		fmt.Printf("Nombre del archivo:\n")
@@ -106,6 +124,8 @@ func main(){
 				panic(err)
 			}
 			fmt.Println(string(content))
+		} else if opc == 3 {
+			probarExportacion("archivos_pruebas/"+archivo)
 		}
 	}
 }

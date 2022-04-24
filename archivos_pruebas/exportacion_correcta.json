@@ -1,0 +1,111 @@
+{
+	"distribuciones": [
+		{
+			"bloque": {
+				"id": 1,
+				"nombre": "A",
+				"modulos":[
+					{
+						"dia":"Lunes",
+						"entrada":"07:00",
+						"salida":"08:30"
+					}
+				]
+			},
+			"asignaciones": [
+				{
+					"profesor": "Alice",
+					"materia": "Lengua",
+					"id_profesor": 1,
+					"id_materia": 1
+				},
+				{
+					"profesor": "Bob",
+					"materia": "Lengua",
+					"id_profesor": 2,
+					"id_materia": 1
+				}
+			]
+		},
+		{
+			"bloque": {
+				"id":2,
+				"nombre": "B",
+				"modulos":[
+					{
+						"dia":"Martes",
+						"entrada":"08:30",
+						"salida":"10:00"
+					}
+				]
+			},
+			"asignaciones": [
+				{
+					"profesor": "Alice",
+					"materia": "Matematicas",
+					"id_profesor": 1,
+					"id_materia": 2
+				}
+			]
+		},
+		{
+			"bloque": {
+				"id":3,
+				"nombre":"C",
+				"modulos":[
+					{
+						"dia":"Miercoles",
+						"entrada":"08:30",
+						"salida":"09:00"
+					},
+					{
+						"dia":"Jueves",
+						"entrada":"10:30",
+						"salida":"12:00"
+					}
+				]
+			},
+			"asignaciones": [
+				{
+					"profesor": "Carl",
+					"materia": "Matematicas",
+					"id_profesor": 3,
+					"id_materia": 2
+				},
+				{
+					"profesor": "Bob",
+					"materia": "Fisica",
+					"id_profesor": 2,
+					"id_materia": 3
+				},
+				{
+					"profesor": "Dan",
+					"materia": "Matematicas",
+					"id_profesor": 4,
+					"id_materia": 2
+				}
+			]
+		},
+		{
+			"bloque": {
+				"id":4,
+				"nombre":"D",
+				"modulos":[
+					{
+						"dia":"Viernes",
+						"entrada":"12:00",
+						"salida":"13:30"
+					}
+				]
+			},
+			"asignaciones": [
+				{
+					"profesor": "Carl",
+					"materia": "Fisica",
+					"id_profesor": 3,
+					"id_materia": 3
+				}
+			]
+		}
+	]
+}
