@@ -7,46 +7,46 @@ import (
 )
 
 const (
-	inf = int64(1e18)
-	oo = int64(1e9)
-	errorClasesMaterias = "Se planean dar %d clases pero los profesores solo son capaces de dar %d clases."
+	inf                   = int64(1e18)
+	oo                    = int64(1e9)
+	errorClasesMaterias   = "Se planean dar %d clases pero los profesores solo son capaces de dar %d clases."
 	errorClasesProfesores = "En total, los profesores deben dar %d clases pero solo existen %d clases disponibles."
-	errorSinSolucion = "No fue posible el encontrar una solucion con las restricciones dadas."
-	logCostoInfinito = "Solo fue posible encontrar una solucion que hace uso de preferencias no optimas."
-	logAristaInfinita = "Si se cambia la preferencia de %s hacia %s, entonces habria una solucion valida."
+	errorSinSolucion      = "No fue posible el encontrar una solucion con las restricciones dadas."
+	logCostoInfinito      = "Solo fue posible encontrar una solucion que hace uso de preferencias no optimas."
+	logAristaInfinita     = "Si se cambia la preferencia de %s hacia %s, entonces habria una solucion valida."
 )
 
 type tupla struct {
 	Profesor obj.Profesor
-	Materia obj.Materia
-	Bloque obj.Bloque
+	Materia  obj.Materia
+	Bloque   obj.Bloque
 }
 
 type edge struct {
-	src, dst int
+	src, dst  int
 	cap, flow int64
-	cost int64
-	rev int
+	cost      int64
+	rev       int
 }
 
 type bedge struct {
 	node int
-	pos int
+	pos  int
 }
 
 var (
-	n int
-	adj [][]edge
-	dist []int64
-	potential []int64
-	back []bedge
+	n            int
+	adj          [][]edge
+	dist         []int64
+	potential    []int64
+	back         []bedge
 	idx_original map[int]int
-	logs []string
+	logs         []string
 )
 
 // Dijkstra code
 type Item struct {
-	node int
+	node     int
 	distance int64
 }
 
@@ -73,6 +73,7 @@ func (pq *PriorityQueue) Pop() (v interface{}) {
 	*pq, v = a[:len(a)-1], a[len(a)-1]
 	return
 }
+
 // END Dijkstra code
 
 func add_edge(src, dst int, cap, cost int64) {
@@ -80,7 +81,7 @@ func add_edge(src, dst int, cap, cost int64) {
 		cost = oo
 	}
 	adj[src] = append(adj[src], edge{src, dst, cap, 0, cost, len(adj[dst])})
-	adj[dst] = append(adj[dst], edge{dst, src, 0, 0, -cost, len(adj[src]) -1})
+	adj[dst] = append(adj[dst], edge{dst, src, 0, 0, -cost, len(adj[src]) - 1})
 }
 
 func rcost(e edge) int64 {
@@ -91,13 +92,13 @@ func dijkstra(source, sink int) bool {
 
 	dist = make([]int64, n+1)
 	back = make([]bedge, n+1)
-	for i:= range dist {
+	for i := range dist {
 		dist[i] = inf
 		back[i] = bedge{-1, -1}
 	}
 
 	dist[source] = 0
-	pq:= PriorityQueue{Item{source, 0}}
+	pq := PriorityQueue{Item{source, 0}}
 	heap.Init(&pq)
 
 	for len(pq) > 0 {
@@ -122,7 +123,7 @@ func min_cost_max_flow(source, sink int) (int64, int64) {
 	var cost, flow int64
 	potential = make([]int64, n+1)
 	for dijkstra(source, sink) {
-		for u:= 0; u < n; u++ {
+		for u := 0; u < n; u++ {
 			if dist[u] < inf {
 				potential[u] = dist[u]
 			}
@@ -131,7 +132,7 @@ func min_cost_max_flow(source, sink int) (int64, int64) {
 		new_flow := inf
 		for be := back[sink]; be.node != -1; be = back[be.node] {
 			e := adj[be.node][be.pos]
-			if e.cap - e.flow < new_flow {
+			if e.cap-e.flow < new_flow {
 				new_flow = e.cap - e.flow
 			}
 		}
@@ -148,19 +149,19 @@ func min_cost_max_flow(source, sink int) (int64, int64) {
 	return flow, cost
 }
 
-func crearGrafo(salones int, materias []obj.Materia, profesores []obj.Profesor, bloques []obj.Bloque) (int, int, error){
+func crearGrafo(salones int, materias []obj.Materia, profesores []obj.Profesor, bloques []obj.Bloque) (int, int, error) {
 	n_materias := len(materias)
 	n_profesores := len(profesores)
 	n_bloques := len(bloques)
 	n = 1 + n_materias + 2*n_profesores + n_bloques + 1
 	fuente := 0
-	destino := n-1
+	destino := n - 1
 	clasesMaterias := 0
 	clasesProfesores := 0
 
 	adj = make([][]edge, n)
-	m_idx := make(map[int]int)
-	b_idx := make(map[int]int)
+	m_idx := make(map[string]int)
+	b_idx := make(map[string]int)
 	idx_original = make(map[int]int)
 
 	// indices para materias
@@ -169,7 +170,7 @@ func crearGrafo(salones int, materias []obj.Materia, profesores []obj.Profesor, 
 		m_idx[m.Id] = i + 1
 		idx_original[i+1] = i
 		clasesMaterias += m.Cantidad
-		add_edge(fuente,i + 1, int64(m.Cantidad), 0)
+		add_edge(fuente, i+1, int64(m.Cantidad), 0)
 	}
 
 	// indices para bloques
@@ -214,16 +215,16 @@ func crearGrafo(salones int, materias []obj.Materia, profesores []obj.Profesor, 
 	return fuente, destino, nil
 }
 
-func filtrarTuplasPorBloque(tuplas []tupla, id_bloque int) ([]obj.Asignacion) {
+func filtrarTuplasPorBloque(tuplas []tupla, id_bloque string) []obj.Asignacion {
 	var asignaciones []obj.Asignacion
 
 	for _, t := range tuplas {
 		if t.Bloque.Id == id_bloque {
-			a := obj.Asignacion {
-				Profesor: t.Profesor.Nombre,
+			a := obj.Asignacion{
+				Profesor:    t.Profesor.Nombre,
 				Id_profesor: t.Profesor.Id,
-				Materia: t.Materia.Nombre,
-				Id_materia: t.Materia.Id,
+				Materia:     t.Materia.Nombre,
+				Id_materia:  t.Materia.Id,
 			}
 			asignaciones = append(asignaciones, a)
 		}
@@ -259,7 +260,7 @@ func encontrarSolucion(fuente, destino int, materias []obj.Materia, profesores [
 	}
 
 	if flujo != flujoEsperado {
-		return nil, fmt.Errorf(errorSinSolucion);
+		return nil, fmt.Errorf(errorSinSolucion)
 	}
 
 	if costo >= oo {
@@ -288,10 +289,10 @@ func encontrarSolucion(fuente, destino int, materias []obj.Materia, profesores [
 		}
 
 		// Optimizacion: agregar directo a un map de bloque -> {profesor,materia}
-		t := tupla {
+		t := tupla{
 			Profesor: profesor,
-			Materia: materia,
-			Bloque: bloque,
+			Materia:  materia,
+			Bloque:   bloque,
 		}
 
 		tuplas = append(tuplas, t)
@@ -301,7 +302,7 @@ func encontrarSolucion(fuente, destino int, materias []obj.Materia, profesores [
 		asignaciones := filtrarTuplasPorBloque(tuplas, b.Id)
 		if len(asignaciones) > 0 {
 			d := obj.Distribucion{
-				Bloque: b,
+				Bloque:       b,
 				Asignaciones: asignaciones,
 			}
 
@@ -312,7 +313,7 @@ func encontrarSolucion(fuente, destino int, materias []obj.Materia, profesores [
 	return distribuciones, nil
 }
 
-func GenerarHorario(horario *obj.Entrada_horario) (*obj.Salida_horario, error){
+func GenerarHorario(horario *obj.Entrada_horario) (*obj.Salida_horario, error) {
 	fuente, destino, err := crearGrafo(horario.Salones, horario.Materias, horario.Profesores, horario.Bloques)
 	if err != nil {
 		return nil, err
@@ -326,9 +327,8 @@ func GenerarHorario(horario *obj.Entrada_horario) (*obj.Salida_horario, error){
 	// Aqui es donde creamos el obj Salida_horario y lo regresamos
 	salida := &obj.Salida_horario{
 		Distribuciones: distribuciones,
-		Logs: logs,
+		Logs:           logs,
 	}
 
 	return salida, nil
 }
-
