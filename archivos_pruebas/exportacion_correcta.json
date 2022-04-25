@@ -2,7 +2,7 @@
 	"distribuciones": [
 		{
 			"bloque": {
-				"id": 1,
+				"id": "1",
 				"nombre": "A",
 				"modulos":[
 					{
@@ -16,20 +16,20 @@
 				{
 					"profesor": "Alice",
 					"materia": "Lengua",
-					"id_profesor": 1,
-					"id_materia": 1
+					"id_profesor": "1",
+					"id_materia": "1"
 				},
 				{
 					"profesor": "Bob",
 					"materia": "Lengua",
-					"id_profesor": 2,
-					"id_materia": 1
+					"id_profesor": "2",
+					"id_materia": "1"
 				}
 			]
 		},
 		{
 			"bloque": {
-				"id":2,
+				"id":"2",
 				"nombre": "B",
 				"modulos":[
 					{
@@ -43,14 +43,14 @@
 				{
 					"profesor": "Alice",
 					"materia": "Matematicas",
-					"id_profesor": 1,
-					"id_materia": 2
+					"id_profesor": "1",
+					"id_materia": "2"
 				}
 			]
 		},
 		{
 			"bloque": {
-				"id":3,
+				"id":"3",
 				"nombre":"C",
 				"modulos":[
 					{
@@ -69,26 +69,26 @@
 				{
 					"profesor": "Carl",
 					"materia": "Matematicas",
-					"id_profesor": 3,
-					"id_materia": 2
+					"id_profesor": "3",
+					"id_materia": "2"
 				},
 				{
 					"profesor": "Bob",
 					"materia": "Fisica",
-					"id_profesor": 2,
-					"id_materia": 3
+					"id_profesor": "2",
+					"id_materia": "3"
 				},
 				{
 					"profesor": "Dan",
 					"materia": "Matematicas",
-					"id_profesor": 4,
-					"id_materia": 2
+					"id_profesor": "4",
+					"id_materia": "2"
 				}
 			]
 		},
 		{
 			"bloque": {
-				"id":4,
+				"id":"4",
 				"nombre":"D",
 				"modulos":[
 					{
@@ -102,8 +102,8 @@
 				{
 					"profesor": "Carl",
 					"materia": "Fisica",
-					"id_profesor": 3,
-					"id_materia": 3
+					"id_profesor": "3",
+					"id_materia": "3"
 				}
 			]
 		}
