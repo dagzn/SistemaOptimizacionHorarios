@@ -3,6 +3,8 @@ package exportacion
 import (
 	"fmt"
 	"strings"
+	"os"
+	"encoding/base64"
 	pdf "github.com/SebastiaanKlippert/go-wkhtmltopdf"
 	obj "proyecto-horarios/objetos"
 )
@@ -96,7 +98,12 @@ func ExportarHorario(horario *obj.Entrada_exportacion) (error){
 		return err
   }
 
-  fmt.Println("Done")
+  content, err := os.ReadFile("./simplesample.pdf")
+	if err != nil {
+		return err
+	}
+
+	_ = base64.StdEncoding.EncodeToString(content)
 
 	return nil
 }
