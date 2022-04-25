@@ -2,75 +2,75 @@
 	"distribuciones": [
 		{
 			"bloque": {
-				"id": 1,
+				"id": "1",
 				"nombre": "A"
 			},
 			"asignaciones": [
 				{
 					"profesor": "Alice",
 					"materia": "Lengua",
-					"id_profesor": 1,
-					"id_materia": 1
+					"id_profesor": "1",
+					"id_materia": "1"
 				},
 				{
 					"profesor": "Bob",
 					"materia": "Lengua",
-					"id_profesor": 2,
-					"id_materia": 1
+					"id_profesor": "2",
+					"id_materia": "1"
 				}
 			]
 		},
 		{
 			"bloque": {
-				"id":2,
+				"id":"2",
 				"nombre": "B"
 			},
 			"asignaciones": [
 				{
 					"profesor": "Alice",
 					"materia": "Matematicas",
-					"id_profesor": 1,
-					"id_materia": 2
+					"id_profesor": "1",
+					"id_materia": "2"
 				}
 			]
 		},
 		{
 			"bloque": {
-				"id":3,
+				"id":"3",
 				"nombre":"C"
 			},
 			"asignaciones": [
 				{
 					"profesor": "Carl",
 					"materia": "Matematicas",
-					"id_profesor": 3,
-					"id_materia": 2
+					"id_profesor": "3",
+					"id_materia": "2"
 				},
 				{
 					"profesor": "Bob",
 					"materia": "Fisica",
-					"id_profesor": 2,
-					"id_materia": 3
+					"id_profesor": "2",
+					"id_materia": "3"
 				},
 				{
 					"profesor": "Dan",
 					"materia": "Matematicas",
-					"id_profesor": 4,
-					"id_materia": 2
+					"id_profesor": "4",
+					"id_materia": "2"
 				}
 			]
 		},
 		{
 			"bloque": {
-				"id":4,
+				"id":"4",
 				"nombre":"D"
 			},
 			"asignaciones": [
 				{
 					"profesor": "Carl",
 					"materia": "Fisica",
-					"id_profesor": 3,
-					"id_materia": 3
+					"id_profesor": "3",
+					"id_materia": "3"
 				}
 			]
 		}
@@ -78,129 +78,129 @@
 	"salones":5,
 	"materias":[
 		{
-			"id":1,
+			"id":"1",
 			"nombre":"Lengua",
 			"cantidad":3
 		},
 		{
-			"id":2,
+			"id":"2",
 			"nombre":"Matematicas",
 			"cantidad":2
 		},
 		{
-			"id":3,
+			"id":"3",
 			"nombre":"Fisica",
 			"cantidad":3
 		}
 	],
 	"profesores":[
 		{
-			"id":1,
+			"id":"1",
 			"nombre":"Alice",
 			"clases":1,
 			"materias":[
 				{
-					"id":1,
+					"id":"1",
 					"limite":1,
 					"preferencia":1
 				}
 			],
 			"bloques":[
 				{
-					"id":1,
+					"id":"1",
 					"preferencia":8
 				},
 				{
-					"id":2,
+					"id":"2",
 					"preferencia":-1
 				}
 			]
 		},
 		{
-			"id":2,
+			"id":"2",
 			"nombre":"Bob",
 			"clases":2,
 			"materias":[
 				{
-					"id":1,
+					"id":"1",
 					"limite":2,
 					"preferencia":4
 				},
 				{
-					"id":2,
+					"id":"2",
 					"limite":1,
 					"preferencia":-1
 				}
 			],
 			"bloques":[
 				{
-					"id":1,
+					"id":"1",
 					"preferencia":2
 				},
 				{
-					"id":2,
+					"id":"2",
 					"preferencia":64
 				},
 				{
-					"id":4,
+					"id":"4",
 					"preferencia":8
 				}
 			]
 		},
 		{
-			"id":3,
+			"id":"3",
 			"nombre":"Carl",
 			"clases":2,
 			"materias":[
 				{
-					"id":1,
+					"id":"1",
 					"limite":1,
 					"preferencia":1
 				},
 				{
-					"id":2,
+					"id":"2",
 					"limite":2,
 					"preferencia":8
 				},
 				{
-					"id":3,
+					"id":"3",
 					"limite":1000,
 					"preferencia":4
 				}
 			],
 			"bloques":[
 				{
-					"id":2,
+					"id":"2",
 					"preferencia":32
 				},
 				{
-					"id":3,
+					"id":"3",
 					"preferencia":2
 				}
 			]
 		},
 		{
-			"id":4,
+			"id":"4",
 			"nombre":"Dan",
 			"clases":3,
 			"materias":[
 				{
-					"id":3,
+					"id":"3",
 					"limite":4,
 					"preferencia":1
 				}
 			],
 			"bloques":[
 				{
-					"id":1,
+					"id":"1",
 					"preferencia":1
 				},
 				{
-					"id":3,
+					"id":"3",
 					"preferencia":16
 				},
 				{
-					"id":4,
+					"id":"4",
 					"preferencia":128
 				}
 			]

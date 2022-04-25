@@ -17,10 +17,10 @@ const (
 )
 
 var (
-	materiasAsignadas map[int][]int
-	bloquesAsignados map[int][]int
-	nombreMateria map[int]string
-	nombreBloque map[int]string
+	materiasAsignadas map[string][]string
+	bloquesAsignados map[string][]string
+	nombreMateria map[string]string
+	nombreBloque map[string]string
 )
 
 /*
@@ -70,10 +70,10 @@ func validarBloques(salonesDisponibles int, distribuciones []obj.Distribucion, v
 	return errores
 }
 
-func unique(intSlice []int) []int {
-    keys := make(map[int]bool)
-    list := []int{}
-    for _, entry := range intSlice {
+func unique(stringSlice []string) []string {
+    keys := make(map[string]bool)
+    list := []string{}
+    for _, entry := range stringSlice {
         if _, value := keys[entry]; !value {
             keys[entry] = true
             list = append(list, entry)
@@ -90,7 +90,7 @@ func validarInterseccionBloques(distribuciones []obj.Distribucion, validaciones 
 
 	var errores []error
 	for _, d := range distribuciones {
-		duplicados := make(map[int]bool)
+		duplicados := make(map[string]bool)
 		for _, a := range d.Asignaciones {
 			profesor := a.Id_profesor
 			if ok := duplicados[profesor]; ok {
@@ -128,7 +128,7 @@ func validarLimiteMateria(profesores []obj.Profesor, validaciones map[string]int
 
 	var errores []error
 	for _, p := range profesores {
-		vecesAsignada := make(map[int]int)
+		vecesAsignada := make(map[string]int)
 		for _, id := range materiasAsignadas[p.Id] {
 			vecesAsignada[id] = vecesAsignada[id] + 1
 		}
@@ -153,7 +153,7 @@ func validarMateriaNoAsignada(profesores []obj.Profesor, validaciones map[string
 
 	var errores []error
 	for _, p := range profesores {
-		preferencias := make(map[int]int)
+		preferencias := make(map[string]int)
 		for _, m := range p.Materias {
 			preferencias[m.Id] = 1
 		}
@@ -175,7 +175,7 @@ func validarBloqueNoAsignado(profesores []obj.Profesor, validaciones map[string]
 
 	var errores []error
 	for _, p := range profesores {
-		preferencias := make(map[int]int)
+		preferencias := make(map[string]int)
 		for _, b := range p.Bloques {
 			preferencias[b.Id] = 1
 		}
@@ -223,10 +223,10 @@ func validarProfesores(profesores []obj.Profesor, distribuciones []obj.Distribuc
 }
 
 func llenarInformacionProfesores(distribuciones []obj.Distribucion) {
-	materiasAsignadas = make(map[int][]int)
-	bloquesAsignados = make(map[int][]int)
-	nombreMateria = make(map[int]string)
-	nombreBloque = make(map[int]string)
+	materiasAsignadas = make(map[string][]string)
+	bloquesAsignados = make(map[string][]string)
+	nombreMateria = make(map[string]string)
+	nombreBloque = make(map[string]string)
 
 	for _, d := range distribuciones {
 		for _, a := range d.Asignaciones {
