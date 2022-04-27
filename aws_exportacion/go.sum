@@ -1,0 +1,4 @@
+github.com/SebastiaanKlippert/go-wkhtmltopdf v1.7.2 h1:LORAatv6KuKheYq8HXehiwx3f/VGuzJBNSydUDQ98EM=
+github.com/SebastiaanKlippert/go-wkhtmltopdf v1.7.2/go.mod h1:TY8r0gmwEL1c5Lbd66NgQCkL4ZjGDJCMVqvbbFvUx20=
+github.com/aws/aws-lambda-go v1.31.1 h1:ECZ4ECLm+watHJ+mjNK8D4gU66UVuR8MfqDKTr/Ffkc=
+github.com/aws/aws-lambda-go v1.31.1/go.mod h1:IF5Q7wj4VyZyUFnZ54IQqeWtctHQ9tz+KhcbDenr220=

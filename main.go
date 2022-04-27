@@ -82,7 +82,7 @@ func probarValidacion(archivo string) (*obj.Salida_validacion){
 	return salida
 }
 
-func probarExportacion(archivo string) {
+func probarExportacion(archivo string) (string) {
 	data, err := utils.LeerArchivo(archivo)
 	if err != nil {
 		panic(err)
@@ -93,10 +93,12 @@ func probarExportacion(archivo string) {
 		panic(err)
 	}
 
-	err = exportacion.ExportarHorario(entradaExportacion)
+	cadena, err := exportacion.ExportarHorario(entradaExportacion, "./")
 	if err != nil {
 		panic(err)
 	}
+
+	return cadena
 }
 
 func main(){
@@ -125,7 +127,8 @@ func main(){
 			}
 			fmt.Println(string(content))
 		} else if opc == 3 {
-			probarExportacion("archivos_pruebas/"+archivo)
+			cadena := probarExportacion("archivos_pruebas/"+archivo)
+			fmt.Print(cadena)
 		}
 	}
 }
