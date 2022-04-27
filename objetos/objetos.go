@@ -3,21 +3,21 @@ package objetos
 // Mantener los nombres de variables en singular
 
 type Materia struct {
-	Id       string `validate:"required"`
-	Nombre   string `validate:"required"`
-	Cantidad int    `validate:"required,gte=1"`
+	Id       string `json:"id" validate:"required"`
+	Nombre   string `json:"nombre" validate:"required"`
+	Cantidad int    `json:"cantidad" validate:"required,gte=1"`
 }
 
 type Modulo struct {
-	Dia     string
-	Entrada string
-	Salida  string
+	Dia     string `json:"dia"`
+	Entrada string `json:"entrada"`
+	Salida  string `json:"salida"`
 }
 
 type Bloque struct {
-	Id      string `validate:"required"`
-	Nombre  string `validate:"required"`
-	Modulos []Modulo
+	Id      string `json:"id" validate:"required"`
+	Nombre  string `json:"nombre" validate:"required"`
+	Modulos []Modulo `json:"modulos"`
 }
 
 type Estructura struct {
@@ -26,34 +26,34 @@ type Estructura struct {
 }
 
 type Pref_materia struct {
-	Id          string `validate:"required"`
-	Limite      int    `validate:"required"`
-	Preferencia int    `validate:"required,oneof=-1 1 2 4 8 16 32 64 128 256 512"`
+	Id          string `json:"id" validate:"required"`
+	Limite      int    `json:"limite" validate:"required"`
+	Preferencia int    `json:"preferencia" validate:"required,oneof=-1 1 2 4 8 16 32 64 128 256 512"`
 }
 
 type Pref_bloque struct {
-	Id          string `validate:"required"`
-	Preferencia int    `validate:"required,oneof=-1 1 2 4 8 16 32 64 128 256 512"`
+	Id          string `json:"id" validate:"required"`
+	Preferencia int    `json:"preferencia" validate:"required,oneof=-1 1 2 4 8 16 32 64 128 256 512"`
 }
 
 type Profesor struct {
-	Id       string         `validate:"required"`
-	Nombre   string         `validate:"required"`
-	Clases   int            `validate:"required,gte=1"`
-	Materias []Pref_materia `validate:"required,min=1,dive,required"`
-	Bloques  []Pref_bloque  `validate:"required,min=1,dive,required"`
+	Id       string         `json:"id" validate:"required"`
+	Nombre   string         `json:"nombre" validate:"required"`
+	Clases   int            `json:"clases" validate:"required,gte=1"`
+	Materias []Pref_materia `json:"materias" validate:"required,min=1,dive,required"`
+	Bloques  []Pref_bloque  `json:"bloques" validate:"required,min=1,dive,required"`
 }
 
 type Asignacion struct {
-	Profesor    string `validate:"required"`
-	Id_profesor string `validate:"required"`
-	Materia     string `validate:"required"`
-	Id_materia  string `validate:"required"`
+	Profesor    string `json:"profesor" validate:"required"`
+	Id_profesor string `json:"id_profesor" validate:"required"`
+	Materia     string `json:"materia" validate:"required"`
+	Id_materia  string `json:"id_materia" validate:"required"`
 }
 
 type Distribucion struct {
-	Bloque       Bloque       `validate:"required"`
-	Asignaciones []Asignacion `validate:"required,min=1,dive,required"`
+	Bloque       Bloque       `json:"bloque" validate:"required"`
+	Asignaciones []Asignacion `json:"asignaciones" validate:"required,min=1,dive,required"`
 }
 
 // Formato de entrada para crear un horario
@@ -66,9 +66,9 @@ type Entrada_horario struct {
 
 // Formato de salida al crear un horario
 type Salida_horario struct {
-	Distribuciones []Distribucion
-	Error          string
-	Logs           []string
+	Distribuciones []Distribucion `json:"distribuciones"`
+	Error          string `json:"error"`
+	Logs           []string `json:"logs"`
 }
 
 // Este formato es el que usamos para validar
@@ -82,8 +82,8 @@ type Entrada_validacion struct {
 
 // Coleccion de los errores encontrados al validar
 type Salida_validacion struct {
-	Error string
-	Logs  []string
+	Error string `json:"error"`
+	Logs  []string `json:"logs"`
 }
 
 // Horario que exportaremos a PDF

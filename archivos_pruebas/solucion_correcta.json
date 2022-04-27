@@ -2,129 +2,129 @@
 	"salones":5,
 	"materias":[
 		{
-			"id":1,
+			"id":"1",
 			"nombre":"Lengua",
 			"cantidad":3
 		},
 		{
-			"id":2,
+			"id":"2",
 			"nombre":"Matematicas",
 			"cantidad":2
 		},
 		{
-			"id":3,
+			"id":"3",
 			"nombre":"Fisica",
 			"cantidad":3
 		}
 	],
 	"profesores":[
 		{
-			"id":1,
+			"id":"1",
 			"nombre":"Alice",
 			"clases":1,
 			"materias":[
 				{
-					"id":1,
+					"id":"1",
 					"limite":1,
 					"preferencia":1
 				}
 			],
 			"bloques":[
 				{
-					"id":1,
+					"id":"1",
 					"preferencia":8
 				},
 				{
-					"id":2,
+					"id":"2",
 					"preferencia":-1
 				}
 			]
 		},
 		{
-			"id":2,
+			"id":"2",
 			"nombre":"Bob",
 			"clases":2,
 			"materias":[
 				{
-					"id":1,
+					"id":"1",
 					"limite":2,
 					"preferencia":4
 				},
 				{
-					"id":2,
+					"id":"2",
 					"limite":1,
 					"preferencia":-1
 				}
 			],
 			"bloques":[
 				{
-					"id":1,
+					"id":"1",
 					"preferencia":2
 				},
 				{
-					"id":2,
+					"id":"2",
 					"preferencia":64
 				},
 				{
-					"id":4,
+					"id":"4",
 					"preferencia":8
 				}
 			]
 		},
 		{
-			"id":3,
+			"id":"3",
 			"nombre":"Carl",
 			"clases":2,
 			"materias":[
 				{
-					"id":1,
+					"id":"1",
 					"limite":1,
 					"preferencia":1
 				},
 				{
-					"id":2,
+					"id":"2",
 					"limite":2,
 					"preferencia":8
 				},
 				{
-					"id":3,
+					"id":"3",
 					"limite":1000,
 					"preferencia":4
 				}
 			],
 			"bloques":[
 				{
-					"id":2,
+					"id":"2",
 					"preferencia":32
 				},
 				{
-					"id":3,
+					"id":"3",
 					"preferencia":2
 				}
 			]
 		},
 		{
-			"id":4,
+			"id":"4",
 			"nombre":"Dan",
 			"clases":3,
 			"materias":[
 				{
-					"id":3,
+					"id":"3",
 					"limite":4,
 					"preferencia":1
 				}
 			],
 			"bloques":[
 				{
-					"id":1,
+					"id":"1",
 					"preferencia":1
 				},
 				{
-					"id":3,
+					"id":"3",
 					"preferencia":16
 				},
 				{
-					"id":4,
+					"id":"4",
 					"preferencia":128
 				}
 			]
@@ -132,20 +132,48 @@
 	],
 	"bloques":[
 		{
-			"id": 1,
-			"nombre": "A"
+			"id": "1",
+			"nombre": "A",
+			"modulos":[
+				{
+					"dia":"Lunes",
+					"entrada":"10:00",
+					"salida":"12:00"
+				}
+			]
 		},
 		{
-			"id": 2,
-			"nombre": "B"
+			"id": "2",
+			"nombre": "B",
+			"modulos":[
+				{
+					"dia":"Martes",
+					"entrada":"11:30",
+					"salida":"12:30"
+				}
+			]
 		},
 		{
-			"id": 3,
-			"nombre": "C"
+			"id": "3",
+			"nombre": "C",
+			"modulos":[
+				{
+					"dia":"Miercoles",
+					"entrada":"08:30",
+					"salida":"10:30"
+				}
+			]
 		},
 		{
-			"id": 4,
-			"nombre": "D"
+			"id": "4",
+			"nombre": "D",
+			"modulos":[
+				{
+					"dia":"Viernes",
+					"entrada":"07:00",
+					"salida":"08:30"
+				}
+			]
 		}
 	]
 }
