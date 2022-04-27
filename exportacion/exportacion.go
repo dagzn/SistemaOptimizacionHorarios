@@ -74,13 +74,13 @@ func crearHTMLBasico(horario *obj.Entrada_exportacion) (string) {
 	return html
 }
 
-func ExportarHorario(horario *obj.Entrada_exportacion) (error){
+func ExportarHorario(horario *obj.Entrada_exportacion, ruta string) (string, error){
 	html := crearHTMLBasico(horario)
 
 	// Create new PDF generator
   pdfg, err := pdf.NewPDFGenerator()
   if err != nil {
-		return err
+		return "", err
   }
 
 	// Add to document
@@ -89,22 +89,22 @@ func ExportarHorario(horario *obj.Entrada_exportacion) (error){
   // Create PDF document in internal buffer
   err = pdfg.Create()
   if err != nil {
-		return err
+		return "", err
   }
 
   // Write buffer contents to file on disk
-  err = pdfg.WriteFile("./simplesample.pdf")
+  err = pdfg.WriteFile(ruta + "simplesample.pdf")
   if err != nil {
-		return err
+		return "", err
   }
 
-  content, err := os.ReadFile("./simplesample.pdf")
+  content, err := os.ReadFile(ruta + "simplesample.pdf")
 	if err != nil {
-		return err
+		return "", err
 	}
 
-	_ = base64.StdEncoding.EncodeToString(content)
+	cadenaCodificada := base64.StdEncoding.EncodeToString(content)
 
-	return nil
+	return cadenaCodificada, nil
 }
 
