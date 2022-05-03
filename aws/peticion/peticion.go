@@ -3,8 +3,10 @@ package peticion
 import (
 	"encoding/base64"
 	"net/http"
+	obj "proyecto-horarios/objetos"
 	"proyecto-horarios/solucion"
 	"proyecto-horarios/utils"
+	"proyecto-horarios/validacion"
 
 	"github.com/aws/aws-lambda-go/events"
 )
@@ -15,6 +17,38 @@ func obtenerHeaders() map[string]string {
 		"Access-Control-Allow-Origin":  "*",
 		"Access-Control-Allow-Methods": "GET, HEAD, OPTIONS, POST",
 	}
+}
+
+func probarSolucion(data []byte) *obj.Salida_horario {
+	entradaHorario, err := utils.DeserializarEntradaHorario(data)
+	if err != nil {
+		return &obj.Salida_horario{
+			Error: err.Error(),
+		}
+	}
+
+	errores, err := validacion.ValidarFormatoEntradaHorario(entradaHorario)
+	if err != nil {
+		return &obj.Salida_horario{
+			Error: err.Error(),
+			Logs: func(errores []error) []string {
+				var ret []string
+				for _, e := range errores {
+					ret = append(ret, e.Error())
+				}
+				return ret
+			}(errores),
+		}
+	}
+
+	salida, err := solucion.GenerarHorario(entradaHorario)
+	if err != nil {
+		return &obj.Salida_horario{
+			Error: err.Error(),
+		}
+	}
+
+	return salida
 }
 
 func AtenderPeticion(peticion events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
@@ -30,23 +64,16 @@ func AtenderPeticion(peticion events.APIGatewayProxyRequest) (events.APIGatewayP
 		body = peticion.Body
 	}
 
-	entradaHorario, err := utils.DeserializarEntradaHorario([]byte(body))
-
-	if err != nil {
-		respuesta.StatusCode = http.StatusInternalServerError
-		return respuesta, err
-	}
-
-	salida, err := solucion.GenerarHorario(entradaHorario)
-	if err != nil {
-		respuesta.StatusCode = http.StatusInternalServerError
-		return respuesta, err
-	}
-
+	salida := probarSolucion([]byte(body))
 	content, err := utils.SerializarSalidaHorario(salida)
 	if err != nil {
-		respuesta.StatusCode = http.StatusInternalServerError
-		return respuesta, err
+		respuesta.Body = `
+			"Distribuciones": null,
+			"Error": "Error al serializar la salida",
+			"Logs": null
+		`
+		respuesta.StatusCode = http.StatusOK
+		return respuesta, nil
 	}
 
 	respuesta.Body = string(content)
