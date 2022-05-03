@@ -61,12 +61,12 @@ func horarioSencillo(tuplas []tupla) {
 }
 
 func crearCeldaSimple(contenido string, span string) (string){
-	html := fmt.Sprintf("<td"+span+">%s</td>", contenido)
+	html := fmt.Sprintf("<td"+span+"><center>%s</center></td>", contenido)
 	return html
 }
 
 func crearCeldaBloque(bloque obj.Bloque, span string) (string){
-	html := "<td"+span+">"
+	html := "<td"+span+"><center>"
 	html += fmt.Sprintf("<b> %s </b> <br>", bloque.Nombre)
 	for i, m := range bloque.Modulos {
 		html += fmt.Sprintf("%s %s - %s", m.Dia, m.Entrada, m.Salida)
@@ -74,7 +74,7 @@ func crearCeldaBloque(bloque obj.Bloque, span string) (string){
 			html += "<br>"
 		}
 	}
-	html += "</td>"
+	html += "</center></td>"
 	return html
 }
 
