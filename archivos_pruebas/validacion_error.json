@@ -13,9 +13,9 @@
 					"id_materia": "1"
 				},
 				{
-					"profesor": "Bob",
+					"profesor": "Alice",
 					"materia": "Lengua",
-					"id_profesor": "2",
+					"id_profesor": "1",
 					"id_materia": "1"
 				}
 			]

@@ -270,7 +270,7 @@ func validar(horario *obj.Entrada_validacion) ([]error) {
 
 func ValidarHorario(horario *obj.Entrada_validacion) (*obj.Salida_validacion){
 	errores := validar(horario)
-	if len(errores) > 1 {
+	if len(errores) > 0 {
 		err := fmt.Errorf(errorValidacion);
 		salida := &obj.Salida_validacion{
 			Error: err.Error(),
