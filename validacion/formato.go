@@ -71,3 +71,31 @@ func ValidarFormatoEntradaValidacion(h *obj.Entrada_validacion) ([]error, error)
 
 	return nil, nil
 }
+
+func ValidarFormatoEntradaExportacion(h *obj.Entrada_exportacion) ([]error, error) {
+	validate := validator.New()
+	err := validate.Struct(h)
+
+	if err != nil {
+		var errores []error
+		for _, err := range err.(validator.ValidationErrors) {
+			tag := err.ActualTag()
+			var errFmt error
+			switch tag {
+				case "required":
+					errFmt = fmt.Errorf(errorRequired,err.StructField(), err.StructNamespace())
+				case "gte":
+					errFmt = fmt.Errorf(errorGte, err.StructField(),fmt.Sprintf(infoCampo, err.StructNamespace(), err.Param(), err.Value()))
+				case "oneof":
+					errFmt = fmt.Errorf(errorOneof, err.StructField(),fmt.Sprintf(infoCampo, err.StructNamespace(), err.Param(), err.Value()))
+				case "min":
+					errFmt = fmt.Errorf(errorMin, err.StructField(),fmt.Sprintf(infoCampo, err.StructNamespace(), err.Param(), err.Value()))
+			}
+
+			errores = append(errores, errFmt)
+		}
+		return errores, fmt.Errorf(errorGeneral)
+	}
+
+	return nil, nil
+}
