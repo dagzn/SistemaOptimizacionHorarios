@@ -7,6 +7,7 @@ import (
 	"math/rand"
 	"math"
 	"os"
+	"encoding/json"
 	obj "proyecto-horarios/objetos"
 	"proyecto-horarios/utils"
 	"proyecto-horarios/solucion"
@@ -263,7 +264,17 @@ func main(){
 		Profesores: profesores,
 	}
 
-	_, err := validacion.ValidarFormatoEntradaHorario(entradaHorario)
+	data, err := json.MarshalIndent(entradaHorario, "", " ")
+	if err != nil {
+		panic(err)
+	}
+
+	err = os.WriteFile("peticion.json", data, 0644)
+	if err != nil {
+		panic(err)
+	}
+
+	_, err = validacion.ValidarFormatoEntradaHorario(entradaHorario)
 	if err != nil {
 		panic(err)
 	}
