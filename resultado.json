@@ -1,0 +1,6288 @@
+{
+ "distribuciones": [
+  {
+   "bloque": {
+    "id": "1",
+    "nombre": "1",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "121",
+     "id_profesor": "121",
+     "materia": "5",
+     "id_materia": "5"
+    },
+    {
+     "profesor": "64",
+     "id_profesor": "64",
+     "materia": "7",
+     "id_materia": "7"
+    },
+    {
+     "profesor": "143",
+     "id_profesor": "143",
+     "materia": "8",
+     "id_materia": "8"
+    },
+    {
+     "profesor": "96",
+     "id_profesor": "96",
+     "materia": "9",
+     "id_materia": "9"
+    },
+    {
+     "profesor": "43",
+     "id_profesor": "43",
+     "materia": "17",
+     "id_materia": "17"
+    },
+    {
+     "profesor": "146",
+     "id_profesor": "146",
+     "materia": "17",
+     "id_materia": "17"
+    },
+    {
+     "profesor": "39",
+     "id_profesor": "39",
+     "materia": "19",
+     "id_materia": "19"
+    },
+    {
+     "profesor": "292",
+     "id_profesor": "292",
+     "materia": "19",
+     "id_materia": "19"
+    },
+    {
+     "profesor": "262",
+     "id_profesor": "262",
+     "materia": "26",
+     "id_materia": "26"
+    },
+    {
+     "profesor": "213",
+     "id_profesor": "213",
+     "materia": "27",
+     "id_materia": "27"
+    },
+    {
+     "profesor": "219",
+     "id_profesor": "219",
+     "materia": "30",
+     "id_materia": "30"
+    },
+    {
+     "profesor": "2",
+     "id_profesor": "2",
+     "materia": "37",
+     "id_materia": "37"
+    },
+    {
+     "profesor": "215",
+     "id_profesor": "215",
+     "materia": "39",
+     "id_materia": "39"
+    },
+    {
+     "profesor": "187",
+     "id_profesor": "187",
+     "materia": "40",
+     "id_materia": "40"
+    },
+    {
+     "profesor": "231",
+     "id_profesor": "231",
+     "materia": "42",
+     "id_materia": "42"
+    },
+    {
+     "profesor": "132",
+     "id_profesor": "132",
+     "materia": "43",
+     "id_materia": "43"
+    },
+    {
+     "profesor": "159",
+     "id_profesor": "159",
+     "materia": "43",
+     "id_materia": "43"
+    },
+    {
+     "profesor": "247",
+     "id_profesor": "247",
+     "materia": "50",
+     "id_materia": "50"
+    },
+    {
+     "profesor": "11",
+     "id_profesor": "11",
+     "materia": "67",
+     "id_materia": "67"
+    },
+    {
+     "profesor": "183",
+     "id_profesor": "183",
+     "materia": "73",
+     "id_materia": "73"
+    },
+    {
+     "profesor": "240",
+     "id_profesor": "240",
+     "materia": "83",
+     "id_materia": "83"
+    },
+    {
+     "profesor": "71",
+     "id_profesor": "71",
+     "materia": "91",
+     "id_materia": "91"
+    },
+    {
+     "profesor": "18",
+     "id_profesor": "18",
+     "materia": "100",
+     "id_materia": "100"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "2",
+    "nombre": "2",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "180",
+     "id_profesor": "180",
+     "materia": "3",
+     "id_materia": "3"
+    },
+    {
+     "profesor": "88",
+     "id_profesor": "88",
+     "materia": "5",
+     "id_materia": "5"
+    },
+    {
+     "profesor": "61",
+     "id_profesor": "61",
+     "materia": "6",
+     "id_materia": "6"
+    },
+    {
+     "profesor": "20",
+     "id_profesor": "20",
+     "materia": "16",
+     "id_materia": "16"
+    },
+    {
+     "profesor": "96",
+     "id_profesor": "96",
+     "materia": "20",
+     "id_materia": "20"
+    },
+    {
+     "profesor": "279",
+     "id_profesor": "279",
+     "materia": "23",
+     "id_materia": "23"
+    },
+    {
+     "profesor": "204",
+     "id_profesor": "204",
+     "materia": "25",
+     "id_materia": "25"
+    },
+    {
+     "profesor": "231",
+     "id_profesor": "231",
+     "materia": "26",
+     "id_materia": "26"
+    },
+    {
+     "profesor": "6",
+     "id_profesor": "6",
+     "materia": "31",
+     "id_materia": "31"
+    },
+    {
+     "profesor": "193",
+     "id_profesor": "193",
+     "materia": "35",
+     "id_materia": "35"
+    },
+    {
+     "profesor": "1",
+     "id_profesor": "1",
+     "materia": "36",
+     "id_materia": "36"
+    },
+    {
+     "profesor": "251",
+     "id_profesor": "251",
+     "materia": "38",
+     "id_materia": "38"
+    },
+    {
+     "profesor": "294",
+     "id_profesor": "294",
+     "materia": "38",
+     "id_materia": "38"
+    },
+    {
+     "profesor": "73",
+     "id_profesor": "73",
+     "materia": "49",
+     "id_materia": "49"
+    },
+    {
+     "profesor": "42",
+     "id_profesor": "42",
+     "materia": "61",
+     "id_materia": "61"
+    },
+    {
+     "profesor": "182",
+     "id_profesor": "182",
+     "materia": "66",
+     "id_materia": "66"
+    },
+    {
+     "profesor": "123",
+     "id_profesor": "123",
+     "materia": "72",
+     "id_materia": "72"
+    },
+    {
+     "profesor": "236",
+     "id_profesor": "236",
+     "materia": "74",
+     "id_materia": "74"
+    },
+    {
+     "profesor": "222",
+     "id_profesor": "222",
+     "materia": "81",
+     "id_materia": "81"
+    },
+    {
+     "profesor": "256",
+     "id_profesor": "256",
+     "materia": "88",
+     "id_materia": "88"
+    },
+    {
+     "profesor": "112",
+     "id_profesor": "112",
+     "materia": "89",
+     "id_materia": "89"
+    },
+    {
+     "profesor": "241",
+     "id_profesor": "241",
+     "materia": "89",
+     "id_materia": "89"
+    },
+    {
+     "profesor": "144",
+     "id_profesor": "144",
+     "materia": "92",
+     "id_materia": "92"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "3",
+    "nombre": "3",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "242",
+     "id_profesor": "242",
+     "materia": "7",
+     "id_materia": "7"
+    },
+    {
+     "profesor": "70",
+     "id_profesor": "70",
+     "materia": "10",
+     "id_materia": "10"
+    },
+    {
+     "profesor": "217",
+     "id_profesor": "217",
+     "materia": "19",
+     "id_materia": "19"
+    },
+    {
+     "profesor": "272",
+     "id_profesor": "272",
+     "materia": "24",
+     "id_materia": "24"
+    },
+    {
+     "profesor": "288",
+     "id_profesor": "288",
+     "materia": "33",
+     "id_materia": "33"
+    },
+    {
+     "profesor": "193",
+     "id_profesor": "193",
+     "materia": "35",
+     "id_materia": "35"
+    },
+    {
+     "profesor": "2",
+     "id_profesor": "2",
+     "materia": "37",
+     "id_materia": "37"
+    },
+    {
+     "profesor": "133",
+     "id_profesor": "133",
+     "materia": "55",
+     "id_materia": "55"
+    },
+    {
+     "profesor": "188",
+     "id_profesor": "188",
+     "materia": "59",
+     "id_materia": "59"
+    },
+    {
+     "profesor": "54",
+     "id_profesor": "54",
+     "materia": "67",
+     "id_materia": "67"
+    },
+    {
+     "profesor": "31",
+     "id_profesor": "31",
+     "materia": "75",
+     "id_materia": "75"
+    },
+    {
+     "profesor": "221",
+     "id_profesor": "221",
+     "materia": "82",
+     "id_materia": "82"
+    },
+    {
+     "profesor": "239",
+     "id_profesor": "239",
+     "materia": "88",
+     "id_materia": "88"
+    },
+    {
+     "profesor": "90",
+     "id_profesor": "90",
+     "materia": "92",
+     "id_materia": "92"
+    },
+    {
+     "profesor": "3",
+     "id_profesor": "3",
+     "materia": "97",
+     "id_materia": "97"
+    },
+    {
+     "profesor": "7",
+     "id_profesor": "7",
+     "materia": "100",
+     "id_materia": "100"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "4",
+    "nombre": "4",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "65",
+     "id_profesor": "65",
+     "materia": "1",
+     "id_materia": "1"
+    },
+    {
+     "profesor": "292",
+     "id_profesor": "292",
+     "materia": "19",
+     "id_materia": "19"
+    },
+    {
+     "profesor": "120",
+     "id_profesor": "120",
+     "materia": "24",
+     "id_materia": "24"
+    },
+    {
+     "profesor": "127",
+     "id_profesor": "127",
+     "materia": "33",
+     "id_materia": "33"
+    },
+    {
+     "profesor": "232",
+     "id_profesor": "232",
+     "materia": "42",
+     "id_materia": "42"
+    },
+    {
+     "profesor": "47",
+     "id_profesor": "47",
+     "materia": "51",
+     "id_materia": "51"
+    },
+    {
+     "profesor": "108",
+     "id_profesor": "108",
+     "materia": "53",
+     "id_materia": "53"
+    },
+    {
+     "profesor": "240",
+     "id_profesor": "240",
+     "materia": "83",
+     "id_materia": "83"
+    },
+    {
+     "profesor": "287",
+     "id_profesor": "287",
+     "materia": "84",
+     "id_materia": "84"
+    },
+    {
+     "profesor": "256",
+     "id_profesor": "256",
+     "materia": "88",
+     "id_materia": "88"
+    },
+    {
+     "profesor": "71",
+     "id_profesor": "71",
+     "materia": "91",
+     "id_materia": "91"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "5",
+    "nombre": "5",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "20",
+     "id_profesor": "20",
+     "materia": "16",
+     "id_materia": "16"
+    },
+    {
+     "profesor": "146",
+     "id_profesor": "146",
+     "materia": "17",
+     "id_materia": "17"
+    },
+    {
+     "profesor": "282",
+     "id_profesor": "282",
+     "materia": "23",
+     "id_materia": "23"
+    },
+    {
+     "profesor": "165",
+     "id_profesor": "165",
+     "materia": "25",
+     "id_materia": "25"
+    },
+    {
+     "profesor": "218",
+     "id_profesor": "218",
+     "materia": "25",
+     "id_materia": "25"
+    },
+    {
+     "profesor": "85",
+     "id_profesor": "85",
+     "materia": "33",
+     "id_materia": "33"
+    },
+    {
+     "profesor": "252",
+     "id_profesor": "252",
+     "materia": "42",
+     "id_materia": "42"
+    },
+    {
+     "profesor": "286",
+     "id_profesor": "286",
+     "materia": "48",
+     "id_materia": "48"
+    },
+    {
+     "profesor": "103",
+     "id_profesor": "103",
+     "materia": "61",
+     "id_materia": "61"
+    },
+    {
+     "profesor": "113",
+     "id_profesor": "113",
+     "materia": "64",
+     "id_materia": "64"
+    },
+    {
+     "profesor": "129",
+     "id_profesor": "129",
+     "materia": "65",
+     "id_materia": "65"
+    },
+    {
+     "profesor": "31",
+     "id_profesor": "31",
+     "materia": "66",
+     "id_materia": "66"
+    },
+    {
+     "profesor": "245",
+     "id_profesor": "245",
+     "materia": "69",
+     "id_materia": "69"
+    },
+    {
+     "profesor": "277",
+     "id_profesor": "277",
+     "materia": "73",
+     "id_materia": "73"
+    },
+    {
+     "profesor": "200",
+     "id_profesor": "200",
+     "materia": "77",
+     "id_materia": "77"
+    },
+    {
+     "profesor": "131",
+     "id_profesor": "131",
+     "materia": "79",
+     "id_materia": "79"
+    },
+    {
+     "profesor": "280",
+     "id_profesor": "280",
+     "materia": "81",
+     "id_materia": "81"
+    },
+    {
+     "profesor": "106",
+     "id_profesor": "106",
+     "materia": "82",
+     "id_materia": "82"
+    },
+    {
+     "profesor": "115",
+     "id_profesor": "115",
+     "materia": "87",
+     "id_materia": "87"
+    },
+    {
+     "profesor": "128",
+     "id_profesor": "128",
+     "materia": "98",
+     "id_materia": "98"
+    },
+    {
+     "profesor": "7",
+     "id_profesor": "7",
+     "materia": "100",
+     "id_materia": "100"
+    },
+    {
+     "profesor": "18",
+     "id_profesor": "18",
+     "materia": "100",
+     "id_materia": "100"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "6",
+    "nombre": "6",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "262",
+     "id_profesor": "262",
+     "materia": "1",
+     "id_materia": "1"
+    },
+    {
+     "profesor": "162",
+     "id_profesor": "162",
+     "materia": "4",
+     "id_materia": "4"
+    },
+    {
+     "profesor": "61",
+     "id_profesor": "61",
+     "materia": "6",
+     "id_materia": "6"
+    },
+    {
+     "profesor": "26",
+     "id_profesor": "26",
+     "materia": "11",
+     "id_materia": "11"
+    },
+    {
+     "profesor": "39",
+     "id_profesor": "39",
+     "materia": "19",
+     "id_materia": "19"
+    },
+    {
+     "profesor": "25",
+     "id_profesor": "25",
+     "materia": "31",
+     "id_materia": "31"
+    },
+    {
+     "profesor": "266",
+     "id_profesor": "266",
+     "materia": "32",
+     "id_materia": "32"
+    },
+    {
+     "profesor": "85",
+     "id_profesor": "85",
+     "materia": "33",
+     "id_materia": "33"
+    },
+    {
+     "profesor": "2",
+     "id_profesor": "2",
+     "materia": "37",
+     "id_materia": "37"
+    },
+    {
+     "profesor": "93",
+     "id_profesor": "93",
+     "materia": "40",
+     "id_materia": "40"
+    },
+    {
+     "profesor": "44",
+     "id_profesor": "44",
+     "materia": "45",
+     "id_materia": "45"
+    },
+    {
+     "profesor": "247",
+     "id_profesor": "247",
+     "materia": "50",
+     "id_materia": "50"
+    },
+    {
+     "profesor": "47",
+     "id_profesor": "47",
+     "materia": "51",
+     "id_materia": "51"
+    },
+    {
+     "profesor": "203",
+     "id_profesor": "203",
+     "materia": "64",
+     "id_materia": "64"
+    },
+    {
+     "profesor": "54",
+     "id_profesor": "54",
+     "materia": "67",
+     "id_materia": "67"
+    },
+    {
+     "profesor": "10",
+     "id_profesor": "10",
+     "materia": "75",
+     "id_materia": "75"
+    },
+    {
+     "profesor": "276",
+     "id_profesor": "276",
+     "materia": "86",
+     "id_materia": "86"
+    },
+    {
+     "profesor": "115",
+     "id_profesor": "115",
+     "materia": "87",
+     "id_materia": "87"
+    },
+    {
+     "profesor": "300",
+     "id_profesor": "300",
+     "materia": "93",
+     "id_materia": "93"
+    },
+    {
+     "profesor": "55",
+     "id_profesor": "55",
+     "materia": "95",
+     "id_materia": "95"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "7",
+    "nombre": "7",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "298",
+     "id_profesor": "298",
+     "materia": "4",
+     "id_materia": "4"
+    },
+    {
+     "profesor": "139",
+     "id_profesor": "139",
+     "materia": "5",
+     "id_materia": "5"
+    },
+    {
+     "profesor": "161",
+     "id_profesor": "161",
+     "materia": "6",
+     "id_materia": "6"
+    },
+    {
+     "profesor": "285",
+     "id_profesor": "285",
+     "materia": "12",
+     "id_materia": "12"
+    },
+    {
+     "profesor": "291",
+     "id_profesor": "291",
+     "materia": "12",
+     "id_materia": "12"
+    },
+    {
+     "profesor": "14",
+     "id_profesor": "14",
+     "materia": "13",
+     "id_materia": "13"
+    },
+    {
+     "profesor": "146",
+     "id_profesor": "146",
+     "materia": "17",
+     "id_materia": "17"
+    },
+    {
+     "profesor": "6",
+     "id_profesor": "6",
+     "materia": "31",
+     "id_materia": "31"
+    },
+    {
+     "profesor": "73",
+     "id_profesor": "73",
+     "materia": "49",
+     "id_materia": "49"
+    },
+    {
+     "profesor": "214",
+     "id_profesor": "214",
+     "materia": "49",
+     "id_materia": "49"
+    },
+    {
+     "profesor": "129",
+     "id_profesor": "129",
+     "materia": "65",
+     "id_materia": "65"
+    },
+    {
+     "profesor": "158",
+     "id_profesor": "158",
+     "materia": "70",
+     "id_materia": "70"
+    },
+    {
+     "profesor": "236",
+     "id_profesor": "236",
+     "materia": "74",
+     "id_materia": "74"
+    },
+    {
+     "profesor": "101",
+     "id_profesor": "101",
+     "materia": "78",
+     "id_materia": "78"
+    },
+    {
+     "profesor": "134",
+     "id_profesor": "134",
+     "materia": "78",
+     "id_materia": "78"
+    },
+    {
+     "profesor": "181",
+     "id_profesor": "181",
+     "materia": "83",
+     "id_materia": "83"
+    },
+    {
+     "profesor": "234",
+     "id_profesor": "234",
+     "materia": "86",
+     "id_materia": "86"
+    },
+    {
+     "profesor": "189",
+     "id_profesor": "189",
+     "materia": "90",
+     "id_materia": "90"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "8",
+    "nombre": "8",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "180",
+     "id_profesor": "180",
+     "materia": "3",
+     "id_materia": "3"
+    },
+    {
+     "profesor": "298",
+     "id_profesor": "298",
+     "materia": "4",
+     "id_materia": "4"
+    },
+    {
+     "profesor": "64",
+     "id_profesor": "64",
+     "materia": "7",
+     "id_materia": "7"
+    },
+    {
+     "profesor": "49",
+     "id_profesor": "49",
+     "materia": "8",
+     "id_materia": "8"
+    },
+    {
+     "profesor": "237",
+     "id_profesor": "237",
+     "materia": "15",
+     "id_materia": "15"
+    },
+    {
+     "profesor": "46",
+     "id_profesor": "46",
+     "materia": "24",
+     "id_materia": "24"
+    },
+    {
+     "profesor": "195",
+     "id_profesor": "195",
+     "materia": "29",
+     "id_materia": "29"
+    },
+    {
+     "profesor": "154",
+     "id_profesor": "154",
+     "materia": "31",
+     "id_materia": "31"
+    },
+    {
+     "profesor": "258",
+     "id_profesor": "258",
+     "materia": "52",
+     "id_materia": "52"
+    },
+    {
+     "profesor": "9",
+     "id_profesor": "9",
+     "materia": "60",
+     "id_materia": "60"
+    },
+    {
+     "profesor": "172",
+     "id_profesor": "172",
+     "materia": "62",
+     "id_materia": "62"
+    },
+    {
+     "profesor": "81",
+     "id_profesor": "81",
+     "materia": "68",
+     "id_materia": "68"
+    },
+    {
+     "profesor": "125",
+     "id_profesor": "125",
+     "materia": "70",
+     "id_materia": "70"
+    },
+    {
+     "profesor": "158",
+     "id_profesor": "158",
+     "materia": "70",
+     "id_materia": "70"
+    },
+    {
+     "profesor": "143",
+     "id_profesor": "143",
+     "materia": "77",
+     "id_materia": "77"
+    },
+    {
+     "profesor": "106",
+     "id_profesor": "106",
+     "materia": "82",
+     "id_materia": "82"
+    },
+    {
+     "profesor": "260",
+     "id_profesor": "260",
+     "materia": "85",
+     "id_materia": "85"
+    },
+    {
+     "profesor": "227",
+     "id_profesor": "227",
+     "materia": "91",
+     "id_materia": "91"
+    },
+    {
+     "profesor": "90",
+     "id_profesor": "90",
+     "materia": "92",
+     "id_materia": "92"
+    },
+    {
+     "profesor": "57",
+     "id_profesor": "57",
+     "materia": "94",
+     "id_materia": "94"
+    },
+    {
+     "profesor": "211",
+     "id_profesor": "211",
+     "materia": "98",
+     "id_materia": "98"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "9",
+    "nombre": "9",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "116",
+     "id_profesor": "116",
+     "materia": "2",
+     "id_materia": "2"
+    },
+    {
+     "profesor": "291",
+     "id_profesor": "291",
+     "materia": "12",
+     "id_materia": "12"
+    },
+    {
+     "profesor": "96",
+     "id_profesor": "96",
+     "materia": "20",
+     "id_materia": "20"
+    },
+    {
+     "profesor": "94",
+     "id_profesor": "94",
+     "materia": "23",
+     "id_materia": "23"
+    },
+    {
+     "profesor": "2",
+     "id_profesor": "2",
+     "materia": "37",
+     "id_materia": "37"
+    },
+    {
+     "profesor": "170",
+     "id_profesor": "170",
+     "materia": "40",
+     "id_materia": "40"
+    },
+    {
+     "profesor": "156",
+     "id_profesor": "156",
+     "materia": "41",
+     "id_materia": "41"
+    },
+    {
+     "profesor": "212",
+     "id_profesor": "212",
+     "materia": "44",
+     "id_materia": "44"
+    },
+    {
+     "profesor": "68",
+     "id_profesor": "68",
+     "materia": "45",
+     "id_materia": "45"
+    },
+    {
+     "profesor": "187",
+     "id_profesor": "187",
+     "materia": "46",
+     "id_materia": "46"
+    },
+    {
+     "profesor": "257",
+     "id_profesor": "257",
+     "materia": "46",
+     "id_materia": "46"
+    },
+    {
+     "profesor": "230",
+     "id_profesor": "230",
+     "materia": "47",
+     "id_materia": "47"
+    },
+    {
+     "profesor": "281",
+     "id_profesor": "281",
+     "materia": "62",
+     "id_materia": "62"
+    },
+    {
+     "profesor": "283",
+     "id_profesor": "283",
+     "materia": "68",
+     "id_materia": "68"
+    },
+    {
+     "profesor": "101",
+     "id_profesor": "101",
+     "materia": "78",
+     "id_materia": "78"
+    },
+    {
+     "profesor": "121",
+     "id_profesor": "121",
+     "materia": "78",
+     "id_materia": "78"
+    },
+    {
+     "profesor": "27",
+     "id_profesor": "27",
+     "materia": "87",
+     "id_materia": "87"
+    },
+    {
+     "profesor": "128",
+     "id_profesor": "128",
+     "materia": "98",
+     "id_materia": "98"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "10",
+    "nombre": "10",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "259",
+     "id_profesor": "259",
+     "materia": "3",
+     "id_materia": "3"
+    },
+    {
+     "profesor": "275",
+     "id_profesor": "275",
+     "materia": "11",
+     "id_materia": "11"
+    },
+    {
+     "profesor": "166",
+     "id_profesor": "166",
+     "materia": "19",
+     "id_materia": "19"
+    },
+    {
+     "profesor": "94",
+     "id_profesor": "94",
+     "materia": "23",
+     "id_materia": "23"
+    },
+    {
+     "profesor": "119",
+     "id_profesor": "119",
+     "materia": "23",
+     "id_materia": "23"
+    },
+    {
+     "profesor": "46",
+     "id_profesor": "46",
+     "materia": "24",
+     "id_materia": "24"
+    },
+    {
+     "profesor": "6",
+     "id_profesor": "6",
+     "materia": "31",
+     "id_materia": "31"
+    },
+    {
+     "profesor": "265",
+     "id_profesor": "265",
+     "materia": "38",
+     "id_materia": "38"
+    },
+    {
+     "profesor": "128",
+     "id_profesor": "128",
+     "materia": "41",
+     "id_materia": "41"
+    },
+    {
+     "profesor": "156",
+     "id_profesor": "156",
+     "materia": "41",
+     "id_materia": "41"
+    },
+    {
+     "profesor": "188",
+     "id_profesor": "188",
+     "materia": "59",
+     "id_materia": "59"
+    },
+    {
+     "profesor": "220",
+     "id_profesor": "220",
+     "materia": "67",
+     "id_materia": "67"
+    },
+    {
+     "profesor": "28",
+     "id_profesor": "28",
+     "materia": "73",
+     "id_materia": "73"
+    },
+    {
+     "profesor": "189",
+     "id_profesor": "189",
+     "materia": "90",
+     "id_materia": "90"
+    },
+    {
+     "profesor": "144",
+     "id_profesor": "144",
+     "materia": "92",
+     "id_materia": "92"
+    },
+    {
+     "profesor": "201",
+     "id_profesor": "201",
+     "materia": "94",
+     "id_materia": "94"
+    },
+    {
+     "profesor": "157",
+     "id_profesor": "157",
+     "materia": "95",
+     "id_materia": "95"
+    },
+    {
+     "profesor": "153",
+     "id_profesor": "153",
+     "materia": "99",
+     "id_materia": "99"
+    },
+    {
+     "profesor": "7",
+     "id_profesor": "7",
+     "materia": "100",
+     "id_materia": "100"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "11",
+    "nombre": "11",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "5",
+     "id_profesor": "5",
+     "materia": "1",
+     "id_materia": "1"
+    },
+    {
+     "profesor": "178",
+     "id_profesor": "178",
+     "materia": "10",
+     "id_materia": "10"
+    },
+    {
+     "profesor": "197",
+     "id_profesor": "197",
+     "materia": "11",
+     "id_materia": "11"
+    },
+    {
+     "profesor": "146",
+     "id_profesor": "146",
+     "materia": "17",
+     "id_materia": "17"
+    },
+    {
+     "profesor": "149",
+     "id_profesor": "149",
+     "materia": "21",
+     "id_materia": "21"
+    },
+    {
+     "profesor": "110",
+     "id_profesor": "110",
+     "materia": "36",
+     "id_materia": "36"
+    },
+    {
+     "profesor": "147",
+     "id_profesor": "147",
+     "materia": "44",
+     "id_materia": "44"
+    },
+    {
+     "profesor": "157",
+     "id_profesor": "157",
+     "materia": "44",
+     "id_materia": "44"
+    },
+    {
+     "profesor": "173",
+     "id_profesor": "173",
+     "materia": "52",
+     "id_materia": "52"
+    },
+    {
+     "profesor": "133",
+     "id_profesor": "133",
+     "materia": "55",
+     "id_materia": "55"
+    },
+    {
+     "profesor": "42",
+     "id_profesor": "42",
+     "materia": "61",
+     "id_materia": "61"
+    },
+    {
+     "profesor": "117",
+     "id_profesor": "117",
+     "materia": "68",
+     "id_materia": "68"
+    },
+    {
+     "profesor": "123",
+     "id_profesor": "123",
+     "materia": "72",
+     "id_materia": "72"
+    },
+    {
+     "profesor": "183",
+     "id_profesor": "183",
+     "materia": "73",
+     "id_materia": "73"
+    },
+    {
+     "profesor": "76",
+     "id_profesor": "76",
+     "materia": "76",
+     "id_materia": "76"
+    },
+    {
+     "profesor": "226",
+     "id_profesor": "226",
+     "materia": "79",
+     "id_materia": "79"
+    },
+    {
+     "profesor": "130",
+     "id_profesor": "130",
+     "materia": "80",
+     "id_materia": "80"
+    },
+    {
+     "profesor": "280",
+     "id_profesor": "280",
+     "materia": "81",
+     "id_materia": "81"
+    },
+    {
+     "profesor": "234",
+     "id_profesor": "234",
+     "materia": "86",
+     "id_materia": "86"
+    },
+    {
+     "profesor": "201",
+     "id_profesor": "201",
+     "materia": "94",
+     "id_materia": "94"
+    },
+    {
+     "profesor": "278",
+     "id_profesor": "278",
+     "materia": "98",
+     "id_materia": "98"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "12",
+    "nombre": "12",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "139",
+     "id_profesor": "139",
+     "materia": "5",
+     "id_materia": "5"
+    },
+    {
+     "profesor": "61",
+     "id_profesor": "61",
+     "materia": "6",
+     "id_materia": "6"
+    },
+    {
+     "profesor": "197",
+     "id_profesor": "197",
+     "materia": "11",
+     "id_materia": "11"
+    },
+    {
+     "profesor": "33",
+     "id_profesor": "33",
+     "materia": "22",
+     "id_materia": "22"
+    },
+    {
+     "profesor": "127",
+     "id_profesor": "127",
+     "materia": "23",
+     "id_materia": "23"
+    },
+    {
+     "profesor": "82",
+     "id_profesor": "82",
+     "materia": "34",
+     "id_materia": "34"
+    },
+    {
+     "profesor": "232",
+     "id_profesor": "232",
+     "materia": "42",
+     "id_materia": "42"
+    },
+    {
+     "profesor": "216",
+     "id_profesor": "216",
+     "materia": "52",
+     "id_materia": "52"
+    },
+    {
+     "profesor": "258",
+     "id_profesor": "258",
+     "materia": "52",
+     "id_materia": "52"
+    },
+    {
+     "profesor": "182",
+     "id_profesor": "182",
+     "materia": "66",
+     "id_materia": "66"
+    },
+    {
+     "profesor": "245",
+     "id_profesor": "245",
+     "materia": "69",
+     "id_materia": "69"
+    },
+    {
+     "profesor": "76",
+     "id_profesor": "76",
+     "materia": "76",
+     "id_materia": "76"
+    },
+    {
+     "profesor": "184",
+     "id_profesor": "184",
+     "materia": "84",
+     "id_materia": "84"
+    },
+    {
+     "profesor": "276",
+     "id_profesor": "276",
+     "materia": "86",
+     "id_materia": "86"
+    },
+    {
+     "profesor": "27",
+     "id_profesor": "27",
+     "materia": "87",
+     "id_materia": "87"
+    },
+    {
+     "profesor": "18",
+     "id_profesor": "18",
+     "materia": "100",
+     "id_materia": "100"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "13",
+    "nombre": "13",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "29",
+     "id_profesor": "29",
+     "materia": "7",
+     "id_materia": "7"
+    },
+    {
+     "profesor": "178",
+     "id_profesor": "178",
+     "materia": "10",
+     "id_materia": "10"
+    },
+    {
+     "profesor": "228",
+     "id_profesor": "228",
+     "materia": "18",
+     "id_materia": "18"
+    },
+    {
+     "profesor": "151",
+     "id_profesor": "151",
+     "materia": "22",
+     "id_materia": "22"
+    },
+    {
+     "profesor": "97",
+     "id_profesor": "97",
+     "materia": "26",
+     "id_materia": "26"
+    },
+    {
+     "profesor": "62",
+     "id_profesor": "62",
+     "materia": "30",
+     "id_materia": "30"
+    },
+    {
+     "profesor": "119",
+     "id_profesor": "119",
+     "materia": "57",
+     "id_materia": "57"
+    },
+    {
+     "profesor": "154",
+     "id_profesor": "154",
+     "materia": "69",
+     "id_materia": "69"
+    },
+    {
+     "profesor": "200",
+     "id_profesor": "200",
+     "materia": "77",
+     "id_materia": "77"
+    },
+    {
+     "profesor": "280",
+     "id_profesor": "280",
+     "materia": "81",
+     "id_materia": "81"
+    },
+    {
+     "profesor": "181",
+     "id_profesor": "181",
+     "materia": "83",
+     "id_materia": "83"
+    },
+    {
+     "profesor": "50",
+     "id_profesor": "50",
+     "materia": "96",
+     "id_materia": "96"
+    },
+    {
+     "profesor": "261",
+     "id_profesor": "261",
+     "materia": "98",
+     "id_materia": "98"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "14",
+    "nombre": "14",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "136",
+     "id_profesor": "136",
+     "materia": "9",
+     "id_materia": "9"
+    },
+    {
+     "profesor": "263",
+     "id_profesor": "263",
+     "materia": "9",
+     "id_materia": "9"
+    },
+    {
+     "profesor": "33",
+     "id_profesor": "33",
+     "materia": "22",
+     "id_materia": "22"
+    },
+    {
+     "profesor": "94",
+     "id_profesor": "94",
+     "materia": "23",
+     "id_materia": "23"
+    },
+    {
+     "profesor": "66",
+     "id_profesor": "66",
+     "materia": "29",
+     "id_materia": "29"
+    },
+    {
+     "profesor": "62",
+     "id_profesor": "62",
+     "materia": "30",
+     "id_materia": "30"
+    },
+    {
+     "profesor": "271",
+     "id_profesor": "271",
+     "materia": "37",
+     "id_materia": "37"
+    },
+    {
+     "profesor": "93",
+     "id_profesor": "93",
+     "materia": "40",
+     "id_materia": "40"
+    },
+    {
+     "profesor": "99",
+     "id_profesor": "99",
+     "materia": "50",
+     "id_materia": "50"
+    },
+    {
+     "profesor": "108",
+     "id_profesor": "108",
+     "materia": "53",
+     "id_materia": "53"
+    },
+    {
+     "profesor": "207",
+     "id_profesor": "207",
+     "materia": "53",
+     "id_materia": "53"
+    },
+    {
+     "profesor": "293",
+     "id_profesor": "293",
+     "materia": "55",
+     "id_materia": "55"
+    },
+    {
+     "profesor": "284",
+     "id_profesor": "284",
+     "materia": "56",
+     "id_materia": "56"
+    },
+    {
+     "profesor": "119",
+     "id_profesor": "119",
+     "materia": "57",
+     "id_materia": "57"
+    },
+    {
+     "profesor": "140",
+     "id_profesor": "140",
+     "materia": "59",
+     "id_materia": "59"
+    },
+    {
+     "profesor": "31",
+     "id_profesor": "31",
+     "materia": "66",
+     "id_materia": "66"
+    },
+    {
+     "profesor": "117",
+     "id_profesor": "117",
+     "materia": "68",
+     "id_materia": "68"
+    },
+    {
+     "profesor": "76",
+     "id_profesor": "76",
+     "materia": "76",
+     "id_materia": "76"
+    },
+    {
+     "profesor": "69",
+     "id_profesor": "69",
+     "materia": "78",
+     "id_materia": "78"
+    },
+    {
+     "profesor": "7",
+     "id_profesor": "7",
+     "materia": "81",
+     "id_materia": "81"
+    },
+    {
+     "profesor": "184",
+     "id_profesor": "184",
+     "materia": "84",
+     "id_materia": "84"
+    },
+    {
+     "profesor": "160",
+     "id_profesor": "160",
+     "materia": "85",
+     "id_materia": "85"
+    },
+    {
+     "profesor": "276",
+     "id_profesor": "276",
+     "materia": "86",
+     "id_materia": "86"
+    },
+    {
+     "profesor": "167",
+     "id_profesor": "167",
+     "materia": "89",
+     "id_materia": "89"
+    },
+    {
+     "profesor": "52",
+     "id_profesor": "52",
+     "materia": "96",
+     "id_materia": "96"
+    },
+    {
+     "profesor": "253",
+     "id_profesor": "253",
+     "materia": "96",
+     "id_materia": "96"
+    },
+    {
+     "profesor": "261",
+     "id_profesor": "261",
+     "materia": "98",
+     "id_materia": "98"
+    },
+    {
+     "profesor": "153",
+     "id_profesor": "153",
+     "materia": "99",
+     "id_materia": "99"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "15",
+    "nombre": "15",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "32",
+     "id_profesor": "32",
+     "materia": "2",
+     "id_materia": "2"
+    },
+    {
+     "profesor": "29",
+     "id_profesor": "29",
+     "materia": "7",
+     "id_materia": "7"
+    },
+    {
+     "profesor": "178",
+     "id_profesor": "178",
+     "materia": "10",
+     "id_materia": "10"
+    },
+    {
+     "profesor": "197",
+     "id_profesor": "197",
+     "materia": "11",
+     "id_materia": "11"
+    },
+    {
+     "profesor": "12",
+     "id_profesor": "12",
+     "materia": "16",
+     "id_materia": "16"
+    },
+    {
+     "profesor": "166",
+     "id_profesor": "166",
+     "materia": "19",
+     "id_materia": "19"
+    },
+    {
+     "profesor": "120",
+     "id_profesor": "120",
+     "materia": "24",
+     "id_materia": "24"
+    },
+    {
+     "profesor": "246",
+     "id_profesor": "246",
+     "materia": "28",
+     "id_materia": "28"
+    },
+    {
+     "profesor": "195",
+     "id_profesor": "195",
+     "materia": "29",
+     "id_materia": "29"
+    },
+    {
+     "profesor": "266",
+     "id_profesor": "266",
+     "materia": "32",
+     "id_materia": "32"
+    },
+    {
+     "profesor": "295",
+     "id_profesor": "295",
+     "materia": "39",
+     "id_materia": "39"
+    },
+    {
+     "profesor": "212",
+     "id_profesor": "212",
+     "materia": "43",
+     "id_materia": "43"
+    },
+    {
+     "profesor": "171",
+     "id_profesor": "171",
+     "materia": "47",
+     "id_materia": "47"
+    },
+    {
+     "profesor": "299",
+     "id_profesor": "299",
+     "materia": "56",
+     "id_materia": "56"
+    },
+    {
+     "profesor": "179",
+     "id_profesor": "179",
+     "materia": "57",
+     "id_materia": "57"
+    },
+    {
+     "profesor": "188",
+     "id_profesor": "188",
+     "materia": "59",
+     "id_materia": "59"
+    },
+    {
+     "profesor": "74",
+     "id_profesor": "74",
+     "materia": "68",
+     "id_materia": "68"
+    },
+    {
+     "profesor": "236",
+     "id_profesor": "236",
+     "materia": "74",
+     "id_materia": "74"
+    },
+    {
+     "profesor": "269",
+     "id_profesor": "269",
+     "materia": "75",
+     "id_materia": "75"
+    },
+    {
+     "profesor": "226",
+     "id_profesor": "226",
+     "materia": "79",
+     "id_materia": "79"
+    },
+    {
+     "profesor": "221",
+     "id_profesor": "221",
+     "materia": "82",
+     "id_materia": "82"
+    },
+    {
+     "profesor": "157",
+     "id_profesor": "157",
+     "materia": "95",
+     "id_materia": "95"
+    },
+    {
+     "profesor": "3",
+     "id_profesor": "3",
+     "materia": "97",
+     "id_materia": "97"
+    },
+    {
+     "profesor": "145",
+     "id_profesor": "145",
+     "materia": "99",
+     "id_materia": "99"
+    },
+    {
+     "profesor": "153",
+     "id_profesor": "153",
+     "materia": "99",
+     "id_materia": "99"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "16",
+    "nombre": "16",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "180",
+     "id_profesor": "180",
+     "materia": "3",
+     "id_materia": "3"
+    },
+    {
+     "profesor": "263",
+     "id_profesor": "263",
+     "materia": "9",
+     "id_materia": "9"
+    },
+    {
+     "profesor": "178",
+     "id_profesor": "178",
+     "materia": "10",
+     "id_materia": "10"
+    },
+    {
+     "profesor": "56",
+     "id_profesor": "56",
+     "materia": "14",
+     "id_materia": "14"
+    },
+    {
+     "profesor": "246",
+     "id_profesor": "246",
+     "materia": "28",
+     "id_materia": "28"
+    },
+    {
+     "profesor": "251",
+     "id_profesor": "251",
+     "materia": "38",
+     "id_materia": "38"
+    },
+    {
+     "profesor": "232",
+     "id_profesor": "232",
+     "materia": "42",
+     "id_materia": "42"
+    },
+    {
+     "profesor": "265",
+     "id_profesor": "265",
+     "materia": "46",
+     "id_materia": "46"
+    },
+    {
+     "profesor": "45",
+     "id_profesor": "45",
+     "materia": "63",
+     "id_materia": "63"
+    },
+    {
+     "profesor": "113",
+     "id_profesor": "113",
+     "materia": "64",
+     "id_materia": "64"
+    },
+    {
+     "profesor": "54",
+     "id_profesor": "54",
+     "materia": "67",
+     "id_materia": "67"
+    },
+    {
+     "profesor": "245",
+     "id_profesor": "245",
+     "materia": "69",
+     "id_materia": "69"
+    },
+    {
+     "profesor": "192",
+     "id_profesor": "192",
+     "materia": "72",
+     "id_materia": "72"
+    },
+    {
+     "profesor": "183",
+     "id_profesor": "183",
+     "materia": "73",
+     "id_materia": "73"
+    },
+    {
+     "profesor": "209",
+     "id_profesor": "209",
+     "materia": "76",
+     "id_materia": "76"
+    },
+    {
+     "profesor": "134",
+     "id_profesor": "134",
+     "materia": "78",
+     "id_materia": "78"
+    },
+    {
+     "profesor": "154",
+     "id_profesor": "154",
+     "materia": "80",
+     "id_materia": "80"
+    },
+    {
+     "profesor": "63",
+     "id_profesor": "63",
+     "materia": "93",
+     "id_materia": "93"
+    },
+    {
+     "profesor": "163",
+     "id_profesor": "163",
+     "materia": "94",
+     "id_materia": "94"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "17",
+    "nombre": "17",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "116",
+     "id_profesor": "116",
+     "materia": "2",
+     "id_materia": "2"
+    },
+    {
+     "profesor": "264",
+     "id_profesor": "264",
+     "materia": "8",
+     "id_materia": "8"
+    },
+    {
+     "profesor": "270",
+     "id_profesor": "270",
+     "materia": "13",
+     "id_materia": "13"
+    },
+    {
+     "profesor": "64",
+     "id_profesor": "64",
+     "materia": "14",
+     "id_materia": "14"
+    },
+    {
+     "profesor": "12",
+     "id_profesor": "12",
+     "materia": "16",
+     "id_materia": "16"
+    },
+    {
+     "profesor": "33",
+     "id_profesor": "33",
+     "materia": "22",
+     "id_materia": "22"
+    },
+    {
+     "profesor": "272",
+     "id_profesor": "272",
+     "materia": "24",
+     "id_materia": "24"
+    },
+    {
+     "profesor": "104",
+     "id_profesor": "104",
+     "materia": "25",
+     "id_materia": "25"
+    },
+    {
+     "profesor": "58",
+     "id_profesor": "58",
+     "materia": "37",
+     "id_materia": "37"
+    },
+    {
+     "profesor": "257",
+     "id_profesor": "257",
+     "materia": "46",
+     "id_materia": "46"
+    },
+    {
+     "profesor": "135",
+     "id_profesor": "135",
+     "materia": "48",
+     "id_materia": "48"
+    },
+    {
+     "profesor": "170",
+     "id_profesor": "170",
+     "materia": "49",
+     "id_materia": "49"
+    },
+    {
+     "profesor": "174",
+     "id_profesor": "174",
+     "materia": "57",
+     "id_materia": "57"
+    },
+    {
+     "profesor": "50",
+     "id_profesor": "50",
+     "materia": "58",
+     "id_materia": "58"
+    },
+    {
+     "profesor": "79",
+     "id_profesor": "79",
+     "materia": "60",
+     "id_materia": "60"
+    },
+    {
+     "profesor": "113",
+     "id_profesor": "113",
+     "materia": "64",
+     "id_materia": "64"
+    },
+    {
+     "profesor": "43",
+     "id_profesor": "43",
+     "materia": "77",
+     "id_materia": "77"
+    },
+    {
+     "profesor": "260",
+     "id_profesor": "260",
+     "materia": "85",
+     "id_materia": "85"
+    },
+    {
+     "profesor": "255",
+     "id_profesor": "255",
+     "materia": "93",
+     "id_materia": "93"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "18",
+    "nombre": "18",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "61",
+     "id_profesor": "61",
+     "materia": "6",
+     "id_materia": "6"
+    },
+    {
+     "profesor": "56",
+     "id_profesor": "56",
+     "materia": "14",
+     "id_materia": "14"
+    },
+    {
+     "profesor": "150",
+     "id_profesor": "150",
+     "materia": "16",
+     "id_materia": "16"
+    },
+    {
+     "profesor": "169",
+     "id_profesor": "169",
+     "materia": "21",
+     "id_materia": "21"
+    },
+    {
+     "profesor": "177",
+     "id_profesor": "177",
+     "materia": "21",
+     "id_materia": "21"
+    },
+    {
+     "profesor": "218",
+     "id_profesor": "218",
+     "materia": "25",
+     "id_materia": "25"
+    },
+    {
+     "profesor": "6",
+     "id_profesor": "6",
+     "materia": "31",
+     "id_materia": "31"
+    },
+    {
+     "profesor": "156",
+     "id_profesor": "156",
+     "materia": "41",
+     "id_materia": "41"
+    },
+    {
+     "profesor": "170",
+     "id_profesor": "170",
+     "materia": "49",
+     "id_materia": "49"
+    },
+    {
+     "profesor": "248",
+     "id_profesor": "248",
+     "materia": "49",
+     "id_materia": "49"
+    },
+    {
+     "profesor": "47",
+     "id_profesor": "47",
+     "materia": "51",
+     "id_materia": "51"
+    },
+    {
+     "profesor": "172",
+     "id_profesor": "172",
+     "materia": "62",
+     "id_materia": "62"
+    },
+    {
+     "profesor": "63",
+     "id_profesor": "63",
+     "materia": "63",
+     "id_materia": "63"
+    },
+    {
+     "profesor": "101",
+     "id_profesor": "101",
+     "materia": "65",
+     "id_materia": "65"
+    },
+    {
+     "profesor": "241",
+     "id_profesor": "241",
+     "materia": "89",
+     "id_materia": "89"
+    },
+    {
+     "profesor": "189",
+     "id_profesor": "189",
+     "materia": "90",
+     "id_materia": "90"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "19",
+    "nombre": "19",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "5",
+     "id_profesor": "5",
+     "materia": "1",
+     "id_materia": "1"
+    },
+    {
+     "profesor": "116",
+     "id_profesor": "116",
+     "materia": "2",
+     "id_materia": "2"
+    },
+    {
+     "profesor": "298",
+     "id_profesor": "298",
+     "materia": "4",
+     "id_materia": "4"
+    },
+    {
+     "profesor": "139",
+     "id_profesor": "139",
+     "materia": "5",
+     "id_materia": "5"
+    },
+    {
+     "profesor": "242",
+     "id_profesor": "242",
+     "materia": "7",
+     "id_materia": "7"
+    },
+    {
+     "profesor": "23",
+     "id_profesor": "23",
+     "materia": "9",
+     "id_materia": "9"
+    },
+    {
+     "profesor": "291",
+     "id_profesor": "291",
+     "materia": "12",
+     "id_materia": "12"
+    },
+    {
+     "profesor": "12",
+     "id_profesor": "12",
+     "materia": "16",
+     "id_materia": "16"
+    },
+    {
+     "profesor": "21",
+     "id_profesor": "21",
+     "materia": "22",
+     "id_materia": "22"
+    },
+    {
+     "profesor": "213",
+     "id_profesor": "213",
+     "materia": "27",
+     "id_materia": "27"
+    },
+    {
+     "profesor": "87",
+     "id_profesor": "87",
+     "materia": "42",
+     "id_materia": "42"
+    },
+    {
+     "profesor": "53",
+     "id_profesor": "53",
+     "materia": "43",
+     "id_materia": "43"
+    },
+    {
+     "profesor": "109",
+     "id_profesor": "109",
+     "materia": "47",
+     "id_materia": "47"
+    },
+    {
+     "profesor": "177",
+     "id_profesor": "177",
+     "materia": "52",
+     "id_materia": "52"
+    },
+    {
+     "profesor": "133",
+     "id_profesor": "133",
+     "materia": "55",
+     "id_materia": "55"
+    },
+    {
+     "profesor": "120",
+     "id_profesor": "120",
+     "materia": "61",
+     "id_materia": "61"
+    },
+    {
+     "profesor": "113",
+     "id_profesor": "113",
+     "materia": "64",
+     "id_materia": "64"
+    },
+    {
+     "profesor": "243",
+     "id_profesor": "243",
+     "materia": "71",
+     "id_materia": "71"
+    },
+    {
+     "profesor": "28",
+     "id_profesor": "28",
+     "materia": "73",
+     "id_materia": "73"
+    },
+    {
+     "profesor": "264",
+     "id_profesor": "264",
+     "materia": "74",
+     "id_materia": "74"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "20",
+    "nombre": "20",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "65",
+     "id_profesor": "65",
+     "materia": "1",
+     "id_materia": "1"
+    },
+    {
+     "profesor": "40",
+     "id_profesor": "40",
+     "materia": "4",
+     "id_materia": "4"
+    },
+    {
+     "profesor": "139",
+     "id_profesor": "139",
+     "materia": "5",
+     "id_materia": "5"
+    },
+    {
+     "profesor": "270",
+     "id_profesor": "270",
+     "materia": "13",
+     "id_materia": "13"
+    },
+    {
+     "profesor": "97",
+     "id_profesor": "97",
+     "materia": "26",
+     "id_materia": "26"
+    },
+    {
+     "profesor": "231",
+     "id_profesor": "231",
+     "materia": "26",
+     "id_materia": "26"
+    },
+    {
+     "profesor": "219",
+     "id_profesor": "219",
+     "materia": "30",
+     "id_materia": "30"
+    },
+    {
+     "profesor": "266",
+     "id_profesor": "266",
+     "materia": "32",
+     "id_materia": "32"
+    },
+    {
+     "profesor": "175",
+     "id_profesor": "175",
+     "materia": "41",
+     "id_materia": "41"
+    },
+    {
+     "profesor": "258",
+     "id_profesor": "258",
+     "materia": "52",
+     "id_materia": "52"
+    },
+    {
+     "profesor": "208",
+     "id_profesor": "208",
+     "materia": "54",
+     "id_materia": "54"
+    },
+    {
+     "profesor": "133",
+     "id_profesor": "133",
+     "materia": "55",
+     "id_materia": "55"
+    },
+    {
+     "profesor": "182",
+     "id_profesor": "182",
+     "materia": "66",
+     "id_materia": "66"
+    },
+    {
+     "profesor": "158",
+     "id_profesor": "158",
+     "materia": "70",
+     "id_materia": "70"
+    },
+    {
+     "profesor": "78",
+     "id_profesor": "78",
+     "materia": "80",
+     "id_materia": "80"
+    },
+    {
+     "profesor": "189",
+     "id_profesor": "189",
+     "materia": "90",
+     "id_materia": "90"
+    },
+    {
+     "profesor": "152",
+     "id_profesor": "152",
+     "materia": "91",
+     "id_materia": "91"
+    },
+    {
+     "profesor": "1",
+     "id_profesor": "1",
+     "materia": "94",
+     "id_materia": "94"
+    },
+    {
+     "profesor": "168",
+     "id_profesor": "168",
+     "materia": "96",
+     "id_materia": "96"
+    },
+    {
+     "profesor": "10",
+     "id_profesor": "10",
+     "materia": "99",
+     "id_materia": "99"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "21",
+    "nombre": "21",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "5",
+     "id_profesor": "5",
+     "materia": "1",
+     "id_materia": "1"
+    },
+    {
+     "profesor": "213",
+     "id_profesor": "213",
+     "materia": "27",
+     "id_materia": "27"
+    },
+    {
+     "profesor": "268",
+     "id_profesor": "268",
+     "materia": "28",
+     "id_materia": "28"
+    },
+    {
+     "profesor": "92",
+     "id_profesor": "92",
+     "materia": "29",
+     "id_materia": "29"
+    },
+    {
+     "profesor": "214",
+     "id_profesor": "214",
+     "materia": "33",
+     "id_materia": "33"
+    },
+    {
+     "profesor": "72",
+     "id_profesor": "72",
+     "materia": "36",
+     "id_materia": "36"
+    },
+    {
+     "profesor": "83",
+     "id_profesor": "83",
+     "materia": "36",
+     "id_materia": "36"
+    },
+    {
+     "profesor": "295",
+     "id_profesor": "295",
+     "materia": "39",
+     "id_materia": "39"
+    },
+    {
+     "profesor": "187",
+     "id_profesor": "187",
+     "materia": "40",
+     "id_materia": "40"
+    },
+    {
+     "profesor": "41",
+     "id_profesor": "41",
+     "materia": "45",
+     "id_materia": "45"
+    },
+    {
+     "profesor": "210",
+     "id_profesor": "210",
+     "materia": "45",
+     "id_materia": "45"
+    },
+    {
+     "profesor": "15",
+     "id_profesor": "15",
+     "materia": "51",
+     "id_materia": "51"
+    },
+    {
+     "profesor": "281",
+     "id_profesor": "281",
+     "materia": "62",
+     "id_materia": "62"
+    },
+    {
+     "profesor": "117",
+     "id_profesor": "117",
+     "materia": "68",
+     "id_materia": "68"
+    },
+    {
+     "profesor": "245",
+     "id_profesor": "245",
+     "materia": "69",
+     "id_materia": "69"
+    },
+    {
+     "profesor": "264",
+     "id_profesor": "264",
+     "materia": "74",
+     "id_materia": "74"
+    },
+    {
+     "profesor": "269",
+     "id_profesor": "269",
+     "materia": "75",
+     "id_materia": "75"
+    },
+    {
+     "profesor": "200",
+     "id_profesor": "200",
+     "materia": "77",
+     "id_materia": "77"
+    },
+    {
+     "profesor": "152",
+     "id_profesor": "152",
+     "materia": "91",
+     "id_materia": "91"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "22",
+    "nombre": "22",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "61",
+     "id_profesor": "61",
+     "materia": "6",
+     "id_materia": "6"
+    },
+    {
+     "profesor": "268",
+     "id_profesor": "268",
+     "materia": "28",
+     "id_materia": "28"
+    },
+    {
+     "profesor": "66",
+     "id_profesor": "66",
+     "materia": "29",
+     "id_materia": "29"
+    },
+    {
+     "profesor": "195",
+     "id_profesor": "195",
+     "materia": "29",
+     "id_materia": "29"
+    },
+    {
+     "profesor": "105",
+     "id_profesor": "105",
+     "materia": "35",
+     "id_materia": "35"
+    },
+    {
+     "profesor": "53",
+     "id_profesor": "53",
+     "materia": "43",
+     "id_materia": "43"
+    },
+    {
+     "profesor": "286",
+     "id_profesor": "286",
+     "materia": "48",
+     "id_materia": "48"
+    },
+    {
+     "profesor": "91",
+     "id_profesor": "91",
+     "materia": "50",
+     "id_materia": "50"
+    },
+    {
+     "profesor": "289",
+     "id_profesor": "289",
+     "materia": "51",
+     "id_materia": "51"
+    },
+    {
+     "profesor": "9",
+     "id_profesor": "9",
+     "materia": "60",
+     "id_materia": "60"
+    },
+    {
+     "profesor": "60",
+     "id_profesor": "60",
+     "materia": "60",
+     "id_materia": "60"
+    },
+    {
+     "profesor": "16",
+     "id_profesor": "16",
+     "materia": "65",
+     "id_materia": "65"
+    },
+    {
+     "profesor": "51",
+     "id_profesor": "51",
+     "materia": "65",
+     "id_materia": "65"
+    },
+    {
+     "profesor": "209",
+     "id_profesor": "209",
+     "materia": "76",
+     "id_materia": "76"
+    },
+    {
+     "profesor": "78",
+     "id_profesor": "78",
+     "materia": "80",
+     "id_materia": "80"
+    },
+    {
+     "profesor": "276",
+     "id_profesor": "276",
+     "materia": "86",
+     "id_materia": "86"
+    },
+    {
+     "profesor": "112",
+     "id_profesor": "112",
+     "materia": "89",
+     "id_materia": "89"
+    },
+    {
+     "profesor": "201",
+     "id_profesor": "201",
+     "materia": "94",
+     "id_materia": "94"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "23",
+    "nombre": "23",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "111",
+     "id_profesor": "111",
+     "materia": "3",
+     "id_materia": "3"
+    },
+    {
+     "profesor": "56",
+     "id_profesor": "56",
+     "materia": "14",
+     "id_materia": "14"
+    },
+    {
+     "profesor": "150",
+     "id_profesor": "150",
+     "materia": "16",
+     "id_materia": "16"
+    },
+    {
+     "profesor": "228",
+     "id_profesor": "228",
+     "materia": "18",
+     "id_materia": "18"
+    },
+    {
+     "profesor": "169",
+     "id_profesor": "169",
+     "materia": "21",
+     "id_materia": "21"
+    },
+    {
+     "profesor": "97",
+     "id_profesor": "97",
+     "materia": "26",
+     "id_materia": "26"
+    },
+    {
+     "profesor": "151",
+     "id_profesor": "151",
+     "materia": "32",
+     "id_materia": "32"
+    },
+    {
+     "profesor": "255",
+     "id_profesor": "255",
+     "materia": "32",
+     "id_materia": "32"
+    },
+    {
+     "profesor": "199",
+     "id_profesor": "199",
+     "materia": "47",
+     "id_materia": "47"
+    },
+    {
+     "profesor": "225",
+     "id_profesor": "225",
+     "materia": "53",
+     "id_materia": "53"
+    },
+    {
+     "profesor": "122",
+     "id_profesor": "122",
+     "materia": "54",
+     "id_materia": "54"
+    },
+    {
+     "profesor": "284",
+     "id_profesor": "284",
+     "materia": "56",
+     "id_materia": "56"
+    },
+    {
+     "profesor": "174",
+     "id_profesor": "174",
+     "materia": "57",
+     "id_materia": "57"
+    },
+    {
+     "profesor": "70",
+     "id_profesor": "70",
+     "materia": "58",
+     "id_materia": "58"
+    },
+    {
+     "profesor": "30",
+     "id_profesor": "30",
+     "materia": "60",
+     "id_materia": "60"
+    },
+    {
+     "profesor": "203",
+     "id_profesor": "203",
+     "materia": "64",
+     "id_materia": "64"
+    },
+    {
+     "profesor": "273",
+     "id_profesor": "273",
+     "materia": "66",
+     "id_materia": "66"
+    },
+    {
+     "profesor": "11",
+     "id_profesor": "11",
+     "materia": "67",
+     "id_materia": "67"
+    },
+    {
+     "profesor": "154",
+     "id_profesor": "154",
+     "materia": "69",
+     "id_materia": "69"
+    },
+    {
+     "profesor": "19",
+     "id_profesor": "19",
+     "materia": "72",
+     "id_materia": "72"
+    },
+    {
+     "profesor": "254",
+     "id_profesor": "254",
+     "materia": "73",
+     "id_materia": "73"
+    },
+    {
+     "profesor": "267",
+     "id_profesor": "267",
+     "materia": "74",
+     "id_materia": "74"
+    },
+    {
+     "profesor": "76",
+     "id_profesor": "76",
+     "materia": "76",
+     "id_materia": "76"
+    },
+    {
+     "profesor": "134",
+     "id_profesor": "134",
+     "materia": "78",
+     "id_materia": "78"
+    },
+    {
+     "profesor": "226",
+     "id_profesor": "226",
+     "materia": "79",
+     "id_materia": "79"
+    },
+    {
+     "profesor": "4",
+     "id_profesor": "4",
+     "materia": "83",
+     "id_materia": "83"
+    },
+    {
+     "profesor": "181",
+     "id_profesor": "181",
+     "materia": "83",
+     "id_materia": "83"
+    },
+    {
+     "profesor": "261",
+     "id_profesor": "261",
+     "materia": "84",
+     "id_materia": "84"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "24",
+    "nombre": "24",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "194",
+     "id_profesor": "194",
+     "materia": "2",
+     "id_materia": "2"
+    },
+    {
+     "profesor": "244",
+     "id_profesor": "244",
+     "materia": "7",
+     "id_materia": "7"
+    },
+    {
+     "profesor": "23",
+     "id_profesor": "23",
+     "materia": "9",
+     "id_materia": "9"
+    },
+    {
+     "profesor": "14",
+     "id_profesor": "14",
+     "materia": "13",
+     "id_materia": "13"
+    },
+    {
+     "profesor": "237",
+     "id_profesor": "237",
+     "materia": "15",
+     "id_materia": "15"
+    },
+    {
+     "profesor": "17",
+     "id_profesor": "17",
+     "materia": "34",
+     "id_materia": "34"
+    },
+    {
+     "profesor": "102",
+     "id_profesor": "102",
+     "materia": "39",
+     "id_materia": "39"
+    },
+    {
+     "profesor": "187",
+     "id_profesor": "187",
+     "materia": "40",
+     "id_materia": "40"
+    },
+    {
+     "profesor": "77",
+     "id_profesor": "77",
+     "materia": "54",
+     "id_materia": "54"
+    },
+    {
+     "profesor": "42",
+     "id_profesor": "42",
+     "materia": "61",
+     "id_materia": "61"
+    },
+    {
+     "profesor": "203",
+     "id_profesor": "203",
+     "materia": "64",
+     "id_materia": "64"
+    },
+    {
+     "profesor": "121",
+     "id_profesor": "121",
+     "materia": "78",
+     "id_materia": "78"
+    },
+    {
+     "profesor": "191",
+     "id_profesor": "191",
+     "materia": "90",
+     "id_materia": "90"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "25",
+    "nombre": "25",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "140",
+     "id_profesor": "140",
+     "materia": "6",
+     "id_materia": "6"
+    },
+    {
+     "profesor": "14",
+     "id_profesor": "14",
+     "materia": "13",
+     "id_materia": "13"
+    },
+    {
+     "profesor": "97",
+     "id_profesor": "97",
+     "materia": "26",
+     "id_materia": "26"
+    },
+    {
+     "profesor": "105",
+     "id_profesor": "105",
+     "materia": "35",
+     "id_materia": "35"
+    },
+    {
+     "profesor": "265",
+     "id_profesor": "265",
+     "materia": "38",
+     "id_materia": "38"
+    },
+    {
+     "profesor": "108",
+     "id_profesor": "108",
+     "materia": "53",
+     "id_materia": "53"
+    },
+    {
+     "profesor": "9",
+     "id_profesor": "9",
+     "materia": "60",
+     "id_materia": "60"
+    },
+    {
+     "profesor": "182",
+     "id_profesor": "182",
+     "materia": "66",
+     "id_materia": "66"
+    },
+    {
+     "profesor": "58",
+     "id_profesor": "58",
+     "materia": "71",
+     "id_materia": "71"
+    },
+    {
+     "profesor": "200",
+     "id_profesor": "200",
+     "materia": "77",
+     "id_materia": "77"
+    },
+    {
+     "profesor": "226",
+     "id_profesor": "226",
+     "materia": "79",
+     "id_materia": "79"
+    },
+    {
+     "profesor": "71",
+     "id_profesor": "71",
+     "materia": "84",
+     "id_materia": "84"
+    },
+    {
+     "profesor": "153",
+     "id_profesor": "153",
+     "materia": "99",
+     "id_materia": "99"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "26",
+    "nombre": "26",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "143",
+     "id_profesor": "143",
+     "materia": "8",
+     "id_materia": "8"
+    },
+    {
+     "profesor": "206",
+     "id_profesor": "206",
+     "materia": "14",
+     "id_materia": "14"
+    },
+    {
+     "profesor": "146",
+     "id_profesor": "146",
+     "materia": "17",
+     "id_materia": "17"
+    },
+    {
+     "profesor": "228",
+     "id_profesor": "228",
+     "materia": "18",
+     "id_materia": "18"
+    },
+    {
+     "profesor": "164",
+     "id_profesor": "164",
+     "materia": "21",
+     "id_materia": "21"
+    },
+    {
+     "profesor": "177",
+     "id_profesor": "177",
+     "materia": "21",
+     "id_materia": "21"
+    },
+    {
+     "profesor": "204",
+     "id_profesor": "204",
+     "materia": "25",
+     "id_materia": "25"
+    },
+    {
+     "profesor": "17",
+     "id_profesor": "17",
+     "materia": "34",
+     "id_materia": "34"
+    },
+    {
+     "profesor": "105",
+     "id_profesor": "105",
+     "materia": "35",
+     "id_materia": "35"
+    },
+    {
+     "profesor": "271",
+     "id_profesor": "271",
+     "materia": "37",
+     "id_materia": "37"
+    },
+    {
+     "profesor": "15",
+     "id_profesor": "15",
+     "materia": "51",
+     "id_materia": "51"
+    },
+    {
+     "profesor": "290",
+     "id_profesor": "290",
+     "materia": "54",
+     "id_materia": "54"
+    },
+    {
+     "profesor": "174",
+     "id_profesor": "174",
+     "materia": "57",
+     "id_materia": "57"
+    },
+    {
+     "profesor": "281",
+     "id_profesor": "281",
+     "materia": "62",
+     "id_materia": "62"
+    },
+    {
+     "profesor": "45",
+     "id_profesor": "45",
+     "materia": "63",
+     "id_materia": "63"
+    },
+    {
+     "profesor": "125",
+     "id_profesor": "125",
+     "materia": "70",
+     "id_materia": "70"
+    },
+    {
+     "profesor": "243",
+     "id_profesor": "243",
+     "materia": "71",
+     "id_materia": "71"
+    },
+    {
+     "profesor": "222",
+     "id_profesor": "222",
+     "materia": "81",
+     "id_materia": "81"
+    },
+    {
+     "profesor": "63",
+     "id_profesor": "63",
+     "materia": "93",
+     "id_materia": "93"
+    },
+    {
+     "profesor": "224",
+     "id_profesor": "224",
+     "materia": "93",
+     "id_materia": "93"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "27",
+    "nombre": "27",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "5",
+     "id_profesor": "5",
+     "materia": "1",
+     "id_materia": "1"
+    },
+    {
+     "profesor": "111",
+     "id_profesor": "111",
+     "materia": "3",
+     "id_materia": "3"
+    },
+    {
+     "profesor": "285",
+     "id_profesor": "285",
+     "materia": "12",
+     "id_materia": "12"
+    },
+    {
+     "profesor": "100",
+     "id_profesor": "100",
+     "materia": "13",
+     "id_materia": "13"
+    },
+    {
+     "profesor": "141",
+     "id_profesor": "141",
+     "materia": "18",
+     "id_materia": "18"
+    },
+    {
+     "profesor": "96",
+     "id_profesor": "96",
+     "materia": "20",
+     "id_materia": "20"
+    },
+    {
+     "profesor": "169",
+     "id_profesor": "169",
+     "materia": "21",
+     "id_materia": "21"
+    },
+    {
+     "profesor": "120",
+     "id_profesor": "120",
+     "materia": "24",
+     "id_materia": "24"
+    },
+    {
+     "profesor": "66",
+     "id_profesor": "66",
+     "materia": "29",
+     "id_materia": "29"
+    },
+    {
+     "profesor": "105",
+     "id_profesor": "105",
+     "materia": "35",
+     "id_materia": "35"
+    },
+    {
+     "profesor": "110",
+     "id_profesor": "110",
+     "materia": "36",
+     "id_materia": "36"
+    },
+    {
+     "profesor": "128",
+     "id_profesor": "128",
+     "materia": "41",
+     "id_materia": "41"
+    },
+    {
+     "profesor": "232",
+     "id_profesor": "232",
+     "materia": "42",
+     "id_materia": "42"
+    },
+    {
+     "profesor": "147",
+     "id_profesor": "147",
+     "materia": "44",
+     "id_materia": "44"
+    },
+    {
+     "profesor": "155",
+     "id_profesor": "155",
+     "materia": "44",
+     "id_materia": "44"
+    },
+    {
+     "profesor": "44",
+     "id_profesor": "44",
+     "materia": "45",
+     "id_materia": "45"
+    },
+    {
+     "profesor": "8",
+     "id_profesor": "8",
+     "materia": "48",
+     "id_materia": "48"
+    },
+    {
+     "profesor": "70",
+     "id_profesor": "70",
+     "materia": "58",
+     "id_materia": "58"
+    },
+    {
+     "profesor": "172",
+     "id_profesor": "172",
+     "materia": "62",
+     "id_materia": "62"
+    },
+    {
+     "profesor": "192",
+     "id_profesor": "192",
+     "materia": "72",
+     "id_materia": "72"
+    },
+    {
+     "profesor": "261",
+     "id_profesor": "261",
+     "materia": "84",
+     "id_materia": "84"
+    },
+    {
+     "profesor": "227",
+     "id_profesor": "227",
+     "materia": "91",
+     "id_materia": "91"
+    },
+    {
+     "profesor": "18",
+     "id_profesor": "18",
+     "materia": "100",
+     "id_materia": "100"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "28",
+    "nombre": "28",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "285",
+     "id_profesor": "285",
+     "materia": "12",
+     "id_materia": "12"
+    },
+    {
+     "profesor": "226",
+     "id_profesor": "226",
+     "materia": "15",
+     "id_materia": "15"
+    },
+    {
+     "profesor": "204",
+     "id_profesor": "204",
+     "materia": "25",
+     "id_materia": "25"
+    },
+    {
+     "profesor": "249",
+     "id_profesor": "249",
+     "materia": "30",
+     "id_materia": "30"
+    },
+    {
+     "profesor": "13",
+     "id_profesor": "13",
+     "materia": "32",
+     "id_materia": "32"
+    },
+    {
+     "profesor": "85",
+     "id_profesor": "85",
+     "materia": "33",
+     "id_materia": "33"
+    },
+    {
+     "profesor": "1",
+     "id_profesor": "1",
+     "materia": "36",
+     "id_materia": "36"
+    },
+    {
+     "profesor": "247",
+     "id_profesor": "247",
+     "materia": "50",
+     "id_materia": "50"
+    },
+    {
+     "profesor": "122",
+     "id_profesor": "122",
+     "materia": "54",
+     "id_materia": "54"
+    },
+    {
+     "profesor": "74",
+     "id_profesor": "74",
+     "materia": "59",
+     "id_materia": "59"
+    },
+    {
+     "profesor": "283",
+     "id_profesor": "283",
+     "materia": "68",
+     "id_materia": "68"
+    },
+    {
+     "profesor": "125",
+     "id_profesor": "125",
+     "materia": "70",
+     "id_materia": "70"
+    },
+    {
+     "profesor": "19",
+     "id_profesor": "19",
+     "materia": "72",
+     "id_materia": "72"
+    },
+    {
+     "profesor": "231",
+     "id_profesor": "231",
+     "materia": "74",
+     "id_materia": "74"
+    },
+    {
+     "profesor": "76",
+     "id_profesor": "76",
+     "materia": "76",
+     "id_materia": "76"
+    },
+    {
+     "profesor": "200",
+     "id_profesor": "200",
+     "materia": "77",
+     "id_materia": "77"
+    },
+    {
+     "profesor": "241",
+     "id_profesor": "241",
+     "materia": "89",
+     "id_materia": "89"
+    },
+    {
+     "profesor": "253",
+     "id_profesor": "253",
+     "materia": "96",
+     "id_materia": "96"
+    },
+    {
+     "profesor": "89",
+     "id_profesor": "89",
+     "materia": "97",
+     "id_materia": "97"
+    },
+    {
+     "profesor": "18",
+     "id_profesor": "18",
+     "materia": "100",
+     "id_materia": "100"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "29",
+    "nombre": "29",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "194",
+     "id_profesor": "194",
+     "materia": "2",
+     "id_materia": "2"
+    },
+    {
+     "profesor": "111",
+     "id_profesor": "111",
+     "materia": "3",
+     "id_materia": "3"
+    },
+    {
+     "profesor": "162",
+     "id_profesor": "162",
+     "materia": "4",
+     "id_materia": "4"
+    },
+    {
+     "profesor": "298",
+     "id_profesor": "298",
+     "materia": "4",
+     "id_materia": "4"
+    },
+    {
+     "profesor": "161",
+     "id_profesor": "161",
+     "materia": "6",
+     "id_materia": "6"
+    },
+    {
+     "profesor": "270",
+     "id_profesor": "270",
+     "materia": "13",
+     "id_materia": "13"
+    },
+    {
+     "profesor": "296",
+     "id_profesor": "296",
+     "materia": "16",
+     "id_materia": "16"
+    },
+    {
+     "profesor": "39",
+     "id_profesor": "39",
+     "materia": "19",
+     "id_materia": "19"
+    },
+    {
+     "profesor": "33",
+     "id_profesor": "33",
+     "materia": "22",
+     "id_materia": "22"
+    },
+    {
+     "profesor": "213",
+     "id_profesor": "213",
+     "materia": "27",
+     "id_materia": "27"
+    },
+    {
+     "profesor": "99",
+     "id_profesor": "99",
+     "materia": "50",
+     "id_materia": "50"
+    },
+    {
+     "profesor": "247",
+     "id_profesor": "247",
+     "materia": "50",
+     "id_materia": "50"
+    },
+    {
+     "profesor": "108",
+     "id_profesor": "108",
+     "materia": "53",
+     "id_materia": "53"
+    },
+    {
+     "profesor": "121",
+     "id_profesor": "121",
+     "materia": "78",
+     "id_materia": "78"
+    },
+    {
+     "profesor": "24",
+     "id_profesor": "24",
+     "materia": "80",
+     "id_materia": "80"
+    },
+    {
+     "profesor": "106",
+     "id_profesor": "106",
+     "materia": "82",
+     "id_materia": "82"
+    },
+    {
+     "profesor": "185",
+     "id_profesor": "185",
+     "materia": "89",
+     "id_materia": "89"
+    },
+    {
+     "profesor": "278",
+     "id_profesor": "278",
+     "materia": "98",
+     "id_materia": "98"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "30",
+    "nombre": "30",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "116",
+     "id_profesor": "116",
+     "materia": "2",
+     "id_materia": "2"
+    },
+    {
+     "profesor": "180",
+     "id_profesor": "180",
+     "materia": "3",
+     "id_materia": "3"
+    },
+    {
+     "profesor": "67",
+     "id_profesor": "67",
+     "materia": "15",
+     "id_materia": "15"
+    },
+    {
+     "profesor": "62",
+     "id_profesor": "62",
+     "materia": "30",
+     "id_materia": "30"
+    },
+    {
+     "profesor": "82",
+     "id_profesor": "82",
+     "materia": "34",
+     "id_materia": "34"
+    },
+    {
+     "profesor": "251",
+     "id_profesor": "251",
+     "materia": "38",
+     "id_materia": "38"
+    },
+    {
+     "profesor": "8",
+     "id_profesor": "8",
+     "materia": "48",
+     "id_materia": "48"
+    },
+    {
+     "profesor": "173",
+     "id_profesor": "173",
+     "materia": "52",
+     "id_materia": "52"
+    },
+    {
+     "profesor": "299",
+     "id_profesor": "299",
+     "materia": "56",
+     "id_materia": "56"
+    },
+    {
+     "profesor": "50",
+     "id_profesor": "50",
+     "materia": "58",
+     "id_materia": "58"
+    },
+    {
+     "profesor": "80",
+     "id_profesor": "80",
+     "materia": "59",
+     "id_materia": "59"
+    },
+    {
+     "profesor": "51",
+     "id_profesor": "51",
+     "materia": "65",
+     "id_materia": "65"
+    },
+    {
+     "profesor": "58",
+     "id_profesor": "58",
+     "materia": "71",
+     "id_materia": "71"
+    },
+    {
+     "profesor": "138",
+     "id_profesor": "138",
+     "materia": "72",
+     "id_materia": "72"
+    },
+    {
+     "profesor": "43",
+     "id_profesor": "43",
+     "materia": "77",
+     "id_materia": "77"
+    },
+    {
+     "profesor": "202",
+     "id_profesor": "202",
+     "materia": "85",
+     "id_materia": "85"
+    },
+    {
+     "profesor": "3",
+     "id_profesor": "3",
+     "materia": "97",
+     "id_materia": "97"
+    },
+    {
+     "profesor": "278",
+     "id_profesor": "278",
+     "materia": "98",
+     "id_materia": "98"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "31",
+    "nombre": "31",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "139",
+     "id_profesor": "139",
+     "materia": "5",
+     "id_materia": "5"
+    },
+    {
+     "profesor": "244",
+     "id_profesor": "244",
+     "materia": "7",
+     "id_materia": "7"
+    },
+    {
+     "profesor": "285",
+     "id_profesor": "285",
+     "materia": "12",
+     "id_materia": "12"
+    },
+    {
+     "profesor": "56",
+     "id_profesor": "56",
+     "materia": "14",
+     "id_materia": "14"
+    },
+    {
+     "profesor": "267",
+     "id_profesor": "267",
+     "materia": "18",
+     "id_materia": "18"
+    },
+    {
+     "profesor": "36",
+     "id_profesor": "36",
+     "materia": "20",
+     "id_materia": "20"
+    },
+    {
+     "profesor": "102",
+     "id_profesor": "102",
+     "materia": "25",
+     "id_materia": "25"
+    },
+    {
+     "profesor": "246",
+     "id_profesor": "246",
+     "materia": "28",
+     "id_materia": "28"
+    },
+    {
+     "profesor": "62",
+     "id_profesor": "62",
+     "materia": "30",
+     "id_materia": "30"
+    },
+    {
+     "profesor": "271",
+     "id_profesor": "271",
+     "materia": "37",
+     "id_materia": "37"
+    },
+    {
+     "profesor": "284",
+     "id_profesor": "284",
+     "materia": "56",
+     "id_materia": "56"
+    },
+    {
+     "profesor": "299",
+     "id_profesor": "299",
+     "materia": "56",
+     "id_materia": "56"
+    },
+    {
+     "profesor": "34",
+     "id_profesor": "34",
+     "materia": "63",
+     "id_materia": "63"
+    },
+    {
+     "profesor": "124",
+     "id_profesor": "124",
+     "materia": "65",
+     "id_materia": "65"
+    },
+    {
+     "profesor": "243",
+     "id_profesor": "243",
+     "materia": "71",
+     "id_materia": "71"
+    },
+    {
+     "profesor": "106",
+     "id_profesor": "106",
+     "materia": "82",
+     "id_materia": "82"
+    },
+    {
+     "profesor": "221",
+     "id_profesor": "221",
+     "materia": "82",
+     "id_materia": "82"
+    },
+    {
+     "profesor": "240",
+     "id_profesor": "240",
+     "materia": "83",
+     "id_materia": "83"
+    },
+    {
+     "profesor": "157",
+     "id_profesor": "157",
+     "materia": "95",
+     "id_materia": "95"
+    },
+    {
+     "profesor": "205",
+     "id_profesor": "205",
+     "materia": "95",
+     "id_materia": "95"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "32",
+    "nombre": "32",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "237",
+     "id_profesor": "237",
+     "materia": "15",
+     "id_materia": "15"
+    },
+    {
+     "profesor": "235",
+     "id_profesor": "235",
+     "materia": "20",
+     "id_materia": "20"
+    },
+    {
+     "profesor": "177",
+     "id_profesor": "177",
+     "materia": "21",
+     "id_materia": "21"
+    },
+    {
+     "profesor": "268",
+     "id_profesor": "268",
+     "materia": "28",
+     "id_materia": "28"
+    },
+    {
+     "profesor": "195",
+     "id_profesor": "195",
+     "materia": "29",
+     "id_materia": "29"
+    },
+    {
+     "profesor": "83",
+     "id_profesor": "83",
+     "materia": "36",
+     "id_materia": "36"
+    },
+    {
+     "profesor": "271",
+     "id_profesor": "271",
+     "materia": "37",
+     "id_materia": "37"
+    },
+    {
+     "profesor": "274",
+     "id_profesor": "274",
+     "materia": "44",
+     "id_materia": "44"
+    },
+    {
+     "profesor": "35",
+     "id_profesor": "35",
+     "materia": "49",
+     "id_materia": "49"
+    },
+    {
+     "profesor": "123",
+     "id_profesor": "123",
+     "materia": "72",
+     "id_materia": "72"
+    },
+    {
+     "profesor": "24",
+     "id_profesor": "24",
+     "materia": "80",
+     "id_materia": "80"
+    },
+    {
+     "profesor": "181",
+     "id_profesor": "181",
+     "materia": "83",
+     "id_materia": "83"
+    },
+    {
+     "profesor": "149",
+     "id_profesor": "149",
+     "materia": "85",
+     "id_materia": "85"
+    },
+    {
+     "profesor": "205",
+     "id_profesor": "205",
+     "materia": "95",
+     "id_materia": "95"
+    },
+    {
+     "profesor": "253",
+     "id_profesor": "253",
+     "materia": "96",
+     "id_materia": "96"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "33",
+    "nombre": "33",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "180",
+     "id_profesor": "180",
+     "materia": "3",
+     "id_materia": "3"
+    },
+    {
+     "profesor": "88",
+     "id_profesor": "88",
+     "materia": "5",
+     "id_materia": "5"
+    },
+    {
+     "profesor": "29",
+     "id_profesor": "29",
+     "materia": "7",
+     "id_materia": "7"
+    },
+    {
+     "profesor": "70",
+     "id_profesor": "70",
+     "materia": "10",
+     "id_materia": "10"
+    },
+    {
+     "profesor": "178",
+     "id_profesor": "178",
+     "materia": "10",
+     "id_materia": "10"
+    },
+    {
+     "profesor": "100",
+     "id_profesor": "100",
+     "materia": "13",
+     "id_materia": "13"
+    },
+    {
+     "profesor": "48",
+     "id_profesor": "48",
+     "materia": "17",
+     "id_materia": "17"
+    },
+    {
+     "profesor": "235",
+     "id_profesor": "235",
+     "materia": "20",
+     "id_materia": "20"
+    },
+    {
+     "profesor": "148",
+     "id_profesor": "148",
+     "materia": "27",
+     "id_materia": "27"
+    },
+    {
+     "profesor": "268",
+     "id_profesor": "268",
+     "materia": "28",
+     "id_materia": "28"
+    },
+    {
+     "profesor": "102",
+     "id_profesor": "102",
+     "materia": "39",
+     "id_materia": "39"
+    },
+    {
+     "profesor": "170",
+     "id_profesor": "170",
+     "materia": "40",
+     "id_materia": "40"
+    },
+    {
+     "profesor": "132",
+     "id_profesor": "132",
+     "materia": "43",
+     "id_materia": "43"
+    },
+    {
+     "profesor": "229",
+     "id_profesor": "229",
+     "materia": "46",
+     "id_materia": "46"
+    },
+    {
+     "profesor": "73",
+     "id_profesor": "73",
+     "materia": "49",
+     "id_materia": "49"
+    },
+    {
+     "profesor": "47",
+     "id_profesor": "47",
+     "materia": "51",
+     "id_materia": "51"
+    },
+    {
+     "profesor": "103",
+     "id_profesor": "103",
+     "materia": "61",
+     "id_materia": "61"
+    },
+    {
+     "profesor": "221",
+     "id_profesor": "221",
+     "materia": "82",
+     "id_materia": "82"
+    },
+    {
+     "profesor": "184",
+     "id_profesor": "184",
+     "materia": "84",
+     "id_materia": "84"
+    },
+    {
+     "profesor": "287",
+     "id_profesor": "287",
+     "materia": "84",
+     "id_materia": "84"
+    },
+    {
+     "profesor": "126",
+     "id_profesor": "126",
+     "materia": "90",
+     "id_materia": "90"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "34",
+    "nombre": "34",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "161",
+     "id_profesor": "161",
+     "materia": "6",
+     "id_materia": "6"
+    },
+    {
+     "profesor": "291",
+     "id_profesor": "291",
+     "materia": "12",
+     "id_materia": "12"
+    },
+    {
+     "profesor": "206",
+     "id_profesor": "206",
+     "materia": "14",
+     "id_materia": "14"
+    },
+    {
+     "profesor": "36",
+     "id_profesor": "36",
+     "materia": "20",
+     "id_materia": "20"
+    },
+    {
+     "profesor": "44",
+     "id_profesor": "44",
+     "materia": "45",
+     "id_materia": "45"
+    },
+    {
+     "profesor": "229",
+     "id_profesor": "229",
+     "materia": "46",
+     "id_materia": "46"
+    },
+    {
+     "profesor": "173",
+     "id_profesor": "173",
+     "materia": "52",
+     "id_materia": "52"
+    },
+    {
+     "profesor": "103",
+     "id_profesor": "103",
+     "materia": "61",
+     "id_materia": "61"
+    },
+    {
+     "profesor": "45",
+     "id_profesor": "45",
+     "materia": "63",
+     "id_materia": "63"
+    },
+    {
+     "profesor": "125",
+     "id_profesor": "125",
+     "materia": "70",
+     "id_materia": "70"
+    },
+    {
+     "profesor": "256",
+     "id_profesor": "256",
+     "materia": "85",
+     "id_materia": "85"
+    },
+    {
+     "profesor": "27",
+     "id_profesor": "27",
+     "materia": "87",
+     "id_materia": "87"
+    },
+    {
+     "profesor": "241",
+     "id_profesor": "241",
+     "materia": "89",
+     "id_materia": "89"
+    },
+    {
+     "profesor": "55",
+     "id_profesor": "55",
+     "materia": "95",
+     "id_materia": "95"
+    },
+    {
+     "profesor": "150",
+     "id_profesor": "150",
+     "materia": "97",
+     "id_materia": "97"
+    },
+    {
+     "profesor": "10",
+     "id_profesor": "10",
+     "materia": "99",
+     "id_materia": "99"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "35",
+    "nombre": "35",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "65",
+     "id_profesor": "65",
+     "materia": "1",
+     "id_materia": "1"
+    },
+    {
+     "profesor": "143",
+     "id_profesor": "143",
+     "materia": "8",
+     "id_materia": "8"
+    },
+    {
+     "profesor": "64",
+     "id_profesor": "64",
+     "materia": "14",
+     "id_materia": "14"
+    },
+    {
+     "profesor": "267",
+     "id_profesor": "267",
+     "materia": "18",
+     "id_materia": "18"
+    },
+    {
+     "profesor": "6",
+     "id_profesor": "6",
+     "materia": "31",
+     "id_materia": "31"
+    },
+    {
+     "profesor": "13",
+     "id_profesor": "13",
+     "materia": "32",
+     "id_materia": "32"
+    },
+    {
+     "profesor": "17",
+     "id_profesor": "17",
+     "materia": "34",
+     "id_materia": "34"
+    },
+    {
+     "profesor": "193",
+     "id_profesor": "193",
+     "materia": "35",
+     "id_materia": "35"
+    },
+    {
+     "profesor": "156",
+     "id_profesor": "156",
+     "materia": "41",
+     "id_materia": "41"
+    },
+    {
+     "profesor": "53",
+     "id_profesor": "53",
+     "materia": "43",
+     "id_materia": "43"
+    },
+    {
+     "profesor": "212",
+     "id_profesor": "212",
+     "materia": "44",
+     "id_materia": "44"
+    },
+    {
+     "profesor": "210",
+     "id_profesor": "210",
+     "materia": "45",
+     "id_materia": "45"
+    },
+    {
+     "profesor": "196",
+     "id_profesor": "196",
+     "materia": "46",
+     "id_materia": "46"
+    },
+    {
+     "profesor": "199",
+     "id_profesor": "199",
+     "materia": "47",
+     "id_materia": "47"
+    },
+    {
+     "profesor": "108",
+     "id_profesor": "108",
+     "materia": "53",
+     "id_materia": "53"
+    },
+    {
+     "profesor": "74",
+     "id_profesor": "74",
+     "materia": "59",
+     "id_materia": "59"
+    },
+    {
+     "profesor": "103",
+     "id_profesor": "103",
+     "materia": "61",
+     "id_materia": "61"
+    },
+    {
+     "profesor": "75",
+     "id_profesor": "75",
+     "materia": "63",
+     "id_materia": "63"
+    },
+    {
+     "profesor": "243",
+     "id_profesor": "243",
+     "materia": "71",
+     "id_materia": "71"
+    },
+    {
+     "profesor": "37",
+     "id_profesor": "37",
+     "materia": "79",
+     "id_materia": "79"
+    },
+    {
+     "profesor": "29",
+     "id_profesor": "29",
+     "materia": "88",
+     "id_materia": "88"
+    },
+    {
+     "profesor": "191",
+     "id_profesor": "191",
+     "materia": "90",
+     "id_materia": "90"
+    },
+    {
+     "profesor": "63",
+     "id_profesor": "63",
+     "materia": "93",
+     "id_materia": "93"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "36",
+    "nombre": "36",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "162",
+     "id_profesor": "162",
+     "materia": "4",
+     "id_materia": "4"
+    },
+    {
+     "profesor": "143",
+     "id_profesor": "143",
+     "materia": "8",
+     "id_materia": "8"
+    },
+    {
+     "profesor": "267",
+     "id_profesor": "267",
+     "materia": "18",
+     "id_materia": "18"
+    },
+    {
+     "profesor": "266",
+     "id_profesor": "266",
+     "materia": "32",
+     "id_materia": "32"
+    },
+    {
+     "profesor": "85",
+     "id_profesor": "85",
+     "materia": "33",
+     "id_materia": "33"
+    },
+    {
+     "profesor": "295",
+     "id_profesor": "295",
+     "materia": "39",
+     "id_materia": "39"
+    },
+    {
+     "profesor": "157",
+     "id_profesor": "157",
+     "materia": "44",
+     "id_materia": "44"
+    },
+    {
+     "profesor": "247",
+     "id_profesor": "247",
+     "materia": "50",
+     "id_materia": "50"
+    },
+    {
+     "profesor": "233",
+     "id_profesor": "233",
+     "materia": "51",
+     "id_materia": "51"
+    },
+    {
+     "profesor": "59",
+     "id_profesor": "59",
+     "materia": "56",
+     "id_materia": "56"
+    },
+    {
+     "profesor": "186",
+     "id_profesor": "186",
+     "materia": "75",
+     "id_materia": "75"
+    },
+    {
+     "profesor": "297",
+     "id_profesor": "297",
+     "materia": "79",
+     "id_materia": "79"
+    },
+    {
+     "profesor": "260",
+     "id_profesor": "260",
+     "materia": "85",
+     "id_materia": "85"
+    },
+    {
+     "profesor": "115",
+     "id_profesor": "115",
+     "materia": "87",
+     "id_materia": "87"
+    },
+    {
+     "profesor": "144",
+     "id_profesor": "144",
+     "materia": "92",
+     "id_materia": "92"
+    },
+    {
+     "profesor": "278",
+     "id_profesor": "278",
+     "materia": "98",
+     "id_materia": "98"
+    },
+    {
+     "profesor": "7",
+     "id_profesor": "7",
+     "materia": "100",
+     "id_materia": "100"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "37",
+    "nombre": "37",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "191",
+     "id_profesor": "191",
+     "materia": "10",
+     "id_materia": "10"
+    },
+    {
+     "profesor": "296",
+     "id_profesor": "296",
+     "materia": "16",
+     "id_materia": "16"
+    },
+    {
+     "profesor": "166",
+     "id_profesor": "166",
+     "materia": "19",
+     "id_materia": "19"
+    },
+    {
+     "profesor": "120",
+     "id_profesor": "120",
+     "materia": "24",
+     "id_materia": "24"
+    },
+    {
+     "profesor": "219",
+     "id_profesor": "219",
+     "materia": "30",
+     "id_materia": "30"
+    },
+    {
+     "profesor": "295",
+     "id_profesor": "295",
+     "materia": "39",
+     "id_materia": "39"
+    },
+    {
+     "profesor": "137",
+     "id_profesor": "137",
+     "materia": "41",
+     "id_materia": "41"
+    },
+    {
+     "profesor": "114",
+     "id_profesor": "114",
+     "materia": "47",
+     "id_materia": "47"
+    },
+    {
+     "profesor": "286",
+     "id_profesor": "286",
+     "materia": "48",
+     "id_materia": "48"
+    },
+    {
+     "profesor": "50",
+     "id_profesor": "50",
+     "materia": "58",
+     "id_materia": "58"
+    },
+    {
+     "profesor": "198",
+     "id_profesor": "198",
+     "materia": "58",
+     "id_materia": "58"
+    },
+    {
+     "profesor": "80",
+     "id_profesor": "80",
+     "materia": "59",
+     "id_materia": "59"
+    },
+    {
+     "profesor": "281",
+     "id_profesor": "281",
+     "materia": "62",
+     "id_materia": "62"
+    },
+    {
+     "profesor": "283",
+     "id_profesor": "283",
+     "materia": "68",
+     "id_materia": "68"
+    },
+    {
+     "profesor": "158",
+     "id_profesor": "158",
+     "materia": "70",
+     "id_materia": "70"
+    },
+    {
+     "profesor": "160",
+     "id_profesor": "160",
+     "materia": "85",
+     "id_materia": "85"
+    },
+    {
+     "profesor": "115",
+     "id_profesor": "115",
+     "materia": "87",
+     "id_materia": "87"
+    },
+    {
+     "profesor": "152",
+     "id_profesor": "152",
+     "materia": "91",
+     "id_materia": "91"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "38",
+    "nombre": "38",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "26",
+     "id_profesor": "26",
+     "materia": "11",
+     "id_materia": "11"
+    },
+    {
+     "profesor": "67",
+     "id_profesor": "67",
+     "materia": "15",
+     "id_materia": "15"
+    },
+    {
+     "profesor": "48",
+     "id_profesor": "48",
+     "materia": "17",
+     "id_materia": "17"
+    },
+    {
+     "profesor": "25",
+     "id_profesor": "25",
+     "materia": "31",
+     "id_materia": "31"
+    },
+    {
+     "profesor": "17",
+     "id_profesor": "17",
+     "materia": "34",
+     "id_materia": "34"
+    },
+    {
+     "profesor": "135",
+     "id_profesor": "135",
+     "materia": "48",
+     "id_materia": "48"
+    },
+    {
+     "profesor": "299",
+     "id_profesor": "299",
+     "materia": "56",
+     "id_materia": "56"
+    },
+    {
+     "profesor": "119",
+     "id_profesor": "119",
+     "materia": "57",
+     "id_materia": "57"
+    },
+    {
+     "profesor": "50",
+     "id_profesor": "50",
+     "materia": "58",
+     "id_materia": "58"
+    },
+    {
+     "profesor": "198",
+     "id_profesor": "198",
+     "materia": "58",
+     "id_materia": "58"
+    },
+    {
+     "profesor": "172",
+     "id_profesor": "172",
+     "materia": "62",
+     "id_materia": "62"
+    },
+    {
+     "profesor": "131",
+     "id_profesor": "131",
+     "materia": "79",
+     "id_materia": "79"
+    },
+    {
+     "profesor": "297",
+     "id_profesor": "297",
+     "materia": "79",
+     "id_materia": "79"
+    },
+    {
+     "profesor": "256",
+     "id_profesor": "256",
+     "materia": "88",
+     "id_materia": "88"
+    },
+    {
+     "profesor": "63",
+     "id_profesor": "63",
+     "materia": "93",
+     "id_materia": "93"
+    },
+    {
+     "profesor": "253",
+     "id_profesor": "253",
+     "materia": "96",
+     "id_materia": "96"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "39",
+    "nombre": "39",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "190",
+     "id_profesor": "190",
+     "materia": "11",
+     "id_materia": "11"
+    },
+    {
+     "profesor": "197",
+     "id_profesor": "197",
+     "materia": "11",
+     "id_materia": "11"
+    },
+    {
+     "profesor": "100",
+     "id_profesor": "100",
+     "materia": "13",
+     "id_materia": "13"
+    },
+    {
+     "profesor": "279",
+     "id_profesor": "279",
+     "materia": "23",
+     "id_materia": "23"
+    },
+    {
+     "profesor": "265",
+     "id_profesor": "265",
+     "materia": "38",
+     "id_materia": "38"
+    },
+    {
+     "profesor": "232",
+     "id_profesor": "232",
+     "materia": "42",
+     "id_materia": "42"
+    },
+    {
+     "profesor": "44",
+     "id_profesor": "44",
+     "materia": "45",
+     "id_materia": "45"
+    },
+    {
+     "profesor": "47",
+     "id_profesor": "47",
+     "materia": "51",
+     "id_materia": "51"
+    },
+    {
+     "profesor": "83",
+     "id_profesor": "83",
+     "materia": "69",
+     "id_materia": "69"
+    },
+    {
+     "profesor": "269",
+     "id_profesor": "269",
+     "materia": "75",
+     "id_materia": "75"
+    },
+    {
+     "profesor": "78",
+     "id_profesor": "78",
+     "materia": "80",
+     "id_materia": "80"
+    },
+    {
+     "profesor": "280",
+     "id_profesor": "280",
+     "materia": "81",
+     "id_materia": "81"
+    },
+    {
+     "profesor": "91",
+     "id_profesor": "91",
+     "materia": "89",
+     "id_materia": "89"
+    },
+    {
+     "profesor": "71",
+     "id_profesor": "71",
+     "materia": "91",
+     "id_materia": "91"
+    },
+    {
+     "profesor": "227",
+     "id_profesor": "227",
+     "materia": "91",
+     "id_materia": "91"
+    },
+    {
+     "profesor": "201",
+     "id_profesor": "201",
+     "materia": "94",
+     "id_materia": "94"
+    },
+    {
+     "profesor": "55",
+     "id_profesor": "55",
+     "materia": "95",
+     "id_materia": "95"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "40",
+    "nombre": "40",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "161",
+     "id_profesor": "161",
+     "materia": "2",
+     "id_materia": "2"
+    },
+    {
+     "profesor": "259",
+     "id_profesor": "259",
+     "materia": "3",
+     "id_materia": "3"
+    },
+    {
+     "profesor": "100",
+     "id_profesor": "100",
+     "materia": "13",
+     "id_materia": "13"
+    },
+    {
+     "profesor": "169",
+     "id_profesor": "169",
+     "materia": "21",
+     "id_materia": "21"
+    },
+    {
+     "profesor": "151",
+     "id_profesor": "151",
+     "materia": "22",
+     "id_materia": "22"
+    },
+    {
+     "profesor": "97",
+     "id_profesor": "97",
+     "materia": "26",
+     "id_materia": "26"
+    },
+    {
+     "profesor": "148",
+     "id_profesor": "148",
+     "materia": "27",
+     "id_materia": "27"
+    },
+    {
+     "profesor": "17",
+     "id_profesor": "17",
+     "materia": "34",
+     "id_materia": "34"
+    },
+    {
+     "profesor": "95",
+     "id_profesor": "95",
+     "materia": "34",
+     "id_materia": "34"
+    },
+    {
+     "profesor": "2",
+     "id_profesor": "2",
+     "materia": "46",
+     "id_materia": "46"
+    },
+    {
+     "profesor": "207",
+     "id_profesor": "207",
+     "materia": "53",
+     "id_materia": "53"
+    },
+    {
+     "profesor": "216",
+     "id_profesor": "216",
+     "materia": "55",
+     "id_materia": "55"
+    },
+    {
+     "profesor": "84",
+     "id_profesor": "84",
+     "materia": "57",
+     "id_materia": "57"
+    },
+    {
+     "profesor": "174",
+     "id_profesor": "174",
+     "materia": "57",
+     "id_materia": "57"
+    },
+    {
+     "profesor": "9",
+     "id_profesor": "9",
+     "materia": "60",
+     "id_materia": "60"
+    },
+    {
+     "profesor": "113",
+     "id_profesor": "113",
+     "materia": "64",
+     "id_materia": "64"
+    },
+    {
+     "profesor": "203",
+     "id_profesor": "203",
+     "materia": "64",
+     "id_materia": "64"
+    },
+    {
+     "profesor": "83",
+     "id_profesor": "83",
+     "materia": "69",
+     "id_materia": "69"
+    },
+    {
+     "profesor": "264",
+     "id_profesor": "264",
+     "materia": "74",
+     "id_materia": "74"
+    },
+    {
+     "profesor": "255",
+     "id_profesor": "255",
+     "materia": "75",
+     "id_materia": "75"
+    },
+    {
+     "profesor": "106",
+     "id_profesor": "106",
+     "materia": "82",
+     "id_materia": "82"
+    },
+    {
+     "profesor": "234",
+     "id_profesor": "234",
+     "materia": "86",
+     "id_materia": "86"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "41",
+    "nombre": "41",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "194",
+     "id_profesor": "194",
+     "materia": "2",
+     "id_materia": "2"
+    },
+    {
+     "profesor": "298",
+     "id_profesor": "298",
+     "materia": "4",
+     "id_materia": "4"
+    },
+    {
+     "profesor": "88",
+     "id_profesor": "88",
+     "materia": "5",
+     "id_materia": "5"
+    },
+    {
+     "profesor": "54",
+     "id_profesor": "54",
+     "materia": "8",
+     "id_materia": "8"
+    },
+    {
+     "profesor": "67",
+     "id_profesor": "67",
+     "materia": "15",
+     "id_materia": "15"
+    },
+    {
+     "profesor": "246",
+     "id_profesor": "246",
+     "materia": "28",
+     "id_materia": "28"
+    },
+    {
+     "profesor": "95",
+     "id_profesor": "95",
+     "materia": "34",
+     "id_materia": "34"
+    },
+    {
+     "profesor": "132",
+     "id_profesor": "132",
+     "materia": "43",
+     "id_materia": "43"
+    },
+    {
+     "profesor": "41",
+     "id_profesor": "41",
+     "materia": "45",
+     "id_materia": "45"
+    },
+    {
+     "profesor": "225",
+     "id_profesor": "225",
+     "materia": "54",
+     "id_materia": "54"
+    },
+    {
+     "profesor": "223",
+     "id_profesor": "223",
+     "materia": "67",
+     "id_materia": "67"
+    },
+    {
+     "profesor": "167",
+     "id_profesor": "167",
+     "materia": "76",
+     "id_materia": "76"
+    },
+    {
+     "profesor": "191",
+     "id_profesor": "191",
+     "materia": "90",
+     "id_materia": "90"
+    },
+    {
+     "profesor": "90",
+     "id_profesor": "90",
+     "materia": "92",
+     "id_materia": "92"
+    },
+    {
+     "profesor": "253",
+     "id_profesor": "253",
+     "materia": "96",
+     "id_materia": "96"
+    },
+    {
+     "profesor": "270",
+     "id_profesor": "270",
+     "materia": "99",
+     "id_materia": "99"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "42",
+    "nombre": "42",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "237",
+     "id_profesor": "237",
+     "materia": "15",
+     "id_materia": "15"
+    },
+    {
+     "profesor": "43",
+     "id_profesor": "43",
+     "materia": "17",
+     "id_materia": "17"
+    },
+    {
+     "profesor": "213",
+     "id_profesor": "213",
+     "materia": "27",
+     "id_materia": "27"
+    },
+    {
+     "profesor": "286",
+     "id_profesor": "286",
+     "materia": "48",
+     "id_materia": "48"
+    },
+    {
+     "profesor": "290",
+     "id_profesor": "290",
+     "materia": "54",
+     "id_materia": "54"
+    },
+    {
+     "profesor": "284",
+     "id_profesor": "284",
+     "materia": "56",
+     "id_materia": "56"
+    },
+    {
+     "profesor": "221",
+     "id_profesor": "221",
+     "materia": "58",
+     "id_materia": "58"
+    },
+    {
+     "profesor": "51",
+     "id_profesor": "51",
+     "materia": "65",
+     "id_materia": "65"
+    },
+    {
+     "profesor": "27",
+     "id_profesor": "27",
+     "materia": "87",
+     "id_materia": "87"
+    },
+    {
+     "profesor": "144",
+     "id_profesor": "144",
+     "materia": "92",
+     "id_materia": "92"
+    },
+    {
+     "profesor": "201",
+     "id_profesor": "201",
+     "materia": "94",
+     "id_materia": "94"
+    },
+    {
+     "profesor": "3",
+     "id_profesor": "3",
+     "materia": "97",
+     "id_materia": "97"
+    },
+    {
+     "profesor": "150",
+     "id_profesor": "150",
+     "materia": "97",
+     "id_materia": "97"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "43",
+    "nombre": "43",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "5",
+     "id_profesor": "5",
+     "materia": "1",
+     "id_materia": "1"
+    },
+    {
+     "profesor": "49",
+     "id_profesor": "49",
+     "materia": "8",
+     "id_materia": "8"
+    },
+    {
+     "profesor": "191",
+     "id_profesor": "191",
+     "materia": "10",
+     "id_materia": "10"
+    },
+    {
+     "profesor": "77",
+     "id_profesor": "77",
+     "materia": "12",
+     "id_materia": "12"
+    },
+    {
+     "profesor": "36",
+     "id_profesor": "36",
+     "materia": "20",
+     "id_materia": "20"
+    },
+    {
+     "profesor": "151",
+     "id_profesor": "151",
+     "materia": "22",
+     "id_materia": "22"
+    },
+    {
+     "profesor": "148",
+     "id_profesor": "148",
+     "materia": "27",
+     "id_materia": "27"
+    },
+    {
+     "profesor": "85",
+     "id_profesor": "85",
+     "materia": "33",
+     "id_materia": "33"
+    },
+    {
+     "profesor": "193",
+     "id_profesor": "193",
+     "materia": "35",
+     "id_materia": "35"
+    },
+    {
+     "profesor": "170",
+     "id_profesor": "170",
+     "materia": "40",
+     "id_materia": "40"
+    },
+    {
+     "profesor": "229",
+     "id_profesor": "229",
+     "materia": "46",
+     "id_materia": "46"
+    },
+    {
+     "profesor": "34",
+     "id_profesor": "34",
+     "materia": "63",
+     "id_materia": "63"
+    },
+    {
+     "profesor": "86",
+     "id_profesor": "86",
+     "materia": "73",
+     "id_materia": "73"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "44",
+    "nombre": "44",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "194",
+     "id_profesor": "194",
+     "materia": "2",
+     "id_materia": "2"
+    },
+    {
+     "profesor": "127",
+     "id_profesor": "127",
+     "materia": "33",
+     "id_materia": "33"
+    },
+    {
+     "profesor": "110",
+     "id_profesor": "110",
+     "materia": "36",
+     "id_materia": "36"
+    },
+    {
+     "profesor": "102",
+     "id_profesor": "102",
+     "materia": "39",
+     "id_materia": "39"
+    },
+    {
+     "profesor": "122",
+     "id_profesor": "122",
+     "materia": "54",
+     "id_materia": "54"
+    },
+    {
+     "profesor": "293",
+     "id_profesor": "293",
+     "materia": "55",
+     "id_materia": "55"
+    },
+    {
+     "profesor": "30",
+     "id_profesor": "30",
+     "materia": "60",
+     "id_materia": "60"
+    },
+    {
+     "profesor": "77",
+     "id_profesor": "77",
+     "materia": "88",
+     "id_materia": "88"
+    },
+    {
+     "profesor": "57",
+     "id_profesor": "57",
+     "materia": "94",
+     "id_materia": "94"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "45",
+    "nombre": "45",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "162",
+     "id_profesor": "162",
+     "materia": "4",
+     "id_materia": "4"
+    },
+    {
+     "profesor": "29",
+     "id_profesor": "29",
+     "materia": "7",
+     "id_materia": "7"
+    },
+    {
+     "profesor": "36",
+     "id_profesor": "36",
+     "materia": "20",
+     "id_materia": "20"
+    },
+    {
+     "profesor": "33",
+     "id_profesor": "33",
+     "materia": "22",
+     "id_materia": "22"
+    },
+    {
+     "profesor": "282",
+     "id_profesor": "282",
+     "materia": "23",
+     "id_materia": "23"
+    },
+    {
+     "profesor": "204",
+     "id_profesor": "204",
+     "materia": "25",
+     "id_materia": "25"
+    },
+    {
+     "profesor": "262",
+     "id_profesor": "262",
+     "materia": "26",
+     "id_materia": "26"
+    },
+    {
+     "profesor": "128",
+     "id_profesor": "128",
+     "materia": "30",
+     "id_materia": "30"
+    },
+    {
+     "profesor": "110",
+     "id_profesor": "110",
+     "materia": "36",
+     "id_materia": "36"
+    },
+    {
+     "profesor": "294",
+     "id_profesor": "294",
+     "materia": "38",
+     "id_materia": "38"
+    },
+    {
+     "profesor": "91",
+     "id_profesor": "91",
+     "materia": "50",
+     "id_materia": "50"
+    },
+    {
+     "profesor": "15",
+     "id_profesor": "15",
+     "materia": "53",
+     "id_materia": "53"
+    },
+    {
+     "profesor": "216",
+     "id_profesor": "216",
+     "materia": "55",
+     "id_materia": "55"
+    },
+    {
+     "profesor": "257",
+     "id_profesor": "257",
+     "materia": "55",
+     "id_materia": "55"
+    },
+    {
+     "profesor": "42",
+     "id_profesor": "42",
+     "materia": "61",
+     "id_materia": "61"
+    },
+    {
+     "profesor": "132",
+     "id_profesor": "132",
+     "materia": "63",
+     "id_materia": "63"
+    },
+    {
+     "profesor": "182",
+     "id_profesor": "182",
+     "materia": "66",
+     "id_materia": "66"
+    },
+    {
+     "profesor": "223",
+     "id_profesor": "223",
+     "materia": "67",
+     "id_materia": "67"
+    },
+    {
+     "profesor": "243",
+     "id_profesor": "243",
+     "materia": "71",
+     "id_materia": "71"
+    },
+    {
+     "profesor": "192",
+     "id_profesor": "192",
+     "materia": "72",
+     "id_materia": "72"
+    },
+    {
+     "profesor": "43",
+     "id_profesor": "43",
+     "materia": "77",
+     "id_materia": "77"
+    },
+    {
+     "profesor": "133",
+     "id_profesor": "133",
+     "materia": "87",
+     "id_materia": "87"
+    },
+    {
+     "profesor": "300",
+     "id_profesor": "300",
+     "materia": "93",
+     "id_materia": "93"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "46",
+    "nombre": "46",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "65",
+     "id_profesor": "65",
+     "materia": "1",
+     "id_materia": "1"
+    },
+    {
+     "profesor": "121",
+     "id_profesor": "121",
+     "materia": "5",
+     "id_materia": "5"
+    },
+    {
+     "profesor": "161",
+     "id_profesor": "161",
+     "materia": "6",
+     "id_materia": "6"
+    },
+    {
+     "profesor": "176",
+     "id_profesor": "176",
+     "materia": "9",
+     "id_materia": "9"
+    },
+    {
+     "profesor": "263",
+     "id_profesor": "263",
+     "materia": "9",
+     "id_materia": "9"
+    },
+    {
+     "profesor": "190",
+     "id_profesor": "190",
+     "materia": "11",
+     "id_materia": "11"
+    },
+    {
+     "profesor": "237",
+     "id_profesor": "237",
+     "materia": "15",
+     "id_materia": "15"
+    },
+    {
+     "profesor": "228",
+     "id_profesor": "228",
+     "materia": "18",
+     "id_materia": "18"
+    },
+    {
+     "profesor": "268",
+     "id_profesor": "268",
+     "materia": "28",
+     "id_materia": "28"
+    },
+    {
+     "profesor": "151",
+     "id_profesor": "151",
+     "materia": "32",
+     "id_materia": "32"
+    },
+    {
+     "profesor": "105",
+     "id_profesor": "105",
+     "materia": "35",
+     "id_materia": "35"
+    },
+    {
+     "profesor": "187",
+     "id_profesor": "187",
+     "materia": "40",
+     "id_materia": "40"
+    },
+    {
+     "profesor": "135",
+     "id_profesor": "135",
+     "materia": "48",
+     "id_materia": "48"
+    },
+    {
+     "profesor": "136",
+     "id_profesor": "136",
+     "materia": "62",
+     "id_materia": "62"
+    },
+    {
+     "profesor": "34",
+     "id_profesor": "34",
+     "materia": "63",
+     "id_materia": "63"
+    },
+    {
+     "profesor": "51",
+     "id_profesor": "51",
+     "materia": "65",
+     "id_materia": "65"
+    },
+    {
+     "profesor": "54",
+     "id_profesor": "54",
+     "materia": "67",
+     "id_materia": "67"
+    },
+    {
+     "profesor": "264",
+     "id_profesor": "264",
+     "materia": "74",
+     "id_materia": "74"
+    },
+    {
+     "profesor": "222",
+     "id_profesor": "222",
+     "materia": "81",
+     "id_materia": "81"
+    },
+    {
+     "profesor": "107",
+     "id_profesor": "107",
+     "materia": "83",
+     "id_materia": "83"
+    },
+    {
+     "profesor": "45",
+     "id_profesor": "45",
+     "materia": "88",
+     "id_materia": "88"
+    },
+    {
+     "profesor": "90",
+     "id_profesor": "90",
+     "materia": "92",
+     "id_materia": "92"
+    },
+    {
+     "profesor": "98",
+     "id_profesor": "98",
+     "materia": "99",
+     "id_materia": "99"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "47",
+    "nombre": "47",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "49",
+     "id_profesor": "49",
+     "materia": "8",
+     "id_materia": "8"
+    },
+    {
+     "profesor": "70",
+     "id_profesor": "70",
+     "materia": "10",
+     "id_materia": "10"
+    },
+    {
+     "profesor": "267",
+     "id_profesor": "267",
+     "materia": "18",
+     "id_materia": "18"
+    },
+    {
+     "profesor": "235",
+     "id_profesor": "235",
+     "materia": "20",
+     "id_materia": "20"
+    },
+    {
+     "profesor": "25",
+     "id_profesor": "25",
+     "materia": "31",
+     "id_materia": "31"
+    },
+    {
+     "profesor": "171",
+     "id_profesor": "171",
+     "materia": "47",
+     "id_materia": "47"
+    },
+    {
+     "profesor": "177",
+     "id_profesor": "177",
+     "materia": "52",
+     "id_materia": "52"
+    },
+    {
+     "profesor": "83",
+     "id_profesor": "83",
+     "materia": "69",
+     "id_materia": "69"
+    },
+    {
+     "profesor": "142",
+     "id_profesor": "142",
+     "materia": "73",
+     "id_materia": "73"
+    },
+    {
+     "profesor": "269",
+     "id_profesor": "269",
+     "materia": "75",
+     "id_materia": "75"
+    },
+    {
+     "profesor": "238",
+     "id_profesor": "238",
+     "materia": "84",
+     "id_materia": "84"
+    },
+    {
+     "profesor": "276",
+     "id_profesor": "276",
+     "materia": "86",
+     "id_materia": "86"
+    },
+    {
+     "profesor": "239",
+     "id_profesor": "239",
+     "materia": "88",
+     "id_materia": "88"
+    },
+    {
+     "profesor": "144",
+     "id_profesor": "144",
+     "materia": "92",
+     "id_materia": "92"
+    },
+    {
+     "profesor": "250",
+     "id_profesor": "250",
+     "materia": "93",
+     "id_materia": "93"
+    },
+    {
+     "profesor": "3",
+     "id_profesor": "3",
+     "materia": "97",
+     "id_materia": "97"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "48",
+    "nombre": "48",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "49",
+     "id_profesor": "49",
+     "materia": "8",
+     "id_materia": "8"
+    },
+    {
+     "profesor": "56",
+     "id_profesor": "56",
+     "materia": "14",
+     "id_materia": "14"
+    },
+    {
+     "profesor": "141",
+     "id_profesor": "141",
+     "materia": "18",
+     "id_materia": "18"
+    },
+    {
+     "profesor": "148",
+     "id_profesor": "148",
+     "materia": "27",
+     "id_materia": "27"
+    },
+    {
+     "profesor": "195",
+     "id_profesor": "195",
+     "materia": "29",
+     "id_materia": "29"
+    },
+    {
+     "profesor": "91",
+     "id_profesor": "91",
+     "materia": "39",
+     "id_materia": "39"
+    },
+    {
+     "profesor": "156",
+     "id_profesor": "156",
+     "materia": "41",
+     "id_materia": "41"
+    },
+    {
+     "profesor": "132",
+     "id_profesor": "132",
+     "materia": "43",
+     "id_materia": "43"
+    },
+    {
+     "profesor": "155",
+     "id_profesor": "155",
+     "materia": "44",
+     "id_materia": "44"
+    },
+    {
+     "profesor": "109",
+     "id_profesor": "109",
+     "materia": "47",
+     "id_materia": "47"
+    },
+    {
+     "profesor": "125",
+     "id_profesor": "125",
+     "materia": "70",
+     "id_materia": "70"
+    },
+    {
+     "profesor": "58",
+     "id_profesor": "58",
+     "materia": "71",
+     "id_materia": "71"
+    },
+    {
+     "profesor": "269",
+     "id_profesor": "269",
+     "materia": "75",
+     "id_materia": "75"
+    },
+    {
+     "profesor": "209",
+     "id_profesor": "209",
+     "materia": "76",
+     "id_materia": "76"
+    },
+    {
+     "profesor": "24",
+     "id_profesor": "24",
+     "materia": "80",
+     "id_materia": "80"
+    },
+    {
+     "profesor": "149",
+     "id_profesor": "149",
+     "materia": "85",
+     "id_materia": "85"
+    },
+    {
+     "profesor": "234",
+     "id_profesor": "234",
+     "materia": "86",
+     "id_materia": "86"
+    },
+    {
+     "profesor": "38",
+     "id_profesor": "38",
+     "materia": "88",
+     "id_materia": "88"
+    },
+    {
+     "profesor": "168",
+     "id_profesor": "168",
+     "materia": "96",
+     "id_materia": "96"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "49",
+    "nombre": "49",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "263",
+     "id_profesor": "263",
+     "materia": "9",
+     "id_materia": "9"
+    },
+    {
+     "profesor": "64",
+     "id_profesor": "64",
+     "materia": "14",
+     "id_materia": "14"
+    },
+    {
+     "profesor": "22",
+     "id_profesor": "22",
+     "materia": "15",
+     "id_materia": "15"
+    },
+    {
+     "profesor": "20",
+     "id_profesor": "20",
+     "materia": "16",
+     "id_materia": "16"
+    },
+    {
+     "profesor": "48",
+     "id_profesor": "48",
+     "materia": "17",
+     "id_materia": "17"
+    },
+    {
+     "profesor": "39",
+     "id_profesor": "39",
+     "materia": "19",
+     "id_materia": "19"
+    },
+    {
+     "profesor": "118",
+     "id_profesor": "118",
+     "materia": "22",
+     "id_materia": "22"
+    },
+    {
+     "profesor": "46",
+     "id_profesor": "46",
+     "materia": "24",
+     "id_materia": "24"
+    },
+    {
+     "profesor": "265",
+     "id_profesor": "265",
+     "materia": "38",
+     "id_materia": "38"
+    },
+    {
+     "profesor": "87",
+     "id_profesor": "87",
+     "materia": "42",
+     "id_materia": "42"
+    },
+    {
+     "profesor": "114",
+     "id_profesor": "114",
+     "materia": "47",
+     "id_materia": "47"
+    },
+    {
+     "profesor": "74",
+     "id_profesor": "74",
+     "materia": "59",
+     "id_materia": "59"
+    },
+    {
+     "profesor": "30",
+     "id_profesor": "30",
+     "materia": "60",
+     "id_materia": "60"
+    },
+    {
+     "profesor": "58",
+     "id_profesor": "58",
+     "materia": "71",
+     "id_materia": "71"
+    },
+    {
+     "profesor": "89",
+     "id_profesor": "89",
+     "materia": "97",
+     "id_materia": "97"
+    }
+   ]
+  },
+  {
+   "bloque": {
+    "id": "50",
+    "nombre": "50",
+    "modulos": [
+     {
+      "dia": "Lunes",
+      "entrada": "07:00",
+      "salida": "10:00"
+     }
+    ]
+   },
+   "asignaciones": [
+    {
+     "profesor": "263",
+     "id_profesor": "263",
+     "materia": "9",
+     "id_materia": "9"
+    },
+    {
+     "profesor": "26",
+     "id_profesor": "26",
+     "materia": "11",
+     "id_materia": "11"
+    },
+    {
+     "profesor": "9",
+     "id_profesor": "9",
+     "materia": "12",
+     "id_materia": "12"
+    },
+    {
+     "profesor": "169",
+     "id_profesor": "169",
+     "materia": "21",
+     "id_materia": "21"
+    },
+    {
+     "profesor": "248",
+     "id_profesor": "248",
+     "materia": "49",
+     "id_materia": "49"
+    },
+    {
+     "profesor": "122",
+     "id_profesor": "122",
+     "materia": "54",
+     "id_materia": "54"
+    },
+    {
+     "profesor": "273",
+     "id_profesor": "273",
+     "materia": "66",
+     "id_materia": "66"
+    },
+    {
+     "profesor": "117",
+     "id_profesor": "117",
+     "materia": "68",
+     "id_materia": "68"
+    },
+    {
+     "profesor": "78",
+     "id_profesor": "78",
+     "materia": "80",
+     "id_materia": "80"
+    },
+    {
+     "profesor": "280",
+     "id_profesor": "280",
+     "materia": "81",
+     "id_materia": "81"
+    },
+    {
+     "profesor": "189",
+     "id_profesor": "189",
+     "materia": "90",
+     "id_materia": "90"
+    },
+    {
+     "profesor": "205",
+     "id_profesor": "205",
+     "materia": "95",
+     "id_materia": "95"
+    }
+   ]
+  }
+ ],
+ "error": "",
+ "logs": null
+}
