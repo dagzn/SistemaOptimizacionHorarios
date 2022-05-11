@@ -6,7 +6,9 @@ import (
 	"os"
 	"strconv"
 	"sort"
+	"time"
 	"encoding/base64"
+	"proyecto-horarios/utils"
 	pdf "github.com/SebastiaanKlippert/go-wkhtmltopdf"
 	obj "proyecto-horarios/objetos"
 )
@@ -16,6 +18,8 @@ var (
 	primerTitulo string
 	segundoTitulo string
 	tercerTitulo string
+	idToNombre map[string]string
+	clases map[string][]info_profe
 )
 
 type tupla struct {
@@ -32,6 +36,41 @@ type grupo struct {
 type pareja struct {
 	Primer  string
 	Segundo string
+}
+
+type info_profe struct {
+	Materia string
+	Modulos []obj.Modulo
+}
+
+// Cosas del archivo HTML
+
+func getEstilo() (string) {
+	html := `
+			<style>
+			table, th, td {
+				border: 1px solid black;
+				border-collapse: collapse;
+				text-align: center;
+			}
+			</style>
+	`
+	return html
+}
+
+func getLogos() (string) {
+	html := `
+			<img
+					src="https://www.escom.ipn.mx/images/conocenos/escudoESCOM.png"
+					style="width:150px;height:120px;"
+			>
+			<img
+					src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Logo_Instituto_Polit%C3%A9cnico_Nacional.png"
+					align="right"
+					style="width:250px;height:120px;"
+			>
+	`
+	return html
 }
 
 func getTuplasIndividuales(horario *obj.Entrada_exportacion) ([]tupla) {
@@ -170,11 +209,19 @@ func agruparBloques(tuplas []tupla) {
 
 func crearTabla() (string) {
 
-	html := "<html><body><center>"
+	html := `
+	<html>
+		<head>
+		`+getEstilo()+`
+		</head>
+		<body>
+		`+getLogos()+`
+		<center>
+	`
 	// Agregamos titulo
 	html += "<h1>" + "Horario" + "</h1>"
 	// Iniciamos tabla
-	html += "<table border = '1' cellpadding = '5' cellspacing = '5'>"
+	html += "<table cellpadding = '5' cellspacing = '5'>"
 	// Titulos de cada columna
 	html += "<tr>"+
 						"<th>"+primerTitulo+"</th>"+
@@ -200,15 +247,15 @@ func crearTabla() (string) {
 	return html
 }
 
-func ExportarHorario(horario *obj.Entrada_exportacion, ruta string) (string, error){
+func exportarHorarioLista(horario *obj.Entrada_exportacion, ruta string) (string, error){
 	tuplas := getTuplasIndividuales(horario)
 	contenidoTabla = make([][]string, len(tuplas))
 
-	if horario.Agrupar == "Profesores" {
+	if horario.Agrupar == "Profesor" {
 		agruparProfesores(tuplas)
-	} else if horario.Agrupar == "Materias" {
+	} else if horario.Agrupar == "Materia" {
 		agruparMaterias(tuplas)
-	} else if horario.Agrupar == "Bloques" {
+	} else if horario.Agrupar == "Bloque" {
 	 agruparBloques(tuplas)
 	} else {
 		horarioSencillo(tuplas)
@@ -247,3 +294,164 @@ func ExportarHorario(horario *obj.Entrada_exportacion, ruta string) (string, err
 	return cadenaCodificada, nil
 }
 
+
+func crearContenidoHorarioIndividual(idProfe string) (string) {
+	html := ""
+	dias := [7]string{"Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"}
+	for _, info := range clases[idProfe] {
+		fila := `
+			<tr>
+				<td>`+info.Materia+`</td>
+		`
+		infoDias := make(map[string]string)
+		for _, m := range info.Modulos {
+			infoDias[m.Dia] = fmt.Sprintf("%s - %s", m.Entrada, m.Salida)
+		}
+
+		for _,d  := range dias {
+			fila += "<td>"
+			if cont, ok := infoDias[d]; ok {
+				fila += cont
+			} else {
+				fila += " --- "
+			}
+			fila += "</td>"
+		}
+		fila += "</tr>"
+		html += fila
+	}
+	return html
+}
+
+func crearTablaHorarioIndividual(idProfe string) (string) {
+	nombreProfesor := idToNombre[idProfe]
+	contenido := crearContenidoHorarioIndividual(idProfe)
+	html := `
+	<html>
+		<head>
+		 `+getEstilo()+`
+		</head>
+		<body>
+			`+getLogos()+`
+			<center>
+				<h2>Horario</h2>
+				<p> <b> Profesor/a: </b> `+nombreProfesor+` </p>
+				<table style="width:75%">
+					<tr>
+						<th>Materia</th>
+						<th>Lunes</th>
+						<th>Martes</th>
+						<th>Miercoles</th>
+						<th>Jueves</th>
+						<th>Viernes</th>
+						<th>Sabado</th>
+						<th>Domingo</th>
+					</tr> `+contenido+`
+				</table>
+			</center>
+		</body>
+	</html>
+	`
+
+	return html
+}
+
+// Devuelve el nombre del archivo a comprimir
+func crearHorarioIndividual(idProfe, ruta string) (string, error) {
+	// Modo landscape
+	// Poner logos del IPN
+	nombreProfe := idToNombre[idProfe]
+	fecha := time.Now().Format("2006-01-02")
+	nombreProfeFiltrado := strings.Replace(nombreProfe, " ", "-", -1)
+	nombreArchivo := fmt.Sprintf("%s-%s.pdf",nombreProfeFiltrado, fecha)
+
+	// Create new PDF generator
+  pdfg, err := pdf.NewPDFGenerator()
+  if err != nil {
+		return "", err
+  }
+
+	// Set options
+	pdfg.Orientation.Set(pdf.OrientationLandscape)
+
+	html := crearTablaHorarioIndividual(idProfe)
+
+	// Add to document
+	pdfg.AddPage(pdf.NewPageReader(strings.NewReader(html)))
+
+  // Create PDF document in internal buffer
+  err = pdfg.Create()
+  if err != nil {
+		return "", err
+  }
+
+  // Write buffer contents to file on disk
+  err = pdfg.WriteFile(ruta + nombreArchivo)
+  if err != nil {
+		return "", err
+  }
+
+	return ruta + nombreArchivo, err
+}
+
+
+func exportarHorarioIndividual(horario *obj.Entrada_exportacion, ruta string) (string, error){
+	idToNombre = make(map[string]string)
+	clases = make(map[string][]info_profe)
+
+	var profes []string
+
+	for _, d := range horario.Distribuciones {
+		modulos := d.Bloque.Modulos
+		for _, a := range d.Asignaciones {
+			if _, ok := idToNombre[a.Id_profesor]; !ok {
+				idToNombre[a.Id_profesor] = a.Profesor
+				profes = append(profes, a.Id_profesor)
+			}
+
+			c := info_profe{
+				Materia: a.Materia,
+				Modulos: modulos,
+			}
+			clases[a.Id_profesor] = append(clases[a.Id_profesor], c)
+		}
+	}
+
+	sort.Slice(profes, func(i, j int) bool {
+		return idToNombre[profes[i]] < idToNombre[profes[j]]
+	})
+
+	var archivos []string
+	for _, id := range profes {
+		f, err := crearHorarioIndividual(id, ruta)
+		if err != nil {
+			return "", err
+		}
+		archivos = append(archivos, f)
+	}
+
+	// Aqui debemos hacer el zip de la carpeta tmp
+	err := utils.ZipFiles(ruta+"horarios.zip", archivos)
+	if err != nil {
+		return "", err
+	}
+
+  content, err := os.ReadFile(ruta+"horarios.zip")
+	if err != nil {
+		return "", err
+	}
+
+	cadenaCodificada := base64.StdEncoding.EncodeToString(content)
+
+	return cadenaCodificada, nil
+}
+
+func ExportarHorario(horario *obj.Entrada_exportacion, ruta string) (string, error){
+	if horario.Tipo == "Lista" {
+		return exportarHorarioLista(horario, ruta)
+	} else if horario.Tipo == "Individual" {
+		return exportarHorarioIndividual(horario, ruta)
+	}
+
+	return "", fmt.Errorf("%s no es un tipo valido de exportacion", horario.Tipo)
+}

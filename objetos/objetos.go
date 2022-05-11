@@ -89,5 +89,6 @@ type Salida_validacion struct {
 // Horario que exportaremos a PDF
 type Entrada_exportacion struct {
 	Distribuciones []Distribucion `validate:"required,min=1,dive,required"`
-	Agrupar        string         // Materia, Profesor, Bloque o NULL (sin agrupar)
+	Tipo           string // Lista o Individual
+	Agrupar        string // Materia, Profesor, Bloque o NULL (sin agrupar)
 }
