@@ -9,11 +9,11 @@ import (
 const (
 	inf                   = int64(1e18)
 	oo                    = int64(1e9)
-	errorClasesMaterias   = "Se planean dar %d clases pero los profesores solo son capaces de dar %d clases."
-	errorClasesProfesores = "En total, los profesores deben dar %d clases pero solo existen %d clases disponibles."
-	errorSinSolucion      = "No fue posible el encontrar una solucion con las restricciones dadas."
+	errorClasesMaterias   = "Desde el inicio se determinaron %d clases a impartir pero en total los profesores seleccionados deben impartir %d clases."
+	errorClasesProfesores = "En total los profesores deben dar %d clases pero solo existen %d clases disponibles."
+	errorSinSolucion      = "No existe alguna asignacion de horario valida dados los conjuntos de profesores, materias, bloques y restricciones seleccionados."
 	logCostoInfinito      = "Solo fue posible encontrar una solucion que hace uso de preferencias no optimas."
-	logAristaInfinita     = "Si se cambia la preferencia de %s hacia %s, entonces habria una solucion valida."
+	logAristaInfinita     = "En el horario se usa la asignacion del profesor %s con %s %s, la cual se registro con una preferencia no optima"
 )
 
 type tupla struct {
@@ -278,14 +278,14 @@ func encontrarSolucion(fuente, destino int, materias []obj.Materia, profesores [
 		u, infinita := movimiento(u)
 		profesor := profesores[idx_original[u]]
 		if infinita {
-			logs = append(logs, fmt.Sprintf(logAristaInfinita, profesor.Nombre, materia.Nombre))
+			logs = append(logs, fmt.Sprintf(logAristaInfinita, profesor.Nombre,"la materia", materia.Nombre))
 		}
 
 		u, _ = movimiento(u)
 		u, infinita = movimiento(u)
 		bloque := bloques[idx_original[u]]
 		if infinita {
-			logs = append(logs, fmt.Sprintf(logAristaInfinita, profesor.Nombre, bloque.Nombre))
+			logs = append(logs, fmt.Sprintf(logAristaInfinita, profesor.Nombre,"el bloque", bloque.Nombre))
 		}
 
 		// Optimizacion: agregar directo a un map de bloque -> {profesor,materia}
