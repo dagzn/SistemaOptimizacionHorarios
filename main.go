@@ -156,6 +156,8 @@ func main(){
 	s1 := rand.NewSource(time.Now().UnixNano())
 	r1 := rand.New(s1)
 
+	start := time.Now()
+
 	var profesores []obj.Profesor
 	totalClases := 0
 	for i := 0; i < cantProfesores; i++ {
@@ -295,4 +297,12 @@ func main(){
 	if err != nil {
 		panic(err)
 	}
+
+	duration := time.Since(start)
+	fmt.Println("Tiempo de ejecucion: ", duration)
+	nodos := 2 + len(materias) + 2* len(profesores) + len(bloques)
+	fmt.Println("Nodos creados: ", nodos)
+	aristas := len(materias) + len(bloques) + 2*len(profesores) + 2 * numAristas
+	fmt.Println("Aristas creadas: ", aristas)
+	fmt.Println("Clases totales: ", totalClases)
 }
