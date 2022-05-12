@@ -69,9 +69,11 @@ func AtenderPeticion(peticion events.APIGatewayProxyRequest) (events.APIGatewayP
 	content, err := utils.SerializarSalidaHorario(salida)
 	if err != nil {
 		respuesta.Body = fmt.Sprintf(`
-			"Distribuciones": null,
-			"Error": "%s",
-			"Logs": null
+		{
+			"distribuciones": null,
+			"error": "%s",
+			"logs": null
+		}
 		`, err.Error())
 
 		respuesta.StatusCode = http.StatusOK
