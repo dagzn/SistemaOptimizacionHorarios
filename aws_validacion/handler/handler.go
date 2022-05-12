@@ -2,6 +2,7 @@ package handler
 
 import (
 	"encoding/base64"
+	"fmt"
 	"net/http"
 
 	obj "proyecto-horarios/objetos"
@@ -64,11 +65,14 @@ func AtenderPeticion(peticion events.APIGatewayProxyRequest) (events.APIGatewayP
 
 	content, err := utils.SerializarSalidaValidacion(salida)
 	if err != nil {
-		respuesta.Body = `
-			"Distribuciones": null,
-			"Error": "Error al serializar la salida",
-			"Logs": null
-		`
+		respuesta.Body = fmt.Sprintf(`
+		{
+			"distribuciones": null,
+			"error": "%s",
+			"logs": null
+		}
+		`, err.Error())
+
 		respuesta.StatusCode = http.StatusOK
 		return respuesta, nil
 	}
