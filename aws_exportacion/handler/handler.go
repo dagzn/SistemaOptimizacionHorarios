@@ -17,18 +17,22 @@ func obtenerHeaders() map[string]string {
 	}
 }
 
-func probarExportacion(data []byte) (string, error) {
+func probarExportacion(data []byte) (string, string, error) {
 	entradaExportacion, err := utils.DeserializarEntradaExportacion(data)
 	if err != nil {
-		return "", err
+		return "", "", err
 	}
 
 	cadenaCodificada, err := exportacion.ExportarHorario(entradaExportacion, "/tmp/")
 	if err != nil {
-		return "", err
+		return "", "", err
 	}
 
-	return cadenaCodificada, nil
+	if entradaExportacion.Tipo == "Individual" {
+		return cadenaCodificada, "application/zip", nil
+	}
+
+	return cadenaCodificada, "application/pdf", nil
 }
 
 func AtenderPeticion(peticion events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
@@ -44,7 +48,7 @@ func AtenderPeticion(peticion events.APIGatewayProxyRequest) (events.APIGatewayP
 		body = peticion.Body
 	}
 
-	cadenaCodificada, err := probarExportacion([]byte(body))
+	cadenaCodificada, contentType, err := probarExportacion([]byte(body))
 
 	if err != nil {
 		respuesta.Headers["Content-Type"] = "application/json"
@@ -61,7 +65,7 @@ func AtenderPeticion(peticion events.APIGatewayProxyRequest) (events.APIGatewayP
 		return respuesta, nil
 	}
 
-	respuesta.Headers["Content-Type"] = "application/pdf"
+	respuesta.Headers["Content-Type"] = contentType
 
 	respuesta.IsBase64Encoded = true
 	respuesta.Body = string(cadenaCodificada)
