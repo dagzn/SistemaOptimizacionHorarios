@@ -141,7 +141,9 @@ func TestArchivo(){
 
 func main(){
 
-	var cantProfesores, cantMaterias, cantBloques, maxClases, numAristas int
+	var cantProfesores, cantMaterias, cantBloques, maxClases, numAristas, idProceso int
+	fmt.Printf("ID:\n")
+	fmt.Scanf("%d", &idProceso)
 	fmt.Printf("Profesores:\n")
 	fmt.Scanf("%d", &cantProfesores)
 	fmt.Printf("Materias:\n")
@@ -271,7 +273,7 @@ func main(){
 		panic(err)
 	}
 
-	err = os.WriteFile("peticion.json", data, 0644)
+	err = os.WriteFile("peticiones/peticion"+strconv.Itoa(idProceso)+".json", data, 0644)
 	if err != nil {
 		panic(err)
 	}
@@ -286,23 +288,26 @@ func main(){
 		panic(err)
 	}
 
-	fmt.Println("Terminamos chido!")
+	fmt.Println("Terminamos el proceso!")
 
 	bytes, err := utils.SerializarSalidaHorario(salida)
 	if err != nil {
 		panic(err)
 	}
 
-	err = os.WriteFile("resultado.json", bytes, 0644)
+	err = os.WriteFile("resultados/resultado"+strconv.Itoa(idProceso)+".json", bytes, 0644)
 	if err != nil {
 		panic(err)
 	}
 
 	duration := time.Since(start)
-	fmt.Println("Tiempo de ejecucion: ", duration)
+	fmt.Println("Profesores: ", len(profesores))
+	fmt.Println("Materias: ", len(materias))
+	fmt.Println("Bloques: ", len(bloques))
+	fmt.Println("Clases totales: ", totalClases)
 	nodos := 2 + len(materias) + 2* len(profesores) + len(bloques)
 	fmt.Println("Nodos creados: ", nodos)
 	aristas := len(materias) + len(bloques) + 2*len(profesores) + 2 * numAristas
 	fmt.Println("Aristas creadas: ", aristas)
-	fmt.Println("Clases totales: ", totalClases)
+	fmt.Println("Tiempo de ejecucion: ", duration)
 }
