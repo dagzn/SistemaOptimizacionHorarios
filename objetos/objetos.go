@@ -15,8 +15,8 @@ type Modulo struct {
 }
 
 type Bloque struct {
-	Id      string `json:"id" validate:"required"`
-	Nombre  string `json:"nombre" validate:"required"`
+	Id      string   `json:"id" validate:"required"`
+	Nombre  string   `json:"nombre" validate:"required"`
 	Modulos []Modulo `json:"modulos"`
 }
 
@@ -67,8 +67,8 @@ type Entrada_horario struct {
 // Formato de salida al crear un horario
 type Salida_horario struct {
 	Distribuciones []Distribucion `json:"distribuciones"`
-	Error          string `json:"error"`
-	Logs           []string `json:"logs"`
+	Error          string         `json:"error"`
+	Logs           []string       `json:"logs"`
 }
 
 // Este formato es el que usamos para validar
@@ -82,13 +82,18 @@ type Entrada_validacion struct {
 
 // Coleccion de los errores encontrados al validar
 type Salida_validacion struct {
-	Error string `json:"error"`
+	Error string   `json:"error"`
 	Logs  []string `json:"logs"`
 }
 
 // Horario que exportaremos a PDF
 type Entrada_exportacion struct {
 	Distribuciones []Distribucion `validate:"required,min=1,dive,required"`
-	Tipo           string `validate:"required"` // Lista o Individual
-	Agrupar        string // Materia, Profesor, Bloque o NULL (sin agrupar)
+	Tipo           string         `validate:"required"` // Lista o Individual
+	Agrupar        string         // Materia, Profesor, Bloque o NULL (sin agrupar)
+}
+
+type Salida_exportacion_fallida struct {
+	Error string   `json:"error"`
+	Logs  []string `json:"logs"`
 }
