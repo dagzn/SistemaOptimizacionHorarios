@@ -139,9 +139,23 @@ func TestArchivo(){
 	}
 }
 
+func minInt(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
+}
+
+func getLimInf(numClases, todas int) int {
+	if todas + 1 < numClases {
+		return numClases - todas - 1
+	}
+	return 1
+}
+
 func main(){
 
-	var cantProfesores, cantMaterias, cantBloques, maxClases, numAristas, idProceso int
+	var cantProfesores, cantMaterias, cantBloques, numClases, numAristas, idProceso int
 	fmt.Printf("ID:\n")
 	fmt.Scanf("%d", &idProceso)
 	fmt.Printf("Profesores:\n")
@@ -150,10 +164,18 @@ func main(){
 	fmt.Scanf("%d", &cantMaterias)
 	fmt.Printf("Bloques:\n")
 	fmt.Scanf("%d", &cantBloques)
-	fmt.Printf("Max clases por profe:\n")
-	fmt.Scanf("%d", &maxClases)
+	fmt.Printf("Numero de clases:\n")
+	fmt.Scanf("%d", &numClases)
 	fmt.Printf("Num aristas por profe (cada lado):\n")
 	fmt.Scanf("%d", &numAristas)
+
+	if cantProfesores > numClases {
+		panic(fmt.Errorf("Numero de clases debe ser mayor o igual a num de profesores"))
+	}
+
+	if numClases > cantProfesores * numAristas {
+		panic(fmt.Errorf("Numero de clases debe ser menor o igual a cantidad de conexiones"))
+	}
 
 	s1 := rand.NewSource(time.Now().UnixNano())
 	r1 := rand.New(s1)
@@ -161,10 +183,16 @@ func main(){
 	start := time.Now()
 
 	var profesores []obj.Profesor
-	totalClases := 0
+	totalClases := numClases
 	for i := 0; i < cantProfesores; i++ {
-		clases := r1.Intn(maxClases) + 1
-		totalClases = totalClases + clases
+		quedan := cantProfesores - (i+1)
+		disponibles := numClases - quedan
+		limiteSuperior := minInt(disponibles, numAristas)
+		todasRestantes := quedan * numAristas
+		limiteInferior := getLimInf(numClases, todasRestantes)
+		clases := r1.Intn(limiteSuperior - limiteInferior + 1) + limiteInferior
+
+		numClases = numClases - clases
 		id_profe := strconv.Itoa(i+1)
 
 		var prefMaterias []obj.Pref_materia
@@ -246,11 +274,14 @@ func main(){
 		Salida: "10:00",
 	}
 
+	var modulos []obj.Modulo
+	for i:=0; i < 5; i++ {
+		modulos = append(modulos, modulo)
+	}
+
 	var bloques []obj.Bloque
 	for i:=0; i < cantBloques; i++ {
 		id_bloque := strconv.Itoa(i+1)
-		var modulos []obj.Modulo
-		modulos = append(modulos, modulo)
 
 		bloque := obj.Bloque{
 			Id: id_bloque,
@@ -262,7 +293,7 @@ func main(){
 	}
 
 	entradaHorario := &obj.Entrada_horario{
-		Salones: 200,
+		Salones: 200000,
 		Materias: materias,
 		Bloques: bloques,
 		Profesores: profesores,
@@ -278,9 +309,12 @@ func main(){
 		panic(err)
 	}
 
-	_, err = validacion.ValidarFormatoEntradaHorario(entradaHorario)
+	errores, err := validacion.ValidarFormatoEntradaHorario(entradaHorario)
 	if err != nil {
-		panic(err)
+		for _, x := range errores {
+			fmt.Println(x)
+		}
+		return
 	}
 
 	salida, err := solucion.GenerarHorario(entradaHorario)
@@ -307,7 +341,7 @@ func main(){
 	fmt.Println("Clases totales: ", totalClases)
 	nodos := 2 + len(materias) + 2* len(profesores) + len(bloques)
 	fmt.Println("Nodos creados: ", nodos)
-	aristas := len(materias) + len(bloques) + 2*len(profesores) + 2 * numAristas
+	aristas := len(materias) + len(bloques) + len(profesores) + 2 *len(profesores)* numAristas
 	fmt.Println("Aristas creadas: ", aristas)
 	fmt.Println("Tiempo de ejecucion: ", duration)
 }
