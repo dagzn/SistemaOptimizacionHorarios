@@ -102,6 +102,8 @@ func AtenderPeticion(peticion events.APIGatewayProxyRequest) (events.APIGatewayP
 
 		respuesta.Body = string(content)
 		respuesta.StatusCode = http.StatusOK
+
+		return respuesta, nil
 	}
 
 	respuesta.Headers["Content-Type"] = contentType
