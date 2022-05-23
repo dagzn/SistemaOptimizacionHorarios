@@ -4,8 +4,11 @@ import (
 	"encoding/base64"
 	"fmt"
 	"net/http"
+
 	"proyecto-horarios/exportacion"
+	obj "proyecto-horarios/objetos"
 	"proyecto-horarios/utils"
+	"proyecto-horarios/validacion"
 
 	"github.com/aws/aws-lambda-go/events"
 )
@@ -17,22 +20,36 @@ func obtenerHeaders() map[string]string {
 	}
 }
 
-func probarExportacion(data []byte) (string, string, error) {
+func probarExportacion(data []byte) (string, string, *obj.Salida_exportacion_fallida, error) {
 	entradaExportacion, err := utils.DeserializarEntradaExportacion(data)
 	if err != nil {
-		return "", "", err
+		return "", "", nil, err
+	}
+
+	errores, err := validacion.ValidarFormatoEntradaExportacion(entradaExportacion)
+	if err != nil {
+		return "", "", &obj.Salida_exportacion_fallida{
+			Error: err.Error(),
+			Logs: func(errores []error) []string {
+				var ret []string
+				for _, e := range errores {
+					ret = append(ret, e.Error())
+				}
+				return ret
+			}(errores),
+		}, nil
 	}
 
 	cadenaCodificada, err := exportacion.ExportarHorario(entradaExportacion, "/tmp/")
 	if err != nil {
-		return "", "", err
+		return "", "", nil, err
 	}
 
 	if entradaExportacion.Tipo == "Individual" {
-		return cadenaCodificada, "application/zip", nil
+		return cadenaCodificada, "application/zip", nil, nil
 	}
 
-	return cadenaCodificada, "application/pdf", nil
+	return cadenaCodificada, "application/pdf", nil, nil
 }
 
 func AtenderPeticion(peticion events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
@@ -48,7 +65,7 @@ func AtenderPeticion(peticion events.APIGatewayProxyRequest) (events.APIGatewayP
 		body = peticion.Body
 	}
 
-	cadenaCodificada, contentType, err := probarExportacion([]byte(body))
+	cadenaCodificada, contentType, salidaExportacionFallida, err := probarExportacion([]byte(body))
 
 	if err != nil {
 		respuesta.Headers["Content-Type"] = "application/json"
@@ -63,6 +80,28 @@ func AtenderPeticion(peticion events.APIGatewayProxyRequest) (events.APIGatewayP
 
 		respuesta.StatusCode = http.StatusOK
 		return respuesta, nil
+	}
+
+	if salidaExportacionFallida != nil {
+		respuesta.Headers["Content-Type"] = "application/json"
+
+		content, err := utils.SerializarSalidaExportacionFallida(salidaExportacionFallida)
+
+		if err != nil {
+			respuesta.Body = fmt.Sprintf(`
+			{
+				"distribuciones": null,
+				"error": "%s",
+				"logs": null
+			}
+			`, err.Error())
+
+			respuesta.StatusCode = http.StatusOK
+			return respuesta, nil
+		}
+
+		respuesta.Body = string(content)
+		respuesta.StatusCode = http.StatusOK
 	}
 
 	respuesta.Headers["Content-Type"] = contentType
