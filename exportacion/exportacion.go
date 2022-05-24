@@ -8,6 +8,7 @@ import (
 	"sort"
 	"time"
 	"encoding/base64"
+	"sync"
 	"proyecto-horarios/utils"
 	pdf "github.com/SebastiaanKlippert/go-wkhtmltopdf"
 	obj "proyecto-horarios/objetos"
@@ -20,6 +21,8 @@ var (
 	tercerTitulo string
 	idToNombre map[string]string
 	clases map[string][]info_profe
+	archivos []string
+	errorGlobal error
 )
 
 type tupla struct {
@@ -357,7 +360,7 @@ func crearTablaHorarioIndividual(idProfe string) (string) {
 }
 
 // Devuelve el nombre del archivo a comprimir
-func crearHorarioIndividual(idProfe, ruta string) (string, error) {
+func crearHorarioIndividual(idProfe, ruta string) {
 	// Modo landscape
 	// Poner logos del IPN
 	nombreProfe := idToNombre[idProfe]
@@ -365,10 +368,12 @@ func crearHorarioIndividual(idProfe, ruta string) (string, error) {
 	nombreProfeFiltrado := strings.Replace(nombreProfe, " ", "-", -1)
 	nombreArchivo := fmt.Sprintf("%s-%s.pdf",nombreProfeFiltrado, fecha)
 
+	fmt.Println("entramos!", nombreArchivo)
 	// Create new PDF generator
   pdfg, err := pdf.NewPDFGenerator()
   if err != nil {
-		return "", err
+		errorGlobal = err
+		return
   }
 
 	// Set options
@@ -382,16 +387,20 @@ func crearHorarioIndividual(idProfe, ruta string) (string, error) {
   // Create PDF document in internal buffer
   err = pdfg.Create()
   if err != nil {
-		return "", err
+		errorGlobal = err
+		return
   }
 
   // Write buffer contents to file on disk
   err = pdfg.WriteFile(ruta + nombreArchivo)
   if err != nil {
-		return "", err
+		errorGlobal = err
+		return
   }
 
-	return ruta + nombreArchivo, err
+	fmt.Println("Salimos!", nombreArchivo)
+
+	archivos = append(archivos, ruta + nombreArchivo)
 }
 
 
@@ -421,14 +430,28 @@ func exportarHorarioIndividual(horario *obj.Entrada_exportacion, ruta string) (s
 		return idToNombre[profes[i]] < idToNombre[profes[j]]
 	})
 
-	var archivos []string
+	// Aqui va la parte asincrona con hilos
+	var wg sync.WaitGroup
+
 	for _, id := range profes {
-		f, err := crearHorarioIndividual(id, ruta)
-		if err != nil {
-			return "", err
-		}
-		archivos = append(archivos, f)
+		wg.Add(1)
+		go func(id, ruta string) {
+			defer wg.Done()
+			crearHorarioIndividual(id, ruta)
+		}(id, ruta)
 	}
+	wg.Wait()
+
+	fmt.Println("salimooos")
+	if errorGlobal != nil {
+		return "", errorGlobal
+	}
+
+	for i, _ := range profes {
+		fmt.Println("archivoo",archivos[i])
+	}
+
+
 
 	// Aqui debemos hacer el zip de la carpeta tmp
 	err := utils.ZipFiles(ruta+"horarios.zip", archivos)
