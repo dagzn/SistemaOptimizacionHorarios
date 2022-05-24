@@ -103,12 +103,6 @@ func probarExportacion(archivo string) (string) {
 }
 
 func main(){
-	start := time.Now()
-	_ = probarExportacion("archivos_pruebas/exportacion_correcta.json")
-	duration := time.Since(start)
-	fmt.Println("Tiempo:", duration)
-	return
-
 	var archivo string
 	opc := 0
 	for true {
