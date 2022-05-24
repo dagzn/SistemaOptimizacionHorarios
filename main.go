@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"time"
 	obj "proyecto-horarios/objetos"
 	"proyecto-horarios/utils"
 	"proyecto-horarios/solucion"

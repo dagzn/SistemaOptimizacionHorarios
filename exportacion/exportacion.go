@@ -235,10 +235,8 @@ func crearTabla() (string) {
 	// Anadimos cada fila de la tabla
 	for i, _ := range contenidoTabla {
 		html += "<tr>"
-		fmt.Println("Linea numero ", i)
 		for _, cc := range contenidoTabla[i] {
 			html += cc
-			fmt.Println(cc)
 		}
 		html += "</tr>"
 	}
@@ -368,7 +366,6 @@ func crearHorarioIndividual(idProfe, ruta string) {
 	nombreProfeFiltrado := strings.Replace(nombreProfe, " ", "-", -1)
 	nombreArchivo := fmt.Sprintf("%s-%s.pdf",nombreProfeFiltrado, fecha)
 
-	fmt.Println("entramos!", nombreArchivo)
 	// Create new PDF generator
   pdfg, err := pdf.NewPDFGenerator()
   if err != nil {
@@ -398,7 +395,6 @@ func crearHorarioIndividual(idProfe, ruta string) {
 		return
   }
 
-	fmt.Println("Salimos!", nombreArchivo)
 
 	archivos = append(archivos, ruta + nombreArchivo)
 }
@@ -442,16 +438,9 @@ func exportarHorarioIndividual(horario *obj.Entrada_exportacion, ruta string) (s
 	}
 	wg.Wait()
 
-	fmt.Println("salimooos")
 	if errorGlobal != nil {
 		return "", errorGlobal
 	}
-
-	for i, _ := range profes {
-		fmt.Println("archivoo",archivos[i])
-	}
-
-
 
 	// Aqui debemos hacer el zip de la carpeta tmp
 	err := utils.ZipFiles(ruta+"horarios.zip", archivos)
