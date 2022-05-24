@@ -7,7 +7,7 @@ import (
 )
 
 const(
-	errorGeneral = "Existe un error en el formato de la peticion. Cheque los logs para obtener mas informacion.\n"
+	errorGeneral = "Existe un error en el formato de la petición.\n"
 	errorRequired = "El campo %s es obligatorio.\nCampo: %s\n"
 	errorMin = "El arreglo %s no cuenta con la longitud esperada.\n%s"
 	errorGte = "El valor del campo %s es menor al valor esperado.\n%s"

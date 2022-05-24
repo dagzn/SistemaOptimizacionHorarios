@@ -336,7 +336,7 @@ func crearTablaHorarioIndividual(idProfe string) (string) {
 			<center>
 				<h2>Horario</h2>
 				<p> <b> Profesor/a: </b> `+nombreProfesor+` </p>
-				<table style="width:75%">
+				<table cellpadding = '5' cellspacing = '5' style="width:75%">
 					<tr>
 						<th>Materia</th>
 						<th>Lunes</th>

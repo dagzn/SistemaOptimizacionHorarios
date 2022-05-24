@@ -9,11 +9,11 @@ import (
 const (
 	inf                   = int64(1e18)
 	oo                    = int64(1e9)
-	errorClasesMaterias   = "Desde el inicio se determinaron %d clases a impartir pero en total los profesores seleccionados deben impartir %d clases."
-	errorClasesProfesores = "En total los profesores deben dar %d clases pero solo existen %d clases disponibles."
-	errorSinSolucion      = "No existe alguna asignacion de horario valida dados los conjuntos de profesores, materias, bloques y restricciones seleccionados."
-	logCostoInfinito      = "Solo fue posible encontrar una solucion que hace uso de preferencias no optimas."
-	logAristaInfinita     = "En el horario se usa la asignacion del profesor %s con %s %s, la cual se registro con una preferencia no optima"
+	errorClasesMaterias   = "Se determinaron %d clases a impartir, pero en total los profesores seleccionados deben impartir %d clases."
+	errorClasesProfesores = "En total los profesores deben dar %d clases, pero solo existen %d clases disponibles."
+	errorSinSolucion      = "No existe alguna asignación de horario válida dados los conjuntos de profesores, materias y bloques seleccionados."
+	logCostoInfinito      = "Solo fue posible encontrar una solución que hace uso de preferencias no óptimas."
+	logAristaInfinita     = "En el horario se usa la asignación del profesor %s con %s %s, la cual se registró con una preferencia no óptima"
 )
 
 type tupla struct {
@@ -321,6 +321,7 @@ func GenerarHorario(horario *obj.Entrada_horario) (*obj.Salida_horario, error) {
 
 	distribuciones, err := encontrarSolucion(fuente, destino, horario.Materias, horario.Profesores, horario.Bloques)
 	if err != nil {
+		// TODO: Aqui regresar salida con error y logs si encontramos como mejorar el no hay resultado.
 		return nil, err
 	}
 

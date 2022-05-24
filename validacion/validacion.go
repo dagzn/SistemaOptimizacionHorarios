@@ -6,12 +6,12 @@ import (
 )
 
 const (
-	errorValidacion = "Se encontraron errores al momento de validar el horario. Cheque los logs para mas informacion."
-	errorClasesMateria = "La materia '%s' tiene que impartirse %d veces y tiene %d clases asignadas."
-	errorClasesProfesor = "El profesor %s requiere de %d clases en total y se le asignaron %d."
+	errorValidacion = "Se encontraron errores al momento de validar el horario."
+	errorClasesMateria = "La materia '%s' tiene que impartirse %d veces y en el horario tiene %d clases asignadas."
+	errorClasesProfesor = "El profesor %s requiere de %d clases en total y en el horario se le asignaron %d."
 	errorInterseccionBloques = "El profesor %s tiene mas de una clase asignada para el bloque %s."
-	errorLimiteBloque = "El bloque %s tiene un maximo de %d salones y se le asignaron %d clases."
-	errorLimiteMateria = "El limite impuesto para el profesor %s para dar la materia %s es de %d clases pero se le asignaron %d clases."
+	errorLimiteBloque = "El bloque %s tiene un máximo de %d salones y se le asignaron %d clases."
+	errorLimiteMateria = "El limite impuesto para el profesor %s para dar la materia %s es de %d clases, pero se le asignaron %d clases."
 	errorMateriaNoAsignada = "La materia %s no puede ser impartida por el profesor %s."
 	errorBloqueNoAsignado = "El profesor %s no puede impartir clases en el bloque %s."
 )
