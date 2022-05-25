@@ -7,13 +7,16 @@ import (
 )
 
 const (
-	inf                   = int64(1e18)
-	oo                    = int64(1e9)
-	errorClasesMaterias   = "Se determinaron %d clases a impartir, pero en total los profesores seleccionados deben impartir %d clases."
-	errorClasesProfesores = "En total los profesores deben dar %d clases, pero solo existen %d clases disponibles."
-	errorSinSolucion      = "No existe alguna asignación de horario válida dados los conjuntos de profesores, materias y bloques seleccionados."
-	logCostoInfinito      = "Solo fue posible encontrar una solución que hace uso de preferencias no óptimas."
-	logAristaInfinita     = "En el horario se usa la asignación del profesor %s con %s %s, la cual se registró con una preferencia no óptima"
+	inf                       = int64(1e18)
+	oo                        = int64(1e9)
+	errorClasesMaterias       = "Se determinaron %d clase/s a impartir, pero en total los profesores seleccionados deben impartir %d clase/s."
+	errorClasesProfesores     = "En total los profesores deben dar %d clase/s, pero solo existe/n %d clase/s disponible/s."
+	errorSinSolucion          = "No existe alguna asignación de horario válida dados los conjuntos de profesores, materias y bloques seleccionados."
+	errorEspacioInsuficiente  = "Se desea impartir %d clase/s pero solamente hay %d bloque/s de horario disponibles con %d salon/es cada uno."
+	errorBloquesInsuficientes = "El/la profesor/a %s solamente tiene %d horario/s disponible/s pero se le pretende asignar %d clase/s."
+	errorProfesInsuficientes  = "La materia %s debe darse en %d clase/s pero, en total, los profesores seleccionados solamente pueden impartirla %d veces"
+	logCostoInfinito          = "Solo fue posible encontrar una solución que hace uso de preferencias denominadas como no óptimas."
+	logAristaInfinita         = "En el horario se usa la asignación de el/la profesor/a %s con %s %s, la cual se registró con una preferencia no óptima"
 )
 
 type tupla struct {
@@ -162,6 +165,7 @@ func crearGrafo(salones int, materias []obj.Materia, profesores []obj.Profesor, 
 	adj = make([][]edge, n)
 	m_idx := make(map[string]int)
 	b_idx := make(map[string]int)
+	sumaCapMaterias := make(map[string]int)
 	idx_original = make(map[int]int)
 
 	// indices para materias
@@ -192,6 +196,7 @@ func crearGrafo(salones int, materias []obj.Materia, profesores []obj.Profesor, 
 		pref_materias := p.Materias
 		for _, m := range pref_materias {
 			if nodo, ok := m_idx[m.Id]; ok {
+				sumaCapMaterias[m.Id] += m.Limite
 				add_edge(nodo, entrada, int64(m.Limite), int64(m.Preferencia))
 			}
 		}
@@ -202,6 +207,18 @@ func crearGrafo(salones int, materias []obj.Materia, profesores []obj.Profesor, 
 				add_edge(salida, nodo, 1, int64(b.Preferencia))
 			}
 		}
+
+		if cuantosBloques := len(pref_bloques); cuantosBloques < p.Clases {
+			return 0, 0, fmt.Errorf(errorBloquesInsuficientes, p.Nombre, cuantosBloques, p.Clases)
+		}
+	}
+
+	for _, m := range materias {
+		if maxCap, ok := sumaCapMaterias[m.Id]; ok {
+			if maxCap < m.Cantidad {
+				return 0, 0, fmt.Errorf(errorProfesInsuficientes, m.Nombre, m.Cantidad, maxCap)
+			}
+		}
 	}
 
 	if clasesMaterias > clasesProfesores {
@@ -210,6 +227,9 @@ func crearGrafo(salones int, materias []obj.Materia, profesores []obj.Profesor, 
 	} else if clasesMaterias < clasesProfesores {
 		// Los profesores necesitan mas clases de las disponibles
 		return 0, 0, fmt.Errorf(errorClasesProfesores, clasesProfesores, clasesMaterias)
+	} else if espacio := salones * len(bloques); espacio < clasesProfesores{
+		// En total no hay suficientes salones para todas las clases.
+		return 0, 0, fmt.Errorf(errorEspacioInsuficiente, clasesProfesores, len(bloques), salones)
 	}
 
 	return fuente, destino, nil
