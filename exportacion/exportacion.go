@@ -9,9 +9,9 @@ import (
 	"time"
 	"encoding/base64"
 	"sync"
-	"proyecto-horarios/utils"
+	utils "proyecto-horarios/utils_exportacion"
 	pdf "github.com/SebastiaanKlippert/go-wkhtmltopdf"
-	obj "proyecto-horarios/objetos"
+	obj "proyecto-horarios/objetos_exportacion"
 )
 
 var (

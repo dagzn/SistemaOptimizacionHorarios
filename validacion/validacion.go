@@ -2,7 +2,7 @@ package validacion
 
 import (
 	"fmt"
-	obj "proyecto-horarios/objetos"
+	obj "proyecto-horarios/objetos_validacion"
 )
 
 const (

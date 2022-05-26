@@ -2,31 +2,36 @@ package main
 
 import (
 	"fmt"
-	obj "proyecto-horarios/objetos"
-	"proyecto-horarios/utils"
+	objs "proyecto-horarios/objetos_solucion"
+	objv "proyecto-horarios/objetos_validacion"
+	utilss "proyecto-horarios/utils_solucion"
+	utilsv "proyecto-horarios/utils_validacion"
+	utilse "proyecto-horarios/utils_exportacion"
+	fmts "proyecto-horarios/formato_solucion"
+	fmtv "proyecto-horarios/formato_validacion"
 	"proyecto-horarios/solucion"
 	"proyecto-horarios/validacion"
 	"proyecto-horarios/exportacion"
 )
 
-func probarSolucion(archivo string) (*obj.Salida_horario){
-	data, err := utils.LeerArchivo(archivo)
+func probarSolucion(archivo string) (*objs.Salida_horario){
+	data, err := utilss.LeerArchivo(archivo)
 	if err != nil {
-		return &obj.Salida_horario{
+		return &objs.Salida_horario{
 			Error: err.Error(),
 		}
 	}
 
-	entradaHorario, err := utils.DeserializarEntradaHorario(data)
+	entradaHorario, err := utilss.DeserializarEntradaHorario(data)
 	if err != nil {
-		return &obj.Salida_horario{
+		return &objs.Salida_horario{
 			Error: err.Error(),
 		}
 	}
 
-	errores, err := validacion.ValidarFormatoEntradaHorario(entradaHorario)
+	errores, err := fmts.ValidarFormatoEntradaHorario(entradaHorario)
 	if err != nil {
-		return &obj.Salida_horario{
+		return &objs.Salida_horario{
 			Error: err.Error(),
 			Logs: func(errores []error) []string {
 				var ret []string
@@ -40,7 +45,7 @@ func probarSolucion(archivo string) (*obj.Salida_horario){
 
 	salida, err := solucion.GenerarHorario(entradaHorario)
 	if err != nil {
-		return &obj.Salida_horario{
+		return &objs.Salida_horario{
 			Error: err.Error(),
 		}
 	}
@@ -48,24 +53,24 @@ func probarSolucion(archivo string) (*obj.Salida_horario){
 	return salida
 }
 
-func probarValidacion(archivo string) (*obj.Salida_validacion){
-	data, err := utils.LeerArchivo(archivo)
+func probarValidacion(archivo string) (*objv.Salida_validacion){
+	data, err := utilsv.LeerArchivo(archivo)
 	if err != nil {
-		return &obj.Salida_validacion{
+		return &objv.Salida_validacion{
 			Error: err.Error(),
 		}
 	}
 
-	entradaValidacion, err := utils.DeserializarEntradaValidacion(data)
+	entradaValidacion, err := utilsv.DeserializarEntradaValidacion(data)
 	if err != nil {
-		return &obj.Salida_validacion{
+		return &objv.Salida_validacion{
 			Error: err.Error(),
 		}
 	}
 
-	errores, err := validacion.ValidarFormatoEntradaValidacion(entradaValidacion)
+	errores, err := fmtv.ValidarFormatoEntradaValidacion(entradaValidacion)
 	if err != nil {
-		return &obj.Salida_validacion{
+		return &objv.Salida_validacion{
 			Error: err.Error(),
 			Logs: func(errores []error) []string {
 				var ret []string
@@ -83,12 +88,12 @@ func probarValidacion(archivo string) (*obj.Salida_validacion){
 }
 
 func probarExportacion(archivo string) (string) {
-	data, err := utils.LeerArchivo(archivo)
+	data, err := utilse.LeerArchivo(archivo)
 	if err != nil {
 		panic(err)
 	}
 
-	entradaExportacion, err := utils.DeserializarEntradaExportacion(data)
+	entradaExportacion, err := utilse.DeserializarEntradaExportacion(data)
 	if err != nil {
 		panic(err)
 	}
@@ -114,14 +119,14 @@ func main(){
 		fmt.Scanf("%s", &archivo)
 		if opc == 1 {
 			salida := probarSolucion("archivos_pruebas/"+archivo)
-			content, err := utils.SerializarSalidaHorario(salida)
+			content, err := utilss.SerializarSalidaHorario(salida)
 			if err != nil {
 				panic(err)
 			}
 			fmt.Println(string(content))
 		} else if opc == 2 {
 			salida := probarValidacion("archivos_pruebas/"+archivo)
-			content, err := utils.SerializarSalidaValidacion(salida)
+			content, err := utilsv.SerializarSalidaValidacion(salida)
 			if err != nil {
 				panic(err)
 			}
