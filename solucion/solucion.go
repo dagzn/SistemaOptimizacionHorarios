@@ -3,7 +3,7 @@ package solucion
 import (
 	"container/heap"
 	"fmt"
-	obj "proyecto-horarios/objetos"
+	obj "proyecto-horarios/objetos_solucion"
 )
 
 const (
