@@ -6,9 +6,9 @@ import (
 	"net/http"
 
 	"proyecto-horarios/exportacion"
-	obj "proyecto-horarios/objetos"
-	"proyecto-horarios/utils"
-	"proyecto-horarios/validacion"
+	obj "proyecto-horarios/objetos_exportacion"
+	utils "proyecto-horarios/utils_exportacion"
+	formato "proyecto-horarios/formato_exportacion"
 
 	"github.com/aws/aws-lambda-go/events"
 )
@@ -26,7 +26,7 @@ func probarExportacion(data []byte) (string, string, *obj.Salida_exportacion_fal
 		return "", "", nil, err
 	}
 
-	errores, err := validacion.ValidarFormatoEntradaExportacion(entradaExportacion)
+	errores, err := formato.ValidarFormatoEntradaExportacion(entradaExportacion)
 	if err != nil {
 		return "", "", &obj.Salida_exportacion_fallida{
 			Error: err.Error(),

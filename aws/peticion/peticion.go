@@ -4,10 +4,10 @@ import (
 	"encoding/base64"
 	"fmt"
 	"net/http"
-	obj "proyecto-horarios/objetos"
+	obj "proyecto-horarios/objetos_solucion"
 	"proyecto-horarios/solucion"
-	"proyecto-horarios/utils"
-	"proyecto-horarios/validacion"
+	utils "proyecto-horarios/utils_solucion"
+	formato "proyecto-horarios/formato_solucion"
 
 	"github.com/aws/aws-lambda-go/events"
 )
@@ -28,7 +28,7 @@ func probarSolucion(data []byte) *obj.Salida_horario {
 		}
 	}
 
-	errores, err := validacion.ValidarFormatoEntradaHorario(entradaHorario)
+	errores, err := formato.ValidarFormatoEntradaHorario(entradaHorario)
 	if err != nil {
 		return &obj.Salida_horario{
 			Error: err.Error(),

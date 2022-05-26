@@ -5,8 +5,9 @@ import (
 	"fmt"
 	"net/http"
 
-	obj "proyecto-horarios/objetos"
-	"proyecto-horarios/utils"
+	obj "proyecto-horarios/objetos_validacion"
+	utils "proyecto-horarios/utils_validacion"
+	formato "proyecto-horarios/formato_validacion"
 	"proyecto-horarios/validacion"
 
 	"github.com/aws/aws-lambda-go/events"
@@ -29,7 +30,7 @@ func probarValidacion(data []byte) *obj.Salida_validacion {
 		}
 	}
 
-	errores, err := validacion.ValidarFormatoEntradaValidacion(entradaValidacion)
+	errores, err := formato.ValidarFormatoEntradaValidacion(entradaValidacion)
 	if err != nil {
 		return &obj.Salida_validacion{
 			Error: err.Error(),
