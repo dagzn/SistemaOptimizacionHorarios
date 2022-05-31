@@ -4,10 +4,7 @@ import (
 	"encoding/base64"
 	"fmt"
 	"net/http"
-	obj "proyecto-horarios/objetos_solucion"
-	"proyecto-horarios/solucion"
-	utils "proyecto-horarios/utils_solucion"
-	formato "proyecto-horarios/formato_solucion"
+	sol "proyecto-horarios/solucion"
 
 	"github.com/aws/aws-lambda-go/events"
 )
@@ -20,17 +17,17 @@ func obtenerHeaders() map[string]string {
 	}
 }
 
-func probarSolucion(data []byte) *obj.Salida_horario {
-	entradaHorario, err := utils.DeserializarEntradaHorario(data)
+func probarSolucion(data []byte) *sol.Salida_horario {
+	entradaHorario, err := sol.DeserializarEntradaHorario(data)
 	if err != nil {
-		return &obj.Salida_horario{
+		return &sol.Salida_horario{
 			Error: err.Error(),
 		}
 	}
 
-	errores, err := formato.ValidarFormatoEntradaHorario(entradaHorario)
+	errores, err := sol.ValidarFormatoEntradaHorario(entradaHorario)
 	if err != nil {
-		return &obj.Salida_horario{
+		return &sol.Salida_horario{
 			Error: err.Error(),
 			Logs: func(errores []error) []string {
 				var ret []string
@@ -42,9 +39,9 @@ func probarSolucion(data []byte) *obj.Salida_horario {
 		}
 	}
 
-	salida, err := solucion.GenerarHorario(entradaHorario)
+	salida, err := sol.GenerarHorario(entradaHorario)
 	if err != nil {
-		return &obj.Salida_horario{
+		return &sol.Salida_horario{
 			Error: err.Error(),
 		}
 	}
@@ -66,7 +63,7 @@ func AtenderPeticion(peticion events.APIGatewayProxyRequest) (events.APIGatewayP
 	}
 
 	salida := probarSolucion([]byte(body))
-	content, err := utils.SerializarSalidaHorario(salida)
+	content, err := sol.SerializarSalidaHorario(salida)
 	if err != nil {
 		respuesta.Body = fmt.Sprintf(`
 		{
