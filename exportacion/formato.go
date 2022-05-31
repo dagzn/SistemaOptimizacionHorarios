@@ -1,9 +1,8 @@
-package formato_validacion
+package exportacion
 
 import (
 	"fmt"
 	"github.com/go-playground/validator/v10"
-	obj "proyecto-horarios/objetos_validacion"
 )
 
 const(
@@ -15,7 +14,7 @@ const(
 	infoCampo = "Campo: %s\nValor esperado: %+v\nValor real: %+v\n"
 )
 
-func ValidarFormatoEntradaValidacion(h *obj.Entrada_validacion) ([]error, error) {
+func ValidarFormatoEntradaExportacion(h *Entrada_exportacion) ([]error, error) {
 	validate := validator.New()
 	err := validate.Struct(h)
 

@@ -1,4 +1,4 @@
-package utils_exportacion
+package exportacion
 
 import (
 	"archive/zip"
@@ -6,7 +6,6 @@ import (
 	"io"
 	"io/ioutil"
 	"os"
-	obj "proyecto-horarios/objetos_exportacion"
 )
 
 func LeerArchivo(archivo string) ([]byte, error) {
@@ -14,8 +13,8 @@ func LeerArchivo(archivo string) ([]byte, error) {
 	return data, err
 }
 
-func DeserializarEntradaExportacion(data []byte) (*obj.Entrada_exportacion, error) {
-	var h *obj.Entrada_exportacion
+func DeserializarEntradaExportacion(data []byte) (*Entrada_exportacion, error) {
+	var h *Entrada_exportacion
 	err := json.Unmarshal(data, &h)
 	if err != nil {
 		return nil, err
@@ -23,7 +22,7 @@ func DeserializarEntradaExportacion(data []byte) (*obj.Entrada_exportacion, erro
 	return h, nil
 }
 
-func SerializarSalidaExportacionFallida(h *obj.Salida_exportacion_fallida) ([]byte, error) {
+func SerializarSalidaExportacionFallida(h *Salida_exportacion_fallida) ([]byte, error) {
 	data, err := json.MarshalIndent(h, "", " ")
 	if err != nil {
 		return nil, err

@@ -2,36 +2,29 @@ package main
 
 import (
 	"fmt"
-	objs "proyecto-horarios/objetos_solucion"
-	objv "proyecto-horarios/objetos_validacion"
-	utilss "proyecto-horarios/utils_solucion"
-	utilsv "proyecto-horarios/utils_validacion"
-	utilse "proyecto-horarios/utils_exportacion"
-	fmts "proyecto-horarios/formato_solucion"
-	fmtv "proyecto-horarios/formato_validacion"
-	"proyecto-horarios/solucion"
-	"proyecto-horarios/validacion"
-	"proyecto-horarios/exportacion"
+	sol "proyecto-horarios/solucion"
+	val "proyecto-horarios/validacion"
+	exp "proyecto-horarios/exportacion"
 )
 
-func probarSolucion(archivo string) (*objs.Salida_horario){
-	data, err := utilss.LeerArchivo(archivo)
+func probarSolucion(archivo string) (*sol.Salida_horario){
+	data, err := sol.LeerArchivo(archivo)
 	if err != nil {
-		return &objs.Salida_horario{
+		return &sol.Salida_horario{
 			Error: err.Error(),
 		}
 	}
 
-	entradaHorario, err := utilss.DeserializarEntradaHorario(data)
+	entradaHorario, err := sol.DeserializarEntradaHorario(data)
 	if err != nil {
-		return &objs.Salida_horario{
+		return &sol.Salida_horario{
 			Error: err.Error(),
 		}
 	}
 
-	errores, err := fmts.ValidarFormatoEntradaHorario(entradaHorario)
+	errores, err := sol.ValidarFormatoEntradaHorario(entradaHorario)
 	if err != nil {
-		return &objs.Salida_horario{
+		return &sol.Salida_horario{
 			Error: err.Error(),
 			Logs: func(errores []error) []string {
 				var ret []string
@@ -43,9 +36,9 @@ func probarSolucion(archivo string) (*objs.Salida_horario){
 		}
 	}
 
-	salida, err := solucion.GenerarHorario(entradaHorario)
+	salida, err := sol.GenerarHorario(entradaHorario)
 	if err != nil {
-		return &objs.Salida_horario{
+		return &sol.Salida_horario{
 			Error: err.Error(),
 		}
 	}
@@ -53,24 +46,24 @@ func probarSolucion(archivo string) (*objs.Salida_horario){
 	return salida
 }
 
-func probarValidacion(archivo string) (*objv.Salida_validacion){
-	data, err := utilsv.LeerArchivo(archivo)
+func probarValidacion(archivo string) (*val.Salida_validacion){
+	data, err := val.LeerArchivo(archivo)
 	if err != nil {
-		return &objv.Salida_validacion{
+		return &val.Salida_validacion{
 			Error: err.Error(),
 		}
 	}
 
-	entradaValidacion, err := utilsv.DeserializarEntradaValidacion(data)
+	entradaValidacion, err := val.DeserializarEntradaValidacion(data)
 	if err != nil {
-		return &objv.Salida_validacion{
+		return &val.Salida_validacion{
 			Error: err.Error(),
 		}
 	}
 
-	errores, err := fmtv.ValidarFormatoEntradaValidacion(entradaValidacion)
+	errores, err := val.ValidarFormatoEntradaValidacion(entradaValidacion)
 	if err != nil {
-		return &objv.Salida_validacion{
+		return &val.Salida_validacion{
 			Error: err.Error(),
 			Logs: func(errores []error) []string {
 				var ret []string
@@ -82,23 +75,23 @@ func probarValidacion(archivo string) (*objv.Salida_validacion){
 		}
 	}
 
-	salida := validacion.ValidarHorario(entradaValidacion)
+	salida := val.ValidarHorario(entradaValidacion)
 
 	return salida
 }
 
 func probarExportacion(archivo string) (string) {
-	data, err := utilse.LeerArchivo(archivo)
+	data, err := exp.LeerArchivo(archivo)
 	if err != nil {
 		panic(err)
 	}
 
-	entradaExportacion, err := utilse.DeserializarEntradaExportacion(data)
+	entradaExportacion, err := exp.DeserializarEntradaExportacion(data)
 	if err != nil {
 		panic(err)
 	}
 
-	cadena, err := exportacion.ExportarHorario(entradaExportacion, "./")
+	cadena, err := exp.ExportarHorario(entradaExportacion, "./")
 	if err != nil {
 		panic(err)
 	}
@@ -119,14 +112,14 @@ func main(){
 		fmt.Scanf("%s", &archivo)
 		if opc == 1 {
 			salida := probarSolucion("archivos_pruebas/"+archivo)
-			content, err := utilss.SerializarSalidaHorario(salida)
+			content, err := sol.SerializarSalidaHorario(salida)
 			if err != nil {
 				panic(err)
 			}
 			fmt.Println(string(content))
 		} else if opc == 2 {
 			salida := probarValidacion("archivos_pruebas/"+archivo)
-			content, err := utilsv.SerializarSalidaValidacion(salida)
+			content, err := val.SerializarSalidaValidacion(salida)
 			if err != nil {
 				panic(err)
 			}

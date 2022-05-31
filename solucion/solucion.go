@@ -3,7 +3,6 @@ package solucion
 import (
 	"container/heap"
 	"fmt"
-	obj "proyecto-horarios/objetos_solucion"
 )
 
 const (
@@ -20,9 +19,9 @@ const (
 )
 
 type tupla struct {
-	Profesor obj.Profesor
-	Materia  obj.Materia
-	Bloque   obj.Bloque
+	Profesor Profesor
+	Materia  Materia
+	Bloque   Bloque
 }
 
 type edge struct {
@@ -152,7 +151,7 @@ func min_cost_max_flow(source, sink int) (int64, int64) {
 	return flow, cost
 }
 
-func crearGrafo(salones int, materias []obj.Materia, profesores []obj.Profesor, bloques []obj.Bloque) (int, int, error) {
+func crearGrafo(salones int, materias []Materia, profesores []Profesor, bloques []Bloque) (int, int, error) {
 	n_materias := len(materias)
 	n_profesores := len(profesores)
 	n_bloques := len(bloques)
@@ -235,12 +234,12 @@ func crearGrafo(salones int, materias []obj.Materia, profesores []obj.Profesor, 
 	return fuente, destino, nil
 }
 
-func filtrarTuplasPorBloque(tuplas []tupla, id_bloque string) []obj.Asignacion {
-	var asignaciones []obj.Asignacion
+func filtrarTuplasPorBloque(tuplas []tupla, id_bloque string) []Asignacion {
+	var asignaciones []Asignacion
 
 	for _, t := range tuplas {
 		if t.Bloque.Id == id_bloque {
-			a := obj.Asignacion{
+			a := Asignacion{
 				Profesor:    t.Profesor.Nombre,
 				Id_profesor: t.Profesor.Id,
 				Materia:     t.Materia.Nombre,
@@ -267,11 +266,11 @@ func movimiento(u int) (int, bool) {
 	return -1, false
 }
 
-func encontrarSolucion(fuente, destino int, materias []obj.Materia, profesores []obj.Profesor, bloques []obj.Bloque) ([]obj.Distribucion, error) {
+func encontrarSolucion(fuente, destino int, materias []Materia, profesores []Profesor, bloques []Bloque) ([]Distribucion, error) {
 	flujo, costo := min_cost_max_flow(fuente, destino)
 
 	// Aqui es donde reconstruimos la respuesta
-	var distribuciones []obj.Distribucion
+	var distribuciones []Distribucion
 	var tuplas []tupla
 	var flujoEsperado int64
 
@@ -321,7 +320,7 @@ func encontrarSolucion(fuente, destino int, materias []obj.Materia, profesores [
 	for _, b := range bloques {
 		asignaciones := filtrarTuplasPorBloque(tuplas, b.Id)
 		if len(asignaciones) > 0 {
-			d := obj.Distribucion{
+			d := Distribucion{
 				Bloque:       b,
 				Asignaciones: asignaciones,
 			}
@@ -333,7 +332,7 @@ func encontrarSolucion(fuente, destino int, materias []obj.Materia, profesores [
 	return distribuciones, nil
 }
 
-func GenerarHorario(horario *obj.Entrada_horario) (*obj.Salida_horario, error) {
+func GenerarHorario(horario *Entrada_horario) (*Salida_horario, error) {
 	fuente, destino, err := crearGrafo(horario.Salones, horario.Materias, horario.Profesores, horario.Bloques)
 	if err != nil {
 		return nil, err
@@ -346,7 +345,7 @@ func GenerarHorario(horario *obj.Entrada_horario) (*obj.Salida_horario, error) {
 	}
 
 	// Aqui es donde creamos el obj Salida_horario y lo regresamos
-	salida := &obj.Salida_horario{
+	salida := &Salida_horario{
 		Distribuciones: distribuciones,
 		Logs:           logs,
 	}

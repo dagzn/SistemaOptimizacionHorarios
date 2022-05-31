@@ -1,6 +1,4 @@
-package objetos_exportacion
-
-// Mantener los nombres de variables en singular
+package solucion
 
 type Materia struct {
 	Id       string `json:"id" validate:"required"`
@@ -71,29 +69,3 @@ type Salida_horario struct {
 	Logs           []string       `json:"logs"`
 }
 
-// Este formato es el que usamos para validar
-type Entrada_validacion struct {
-	Distribuciones []Distribucion `validate:"required,min=1,dive,required"`
-	Profesores     []Profesor     `validate:"required,min=1,dive,required"`
-	Materias       []Materia      `validate:"required,min=1,dive,required"`
-	Salones        int            `validate:"required,gte=1"`
-	Validaciones   []string       `validate:"required,min=1,dive,required"`
-}
-
-// Coleccion de los errores encontrados al validar
-type Salida_validacion struct {
-	Error string   `json:"error"`
-	Logs  []string `json:"logs"`
-}
-
-// Horario que exportaremos a PDF
-type Entrada_exportacion struct {
-	Distribuciones []Distribucion `validate:"required,min=1,dive,required"`
-	Tipo           string         `validate:"required"` // Lista o Individual
-	Agrupar        string         // Materia, Profesor, Bloque o NULL (sin agrupar)
-}
-
-type Salida_exportacion_fallida struct {
-	Error string   `json:"error"`
-	Logs  []string `json:"logs"`
-}
