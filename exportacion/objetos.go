@@ -1,4 +1,4 @@
-package objetos_validacion
+package exportacion
 
 // Mantener los nombres de variables en singular
 
@@ -54,36 +54,6 @@ type Asignacion struct {
 type Distribucion struct {
 	Bloque       Bloque       `json:"bloque" validate:"required"`
 	Asignaciones []Asignacion `json:"asignaciones" validate:"required,min=1,dive,required"`
-}
-
-// Formato de entrada para crear un horario
-type Entrada_horario struct {
-	Salones    int        `validate:"required,gte=1"`
-	Materias   []Materia  `validate:"required,min=1,dive,required"`
-	Profesores []Profesor `validate:"required,min=1,dive,required"`
-	Bloques    []Bloque   `validate:"required,min=1,dive,required"`
-}
-
-// Formato de salida al crear un horario
-type Salida_horario struct {
-	Distribuciones []Distribucion `json:"distribuciones"`
-	Error          string         `json:"error"`
-	Logs           []string       `json:"logs"`
-}
-
-// Este formato es el que usamos para validar
-type Entrada_validacion struct {
-	Distribuciones []Distribucion `validate:"required,min=1,dive,required"`
-	Profesores     []Profesor     `validate:"required,min=1,dive,required"`
-	Materias       []Materia      `validate:"required,min=1,dive,required"`
-	Salones        int            `validate:"required,gte=1"`
-	Validaciones   []string       `validate:"required,min=1,dive,required"`
-}
-
-// Coleccion de los errores encontrados al validar
-type Salida_validacion struct {
-	Error string   `json:"error"`
-	Logs  []string `json:"logs"`
 }
 
 // Horario que exportaremos a PDF

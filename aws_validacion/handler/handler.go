@@ -5,9 +5,7 @@ import (
 	"fmt"
 	"net/http"
 
-	obj "proyecto-horarios/objetos"
-	"proyecto-horarios/utils"
-	"proyecto-horarios/validacion"
+	val "proyecto-horarios/validacion"
 
 	"github.com/aws/aws-lambda-go/events"
 )
@@ -20,18 +18,18 @@ func obtenerHeaders() map[string]string {
 	}
 }
 
-func probarValidacion(data []byte) *obj.Salida_validacion {
+func probarValidacion(data []byte) *val.Salida_validacion {
 
-	entradaValidacion, err := utils.DeserializarEntradaValidacion(data)
+	entradaValidacion, err := val.DeserializarEntradaValidacion(data)
 	if err != nil {
-		return &obj.Salida_validacion{
+		return &val.Salida_validacion{
 			Error: err.Error(),
 		}
 	}
 
-	errores, err := validacion.ValidarFormatoEntradaValidacion(entradaValidacion)
+	errores, err := val.ValidarFormatoEntradaValidacion(entradaValidacion)
 	if err != nil {
-		return &obj.Salida_validacion{
+		return &val.Salida_validacion{
 			Error: err.Error(),
 			Logs: func(errores []error) []string {
 				var ret []string
@@ -43,7 +41,7 @@ func probarValidacion(data []byte) *obj.Salida_validacion {
 		}
 	}
 
-	salida := validacion.ValidarHorario(entradaValidacion)
+	salida := val.ValidarHorario(entradaValidacion)
 
 	return salida
 }
@@ -63,7 +61,7 @@ func AtenderPeticion(peticion events.APIGatewayProxyRequest) (events.APIGatewayP
 
 	salida := probarValidacion([]byte(body))
 
-	content, err := utils.SerializarSalidaValidacion(salida)
+	content, err := val.SerializarSalidaValidacion(salida)
 	if err != nil {
 		respuesta.Body = fmt.Sprintf(`
 		{

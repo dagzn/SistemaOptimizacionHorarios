@@ -2,7 +2,6 @@ package validacion
 
 import (
 	"fmt"
-	obj "proyecto-horarios/objetos_validacion"
 )
 
 const (
@@ -26,7 +25,7 @@ var (
 /*
 	Validar que cada materia sea dada una cierta cantidad de veces.
 */
-func validarMaterias(materias []obj.Materia, distribuciones []obj.Distribucion, validaciones map[string]int) ([]error) {
+func validarMaterias(materias []Materia, distribuciones []Distribucion, validaciones map[string]int) ([]error) {
 	if _, ok := validaciones["ClasesMateria"]; !ok {
 		return nil
 	}
@@ -54,7 +53,7 @@ func validarMaterias(materias []obj.Materia, distribuciones []obj.Distribucion, 
 /*
 	Validar que cada bloque cumpla con con limite asignado de salones.
 */
-func validarBloques(salonesDisponibles int, distribuciones []obj.Distribucion, validaciones map[string]int) ([]error) {
+func validarBloques(salonesDisponibles int, distribuciones []Distribucion, validaciones map[string]int) ([]error) {
 	if _, ok := validaciones["LimiteBloque"]; !ok {
 		return nil;
 	}
@@ -83,7 +82,7 @@ func unique(stringSlice []string) []string {
 }
 
 // Validar que un profesor no tenga mas de una clase en el mismo bloque.
-func validarInterseccionBloques(distribuciones []obj.Distribucion, validaciones map[string]int) ([]error) {
+func validarInterseccionBloques(distribuciones []Distribucion, validaciones map[string]int) ([]error) {
 	if _, ok := validaciones["InterseccionBloques"]; !ok {
 		return nil
 	}
@@ -105,7 +104,7 @@ func validarInterseccionBloques(distribuciones []obj.Distribucion, validaciones 
 
 
 // Validar que se cumplan con las clases requeridas para cada profesor.
-func validarClasesProfesor(profesores []obj.Profesor, validaciones map[string]int) ([]error) {
+func validarClasesProfesor(profesores []Profesor, validaciones map[string]int) ([]error) {
 	if _, ok := validaciones["ClasesProfesor"]; !ok {
 		return nil
 	}
@@ -121,7 +120,7 @@ func validarClasesProfesor(profesores []obj.Profesor, validaciones map[string]in
 }
 
 // Validar que el profesor no de mas veces una materia que las deseadas
-func validarLimiteMateria(profesores []obj.Profesor, validaciones map[string]int) ([]error) {
+func validarLimiteMateria(profesores []Profesor, validaciones map[string]int) ([]error) {
 	if _, ok := validaciones["LimiteMateria"]; !ok {
 		return nil
 	}
@@ -146,7 +145,7 @@ func validarLimiteMateria(profesores []obj.Profesor, validaciones map[string]int
 }
 
 // Validar de que un profesor no tenga asignada materia que no puede dar.
-func validarMateriaNoAsignada(profesores []obj.Profesor, validaciones map[string]int) ([]error) {
+func validarMateriaNoAsignada(profesores []Profesor, validaciones map[string]int) ([]error) {
 	if _, ok := validaciones["MateriaNoAsignada"]; !ok {
 		return nil
 	}
@@ -168,7 +167,7 @@ func validarMateriaNoAsignada(profesores []obj.Profesor, validaciones map[string
 }
 
 // Validar que el profesor solo tenga asignados bloques en los que si pueda trabajar.
-func validarBloqueNoAsignado(profesores []obj.Profesor, validaciones map[string]int) ([]error) {
+func validarBloqueNoAsignado(profesores []Profesor, validaciones map[string]int) ([]error) {
 	if _, ok := validaciones["BloqueNoAsignado"]; !ok {
 		return nil
 	}
@@ -191,7 +190,7 @@ func validarBloqueNoAsignado(profesores []obj.Profesor, validaciones map[string]
 	return errores
 }
 
-func validarProfesores(profesores []obj.Profesor, distribuciones []obj.Distribucion, validaciones map[string]int) ([]error) {
+func validarProfesores(profesores []Profesor, distribuciones []Distribucion, validaciones map[string]int) ([]error) {
 	var errores []error
 
 	err := validarInterseccionBloques(distribuciones, validaciones)
@@ -222,7 +221,7 @@ func validarProfesores(profesores []obj.Profesor, distribuciones []obj.Distribuc
 	return errores
 }
 
-func llenarInformacionProfesores(distribuciones []obj.Distribucion) {
+func llenarInformacionProfesores(distribuciones []Distribucion) {
 	materiasAsignadas = make(map[string][]string)
 	bloquesAsignados = make(map[string][]string)
 	nombreMateria = make(map[string]string)
@@ -239,7 +238,7 @@ func llenarInformacionProfesores(distribuciones []obj.Distribucion) {
 	}
 }
 
-func validar(horario *obj.Entrada_validacion) ([]error) {
+func validar(horario *Entrada_validacion) ([]error) {
 	var errores []error
 
 	listaValidaciones := horario.Validaciones
@@ -268,11 +267,11 @@ func validar(horario *obj.Entrada_validacion) ([]error) {
 	return errores
 }
 
-func ValidarHorario(horario *obj.Entrada_validacion) (*obj.Salida_validacion){
+func ValidarHorario(horario *Entrada_validacion) (*Salida_validacion){
 	errores := validar(horario)
 	if len(errores) > 0 {
 		err := fmt.Errorf(errorValidacion);
-		salida := &obj.Salida_validacion{
+		salida := &Salida_validacion{
 			Error: err.Error(),
 			Logs: func(errores []error) []string {
 				var ret []string
@@ -286,5 +285,5 @@ func ValidarHorario(horario *obj.Entrada_validacion) (*obj.Salida_validacion){
 		return salida
 	}
 
-	return &obj.Salida_validacion{}
+	return &Salida_validacion{}
 }

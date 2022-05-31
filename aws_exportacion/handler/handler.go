@@ -5,10 +5,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"proyecto-horarios/exportacion"
-	obj "proyecto-horarios/objetos"
-	"proyecto-horarios/utils"
-	"proyecto-horarios/validacion"
+	exp "proyecto-horarios/exportacion"
 
 	"github.com/aws/aws-lambda-go/events"
 )
@@ -20,15 +17,15 @@ func obtenerHeaders() map[string]string {
 	}
 }
 
-func probarExportacion(data []byte) (string, string, *obj.Salida_exportacion_fallida, error) {
-	entradaExportacion, err := utils.DeserializarEntradaExportacion(data)
+func probarExportacion(data []byte) (string, string, *exp.Salida_exportacion_fallida, error) {
+	entradaExportacion, err := exp.DeserializarEntradaExportacion(data)
 	if err != nil {
 		return "", "", nil, err
 	}
 
-	errores, err := validacion.ValidarFormatoEntradaExportacion(entradaExportacion)
+	errores, err := exp.ValidarFormatoEntradaExportacion(entradaExportacion)
 	if err != nil {
-		return "", "", &obj.Salida_exportacion_fallida{
+		return "", "", &exp.Salida_exportacion_fallida{
 			Error: err.Error(),
 			Logs: func(errores []error) []string {
 				var ret []string
@@ -40,7 +37,7 @@ func probarExportacion(data []byte) (string, string, *obj.Salida_exportacion_fal
 		}, nil
 	}
 
-	cadenaCodificada, err := exportacion.ExportarHorario(entradaExportacion, "/tmp/")
+	cadenaCodificada, err := exp.ExportarHorario(entradaExportacion, "/tmp/")
 	if err != nil {
 		return "", "", nil, err
 	}
@@ -85,7 +82,7 @@ func AtenderPeticion(peticion events.APIGatewayProxyRequest) (events.APIGatewayP
 	if salidaExportacionFallida != nil {
 		respuesta.Headers["Content-Type"] = "application/json"
 
-		content, err := utils.SerializarSalidaExportacionFallida(salidaExportacionFallida)
+		content, err := exp.SerializarSalidaExportacionFallida(salidaExportacionFallida)
 
 		if err != nil {
 			respuesta.Body = fmt.Sprintf(`

@@ -9,9 +9,7 @@ import (
 	"time"
 	"encoding/base64"
 	"sync"
-	utils "proyecto-horarios/utils_exportacion"
 	pdf "github.com/SebastiaanKlippert/go-wkhtmltopdf"
-	obj "proyecto-horarios/objetos_exportacion"
 )
 
 var (
@@ -26,7 +24,7 @@ var (
 )
 
 type tupla struct {
-	Bloque obj.Bloque
+	Bloque Bloque
 	Profesor string
 	Materia string
 }
@@ -43,7 +41,7 @@ type pareja struct {
 
 type info_profe struct {
 	Materia string
-	Modulos []obj.Modulo
+	Modulos []Modulo
 }
 
 // Cosas del archivo HTML
@@ -76,7 +74,7 @@ func getLogos() (string) {
 	return html
 }
 
-func getTuplasIndividuales(horario *obj.Entrada_exportacion) ([]tupla) {
+func getTuplasIndividuales(horario *Entrada_exportacion) ([]tupla) {
 	var tuplas []tupla
 
 	for _, d := range horario.Distribuciones {
@@ -107,7 +105,7 @@ func crearCeldaSimple(contenido string, span string) (string){
 	return html
 }
 
-func crearCeldaBloque(bloque obj.Bloque, span string) (string){
+func crearCeldaBloque(bloque Bloque, span string) (string){
 	html := "<td"+span+"><center>"
 	html += fmt.Sprintf("<b> %s </b> <br>", bloque.Nombre)
 	for i, m := range bloque.Modulos {
@@ -248,7 +246,7 @@ func crearTabla() (string) {
 	return html
 }
 
-func exportarHorarioLista(horario *obj.Entrada_exportacion, ruta string) (string, error){
+func exportarHorarioLista(horario *Entrada_exportacion, ruta string) (string, error){
 	tuplas := getTuplasIndividuales(horario)
 	contenidoTabla = make([][]string, len(tuplas))
 
@@ -400,7 +398,7 @@ func crearHorarioIndividual(idProfe, ruta string) {
 }
 
 
-func exportarHorarioIndividual(horario *obj.Entrada_exportacion, ruta string) (string, error){
+func exportarHorarioIndividual(horario *Entrada_exportacion, ruta string) (string, error){
 	idToNombre = make(map[string]string)
 	clases = make(map[string][]info_profe)
 
@@ -443,7 +441,7 @@ func exportarHorarioIndividual(horario *obj.Entrada_exportacion, ruta string) (s
 	}
 
 	// Aqui debemos hacer el zip de la carpeta tmp
-	err := utils.ZipFiles(ruta+"horarios.zip", archivos)
+	err := ZipFiles(ruta+"horarios.zip", archivos)
 	if err != nil {
 		return "", err
 	}
@@ -458,7 +456,7 @@ func exportarHorarioIndividual(horario *obj.Entrada_exportacion, ruta string) (s
 	return cadenaCodificada, nil
 }
 
-func ExportarHorario(horario *obj.Entrada_exportacion, ruta string) (string, error){
+func ExportarHorario(horario *Entrada_exportacion, ruta string) (string, error){
 	if horario.Tipo == "Lista" {
 		return exportarHorarioLista(horario, ruta)
 	} else if horario.Tipo == "Individual" {

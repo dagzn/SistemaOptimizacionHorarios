@@ -1,9 +1,8 @@
-package utils_validacion
+package solucion
 
 import (
 	"encoding/json"
 	"io/ioutil"
-	obj "proyecto-horarios/objetos_validacion"
 )
 
 func LeerArchivo(archivo string) ([]byte, error) {
@@ -11,8 +10,8 @@ func LeerArchivo(archivo string) ([]byte, error) {
 	return data, err
 }
 
-func DeserializarEntradaValidacion(data []byte) (*obj.Entrada_validacion, error) {
-	var h *obj.Entrada_validacion
+func DeserializarEntradaHorario(data []byte) (*Entrada_horario, error) {
+	var h *Entrada_horario
 	err := json.Unmarshal(data, &h)
 	if err != nil {
 		return nil, err
@@ -20,7 +19,7 @@ func DeserializarEntradaValidacion(data []byte) (*obj.Entrada_validacion, error)
 	return h, nil
 }
 
-func SerializarSalidaValidacion(h *obj.Salida_validacion) ([]byte, error) {
+func SerializarSalidaHorario(h *Salida_horario) ([]byte, error) {
 	data, err := json.MarshalIndent(h, "", " ")
 	if err != nil {
 		return nil, err
