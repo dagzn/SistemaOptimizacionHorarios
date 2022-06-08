@@ -214,6 +214,7 @@ func crearTabla() (string) {
 	<html>
 		<head>
 		`+getEstilo()+`
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		</head>
 		<body>
 		`+getLogos()+`
@@ -296,7 +297,7 @@ func exportarHorarioLista(horario *Entrada_exportacion, ruta string) (string, er
 
 func crearContenidoHorarioIndividual(idProfe string) (string) {
 	html := ""
-	dias := [7]string{"Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"}
+	dias := [7]string{"Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"}
 	for _, info := range clases[idProfe] {
 		fila := `
 			<tr>
@@ -329,6 +330,7 @@ func crearTablaHorarioIndividual(idProfe string) (string) {
 	<html>
 		<head>
 		 `+getEstilo()+`
+		 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		</head>
 		<body>
 			`+getLogos()+`
@@ -340,10 +342,10 @@ func crearTablaHorarioIndividual(idProfe string) (string) {
 						<th>Materia</th>
 						<th>Lunes</th>
 						<th>Martes</th>
-						<th>Miercoles</th>
+						<th>Miércoles</th>
 						<th>Jueves</th>
 						<th>Viernes</th>
-						<th>Sabado</th>
+						<th>Sábado</th>
 						<th>Domingo</th>
 					</tr> `+contenido+`
 				</table>

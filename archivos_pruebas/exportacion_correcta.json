@@ -43,7 +43,7 @@
 			"asignaciones": [
 				{
 					"profesor": "Alice",
-					"materia": "Matematicas",
+					"materia": "Matemáticas",
 					"id_profesor": "1",
 					"id_materia": "2"
 				}
@@ -55,7 +55,7 @@
 				"nombre":"C",
 				"modulos":[
 					{
-						"dia":"Miercoles",
+						"dia":"Miércoles",
 						"entrada":"08:30",
 						"salida":"09:00"
 					},
@@ -69,19 +69,19 @@
 			"asignaciones": [
 				{
 					"profesor": "Carl",
-					"materia": "Matematicas",
+					"materia": "Matemáticas",
 					"id_profesor": "3",
 					"id_materia": "2"
 				},
 				{
 					"profesor": "Bob",
-					"materia": "Fisica",
+					"materia": "Física",
 					"id_profesor": "2",
 					"id_materia": "3"
 				},
 				{
 					"profesor": "Dan",
-					"materia": "Matematicas",
+					"materia": "Matemáticas",
 					"id_profesor": "4",
 					"id_materia": "2"
 				}
@@ -102,7 +102,7 @@
 			"asignaciones": [
 				{
 					"profesor": "Carl",
-					"materia": "Fisica",
+					"materia": "Física",
 					"id_profesor": "3",
 					"id_materia": "3"
 				}
