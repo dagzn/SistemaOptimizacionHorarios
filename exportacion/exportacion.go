@@ -358,7 +358,7 @@ func crearTablaHorarioIndividual(idProfe string) (string) {
 }
 
 // Devuelve el nombre del archivo a comprimir
-func crearHorarioIndividual(idProfe, ruta string) {
+func crearHorarioIndividual(idProfe, ruta string, idx int) {
 	// Modo landscape
 	// Poner logos del IPN
 	nombreProfe := idToNombre[idProfe]
@@ -395,8 +395,7 @@ func crearHorarioIndividual(idProfe, ruta string) {
 		return
   }
 
-
-	archivos = append(archivos, ruta + nombreArchivo)
+	archivos[idx] = ruta + nombreArchivo
 }
 
 
@@ -426,15 +425,17 @@ func exportarHorarioIndividual(horario *Entrada_exportacion, ruta string) (strin
 		return idToNombre[profes[i]] < idToNombre[profes[j]]
 	})
 
+	archivos = make([]string, len(profes))
+
 	// Aqui va la parte asincrona con hilos
 	var wg sync.WaitGroup
 
-	for _, id := range profes {
+	for i, id := range profes {
 		wg.Add(1)
-		go func(id, ruta string) {
+		go func(id, ruta string, i int) {
 			defer wg.Done()
-			crearHorarioIndividual(id, ruta)
-		}(id, ruta)
+			crearHorarioIndividual(id, ruta, i)
+		}(id, ruta, i)
 	}
 	wg.Wait()
 
@@ -454,7 +455,7 @@ func exportarHorarioIndividual(horario *Entrada_exportacion, ruta string) (strin
 	}
 
 	for _, a := range archivos {
-		err = os.Remove(ruta+a)
+		err = os.Remove(a)
 		if err != nil {
 			return "", err
 		}
