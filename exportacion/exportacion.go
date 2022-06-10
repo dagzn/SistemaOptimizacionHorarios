@@ -453,6 +453,18 @@ func exportarHorarioIndividual(horario *Entrada_exportacion, ruta string) (strin
 		return "", err
 	}
 
+	for _, a := range archivos {
+		err = os.Remove(ruta+a)
+		if err != nil {
+			return "", err
+		}
+	}
+
+	err = os.Remove(ruta+"horarios.zip")
+	if err != nil {
+		return "", err
+	}
+
 	cadenaCodificada := base64.StdEncoding.EncodeToString(content)
 
 	return cadenaCodificada, nil
